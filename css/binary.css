@@ -1,0 +1,1474 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}  
+
+body {
+margin: 0;
+font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; /* Define a fallback font stack for browsers that don't support system-ui */
+display: flex; 
+flex-wrap: wrap;
+align-items: center; 
+justify-content: center; 
+max-height: auto;
+overflow-x: hidden;
+
+}
+header{
+  position: relative;
+  background-color: rgb(37, 37, 37);
+  top:0;
+  left:0;
+  width:100%;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  transition: 0.6s;
+  padding:10px 100px;
+}
+header a{
+  color:yellow;
+
+}
+.animation
+{
+  
+  background-color:#e0dede;
+  width:105%;
+  margin-top: -40px;
+  height: 100%; 
+  margin-left:-20px;
+  border-radius: 5px;
+}
+.arrow-1
+{   
+  position: absolute;
+  width:61px;
+  top: 75%;
+  left:0;
+  padding-top:30px;
+  padding-left: 25px;
+  transform: translateY(-50%);
+  background-color:palevioletred;
+  height:85px;
+}
+.arrow-2
+{   
+  position: absolute;
+  width:61px;
+  top: 49.2%;
+  right:0;
+  transform: translateY(-50%);
+  padding-top:30px;
+  padding-left: 20px;
+  background-color:rgb(72, 72, 146);
+  height:75px;
+}
+.arrow-3
+{   
+  position: absolute;
+  width:61px;
+  top: 74.8%;
+  right:0;
+  padding-top: 10px;
+  padding-left:20px;
+  transform: translateY(-50%);
+  background-color:rgb(66, 235, 91);
+  height:200px;
+}
+.arrow-3 span{
+  margin-top:70px;
+}
+/*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+.menu-1
+{
+  position: relative;
+  padding:  0;
+  height:185px;
+  top: 15.8%;
+  left:1%;
+  background-color: palevioletred;
+  width:0;
+  overflow: hidden;
+  transition: width 0.5s; 
+
+}
+.menu1-ul
+{   position: absolute;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+ 
+}
+
+
+
+
+
+.menu-1.show {
+  width:137px;
+
+}
+#leftarrow {
+  transition: transform 0.3s;
+  cursor: pointer; 
+}
+#leftarrow.rotate{
+  transform: rotate(180deg);
+}
+/* .create{
+  padding:10px 38px;
+  font-weight:700;
+  width:100%;
+  background-color:palevioletred;
+  color:#fff;
+  font-family: "Teachers", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 1.2em;
+  font-style: normal;
+}.search{
+  padding:0; 
+  font-weight:700;
+  width:100px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color:palevioletred;
+  color:#fff;
+  font-family: "Teachers", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 1em;
+  
+  display: block;
+  font-style: normal;
+  border-radius: 5px;
+}
+.restart
+{
+  padding:0; 
+  font-weight:700;
+  width:100px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color:palevioletred;
+  color:#fff;
+  font-family: "Teachers", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 1em;
+  
+  display: block;
+  font-style: normal;
+  border-radius: 5px;
+}
+
+.pause
+{
+  padding:0; 
+  font-weight:700;
+  width:100px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color:palevioletred;
+  color:#fff;
+  font-family: "Teachers", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 1em;
+  
+  display: block;
+  font-style: normal;
+  border-radius: 5px; 
+}
+.restart.appear
+{
+display: block;
+}
+.search.disappear
+{
+  display: none;
+}
+
+.create:hover,
+.search:hover,
+.restart:hover,
+.pause:hover{
+  cursor:pointer;
+  color:#fff;
+  background-color: rgb(29, 28, 28);
+} */
+
+
+.array{
+  padding:0 10px;
+  font-weight: 600;
+  font-family: "Teachers", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 1.2em;
+  color:#000;
+  font-style: normal;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-left: -25px;
+}
+
+/*
+.key-item
+{
+  width:30px;
+  border-radius: 2px;
+  height:20px;
+  border:1px solid #000;
+  font-family: "Teachers", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size:0.8em;
+  font-weight: bold;
+  padding: 2px;
+}
+.key-item:focus
+{   outline: none;
+  border:2px solid #4CAF50;
+  border-radius: 2px;
+  font-family: "Teachers", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.random{
+ width:60px;
+ cursor: pointer;
+ color:#000;
+ padding:0 10px;
+ line-height: 24px;
+ height:25px;
+ background-color:#fff; 
+}
+.random:hover{
+  color:#fff;
+  background-color: #000;
+}
+.array-item{
+ width: 155px;
+ height:25px;
+ border-radius: 3px;
+ border:1px solid #000;
+ font-family: "Teachers", sans-serif;
+ font-optical-sizing: auto;
+ font-style: normal;
+ font-size:0.8em;
+ padding: 2px;
+}
+.go
+{
+  width:50px;
+  height:50px;
+  border-radius: 2px;
+  padding-top: 2px;
+  padding-left: 12px;
+  background-color:rgb(62, 181, 62);
+}
+.go:hover{
+  background-color: rgb(53, 118, 53);
+  color:#fff;
+}
+.array-items:focus
+{
+  outline:none;
+  border:2px solid #4CAF50;
+  border-radius: 2px;
+}
+.prompt.show1
+{
+display: block;
+} */
+/*$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$*/
+.menu-2 {
+  position: relative;
+  width: 450px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  background-color: #090909;
+  height: 75px;
+  margin-top: -25px;
+  color:#fff;
+  right:0;
+  margin-left: auto;
+  border: 1px solid #fff;
+  transform: translateX(0);
+  transition: transform 1.5s ease,width 1.5s ease;
+
+}
+.menu-2.going{
+  top:-25%;
+}
+.menu-2 .e1{
+  padding: 5px;  
+  font-size: 18px;
+}
+.menu-2.e1.flow{
+  display: block; 
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-size:10px;
+  font-weight: bold;
+  font-style: normal;
+  border: 0px solid transparent;
+    
+}
+
+.menu-2 .arrow1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+  border: 1px solid #fff;
+  transition: transform 0.5s ease;
+}
+
+.code {
+  flex-grow: 2;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.menu-2.expand .code{
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.menu-2.expand {
+  width: 28px;
+  transform: translateX(100%);
+  margin-right: 2.5%;
+}
+
+.menu-2 .arrow1.rotate {
+  transform: rotate(180deg);
+}
+
+.menu-2.expand .code {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+.menu-3{
+  position: relative;
+  height:200px;
+  width:450px;
+  margin-top:10px;
+  right:0;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  margin-left:auto;
+  gap:0;padding: 0;
+  background-color:#090909;
+  color:#000;
+  transform: translateX(0);
+  border:1px solid #fff;
+  transition:transform 1.5s ease,width 1.5s ease;
+}
+
+.menu-3 .arrow2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 0;
+  border:1px solid #fff;
+  transition: transform 0.5s ease;
+}
+
+.code{
+  display: block;
+  color:#fff;
+  height: 100%;
+  margin-left:2px;
+  margin-top: 5px;
+  flex-grow: 2;
+  transform: translateX(0);
+  transition: transform 0.5s ease;
+  font-size: 15px;
+  
+}
+
+.menu-3.expand .code{
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+.menu-3.expand {
+  width: 18px;
+  transform: translateX(100%);
+  margin-right: 2.5%;
+}
+
+.menu-3 .arrow2.rotate {
+  transform: rotate(180deg);
+}
+.rotate {
+  transform: rotate(180deg);
+}
+/*code*/
+.code .e1
+{
+  width:100%;
+  height:18px;
+  margin-top:-8px;
+  transition: background-color 0.5s ease-in;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-size:13px;
+  font-weight: 2em;
+  font-style: normal;
+  border: 0px solid transparent;
+}
+.code .e1 .show{
+  color:white;
+  background-color: aqua;
+}
+.code .e2
+{
+  width:100%;
+  height:33px;
+  margin-top: -4px;
+  transition: background-color 0.5s ease-in;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-size:13px;
+  border: 0px solid transparent;
+  font-weight: 2em;
+  font-style: normal;
+ 
+}
+.code .e2.show{
+  color:white;
+  background-color:aqua;
+}
+.code .e3
+{
+  width:100%;
+  height:18px;
+  margin-top: -22px;
+  transition: background-color 0.5s ease-in;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-size:13px;
+  font-weight: 2em;
+  border: 0px solid transparent;
+  font-style: normal;
+  
+}
+.code .e3.show{
+  color:white;
+  background-color: aqua;
+}
+.code .e4
+{
+  width:100%;
+  height:18px;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-size:13px;
+  font-weight: 2em;
+  font-style: normal;
+  margin-top: -2px;
+  transition: background-color 0.5s ease-in;
+  border: 0px solid transparent;
+
+}
+.code .e4.show{
+  color:white;
+  background-color: aqua;
+}
+.code .e5 
+{
+  width:100%;
+  height:35px;
+  margin-top: -3px;
+  transition: background-color 0.5s ease-in;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-size:13px;
+  font-weight: 2em;
+  border: 0px solid transparent;
+  font-style: normal;
+}
+.code .e5.show{
+  color:white;
+  background-color: aqua;
+}
+.code .e6 
+{
+  width:100%;
+  height:38px;
+  margin-top: -2px;
+  transition: background-color 0.5s ease-in;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-size:13px;
+  font-weight: 2em;
+  border: 0px solid transparent;
+  font-style: normal;
+}
+.code .e6.show{
+  color:white;
+  background-color: aqua;
+}
+.code .e7 
+{
+  width:100%;
+  height:35px;
+  margin-top: -4px;
+  transition: background-color 0.5s ease-in;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-size:13px;
+  font-weight: 2em;
+  font-style: normal;
+  border: 0px solid transparent;
+}
+.code .e7.show{
+  color:white;
+  background-color: aqua;
+}
+.code .e8 
+{
+  width:100%;
+  height:25px;
+  margin-top: 1px;
+  transition: background-color 0.5s ease-in;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-size:13px;
+  font-weight: 2em;
+  font-style: normal;
+  border: 0px solid transparent;
+}
+.code .e8.show{
+  color:white;
+  background-color: aqua;
+}
+/*animation*/
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  position: absolute;
+  margin-left: 80px;
+  
+}
+
+.p1{
+font-family: "Nunito", sans-serif;
+font-optical-sizing: auto;
+font-size:20px;
+font-weight: 2em;
+font-style: normal;
+margin-left:-160px;
+margin-top: 10px;
+}
+
+.key{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; 
+  width: 50px;
+  height: 50px;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-size:20px;
+  font-weight: 2em;
+  font-style: normal;
+  line-height: 40px;
+  margin:0;
+  margin-left:-145px;
+  margin-top: -2px;
+  padding: 5px 5px;
+  border-radius: 5px;
+  background-color: lightblue;
+  position: absolute;
+  transition: left 1.5s; 
+}
+.input-key
+{
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  margin:0;
+  margin-top:-5%;
+  outline: none;
+  padding:8px;
+  background-color: transparent;
+  border: 0 solid transparent;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size:20px;
+  font-weight: 2em;
+  font-weight: 2em;
+}
+.identity
+{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-left: 50px;
+  top:50px;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.lowid div{
+  width:15px;
+  height:15px;
+  background-color: blue;
+  position: absolute;
+  margin-left: -30px;
+}
+.highid div{
+  width:15px;
+  height:15px;
+  background-color: red;
+  position: absolute;
+  margin-left: -30px;
+}
+.midid div{
+  width:15px;
+  height:15px;
+  background-color: yellow;
+  position: absolute;
+  margin-left: -30px;
+}
+.foundid div{
+  width:15px;
+  height:15px;
+  background-color: green;
+  position: absolute;
+  margin-left: -30px;
+
+}
+/* animation*/
+.main{
+  width:800px;
+  height: 100px;
+  position: relative;
+  
+  margin-top:40px;
+  margin-left: 200px;
+  padding:10px;
+}
+/*video animate*/
+.lower
+{
+  background-color:rgb(37, 37, 37);
+  width:100%;
+  height: 54px;
+  display:flex;
+  flex-direction: row;
+  gap:150px;
+  position: relative;
+}
+
+
+
+/* play back speed */
+.box{
+  background: transparent;
+  height: 50px;
+  margin-left: 100px;
+  margin-top:0;
+  padding: 20px 10px 20px 30px;
+  
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+}
+.box .slider{
+width: 300px;
+height: 40px;
+display: flex;
+align-items: center;
+margin-right: 15px;  
+}
+.box .slider input{
+  height: 10px;
+  width: 100%;
+  outline: none;
+  cursor:pointer;
+  background-color:aqua;
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  box-shadow: inset 0px 0px 4px rgba(0,0,0,0.2);
+}
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.arrays {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.array-item {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(144, 210, 232);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #000;
+  border-radius: 5px;
+}
+.array-item span{
+  color:#000;
+}
+.array-item.found
+{
+  
+  background-color: #4CAF50;
+}
+.key-container {
+  margin-top: 20px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.arrow-low.anmie,
+.arrow-high.anmie,
+.arrow-mid.anmie{
+  transition: left 0.5s ease;
+}
+@keyframes highlight {
+  0% { background-color: lightblue; }
+  50% { background-color: yellow; }
+  100% { background-color: lightblue; }
+}
+@keyframes highlights {
+  0% { background-color: lightblue; }
+  50% { background-color: yellow; }
+  100% { background-color: green; }
+}
+
+
+.container {
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 20px;
+}
+
+.array {
+
+}
+
+
+.array-item {
+position: relative;
+width: 50px;
+height: 50px;
+font-family: "Nunito", sans-serif;
+font-optical-sizing: auto;
+font-size:20px;
+font-weight: 2em;
+font-style: normal;
+background-color: lightblue;
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 0 5px;
+transition: background-color 0.5s;
+}
+
+.array-item span {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-size:18px;
+  font-weight: 2em;
+  font-style: normal;
+position: absolute;
+
+bottom: -30px;
+left: 50%;
+transform: translateX(-50%);
+}
+.index {
+position: absolute;
+bottom: -20px;
+left: 0;
+right: 0;
+font-size: 12px;
+color: #666;
+}
+.key-container {
+margin-top: 20px;
+}
+
+button {
+padding: 5px 10px;
+background-color: #4CAF50;
+color: white;
+border: none;
+cursor: pointer;
+}
+
+.arrow-low.anmie,
+.arrow-high.anmie,
+.arrow-mid.anmie {
+transition: left 0.5s ease;
+}
+
+@keyframes highlight {
+0% { background-color: lightblue; }
+50% { background-color: yellow; }
+100% { background-color: lightblue; }
+}
+
+@keyframes fadeOut {
+0% { opacity: 1; }
+100% { opacity: 0; }
+}
+
+
+
+/*********************/
+.controls {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap:10px;
+  width:100%;
+}
+/* Full Screen */
+.cancel
+{
+    margin-left:auto;
+    width: 30px;
+    height:30px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50px;
+    margin-left: auto;
+    display: none;
+
+}
+.cancel i{
+    margin-top: 5px;
+}
+.cancel:hover{
+    background-color: rgb(65, 63, 63); 
+}
+.screen
+{
+    margin-top:-40px;
+    margin-left:20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:30px;
+    height:30px;
+    border-radius: 50px;
+    background-color: #7b7878;
+
+}
+.screen:hover{
+    background-color: rgb(65, 63, 63); 
+}
+.fullscreen-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-left:0;
+    background-color: #090909; /* Or any background color you prefer */
+    z-index: 1000;
+   
+    padding: 20px; /* Optional padding */
+    margin-top: 5px;
+}
+
+.fullscreen-active #Theory {
+    display: block;
+    width: 100%;
+    height: 100%; /* Adjust based on the height of the controls */
+}
+
+.fullscreen-active .navbar,
+.fullscreen-active .sidebar,
+.fullscreen-active .content-container:not(#Theory) {
+    display: none;
+}
+
+.fullscreen-active .controls {
+    position: relative;
+    bottom: 100px; /* Position controls at the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    z-index: 1001;
+}
+.fullscreen-active .screen
+{
+    display: none;
+}
+.fullscreen-active .cancel
+{
+    display: block;
+}
+.fullscreen-active .menu1,
+.fullscreen-active .menu2
+{
+    margin-right: -20px;
+}
+.no-scroll {
+    overflow: hidden;
+}
+
+/* page css */
+.sidebar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 15px 0px;
+  margin-top: 0;
+  gap: 35px;
+}
+.sidebar-header h3 {
+  margin: 0;
+  margin-left: -180px;
+  font-size:18px;
+ 
+}
+.close-btn {
+background: none;
+border: 0;
+font-size: 20px;
+color: #000;
+cursor: pointer;
+width: 30px;
+height: 30px;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 50px;
+margin-top: -55px;
+margin-right: -230px;
+}
+#Theory
+{
+  height: calc(125vh - 100px);
+}
+.sidebar {
+  width: 250px;/* Start with sidebar visible */
+  height: calc(100% - 50px); 
+  background-color: #e0dede;
+  color: white;
+  position: fixed;
+  top: 55px; 
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: transform 0.3s ease, width 0.3s ease; /* Smooth transition */
+  padding-top: 20px;
+  z-index: 2;
+
+  transform: translateX(0); /* Sidebar starts visible */
+}
+
+/* Button Styles */
+.btn1-start,
+.btn1-re-start,
+.btn2-pause,
+.btn2-resume {
+    width: 100%;
+    max-width: 100px; /* Max width for larger screens */
+    height: 50px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 600;
+    border: 0;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn1-start i,
+.btn1-re-start i,
+.btn2-pause i,
+.btn2-resume i {
+    color: #000;
+}
+
+.btn1-start:hover,
+.btn1-re-start:hover,
+.btn2-pause:hover,
+.btn2-resume:hover {
+    background-color: rgba(100, 91, 91, 0.712);
+    color: #fff;
+}
+
+.btn1-start:hover i,
+.btn1-re-start:hover i,
+.btn2-pause:hover i,
+.btn2-resume:hover i {
+    color: #fff;
+}
+
+/* Toggle Class for Display Buttons */
+.display {
+    display: block;
+    background-color: aqua;
+}
+
+.none {
+    display: none;
+}
+
+/* Prompt Section */
+.prompt {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 100%;
+  max-width: 1000px;
+  padding:5;
+  margin-top: 50px;
+  
+  box-sizing: border-box;
+  margin-left: 10px;
+}
+
+.prompt-menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  background-color: #f2f2f2;
+  color: #090909;
+  height: 50px;
+  margin-top: 5px;
+  width: 0;
+  overflow: hidden;
+  transform: translateX(100%);
+  transition: transform 0.5s ease, width 0.5s ease;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+.prompt-menu.visible {
+  width: 45%;
+  transform: translateX(0);
+}
+
+.prompt-menu li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+.prompt-menu input {
+  margin-left: 10px;
+  padding: 5px;
+}
+
+.prompt-menu .go {
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+}
+.prompt-menu .arrays{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  margin-left: 0;
+  margin-top: 0;
+  
+  
+}
+.prompt-menu .arrays p{
+
+  margin-top: 15px;
+}
+.prompt-menu .go:hover {
+  background-color: #0056b3;
+}
+
+/* Create Button */
+.create {
+  width: 100%;
+  max-width: 220px; /* Max width for larger screens */
+  height: 50px;
+  flex-grow: 0;
+  border-radius: 5px;
+  color: #000;
+  margin: 5px;
+  background-color: #fff;
+}
+
+.create:hover {
+  background-color: rgba(100, 91, 91, 0.712);
+  color: #fff;
+}
+
+/* Array Input */
+#array-input {
+  width: 100%;
+  max-width: 150px; /* Max width for larger screens */
+  height: 35px;
+  border-radius: 3px;
+  border: 1px solid #000;
+  font-family: "Teachers", sans-serif;
+  font-size: 0.8em;
+  margin-left: -5px;
+}
+/*Box section*/
+.box {
+  background: none;
+  height: 50px;
+  width: 100%;
+  max-width: 500px; /* Max width for larger screens */
+  margin-top: 60px;
+  padding: 0;
+  
+  display: flex;
+  position: absolute;
+  right: -90px;
+  align-items: center;
+  flex-direction: row;
+  gap: 5px;
+  margin-left: auto;
+  flex-grow: 2;
+}
+
+.box .slider {
+  width: 100%;
+  max-width: 300px; /* Max width for larger screens */
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  flex-grow: 0;
+}
+
+.box h4 {
+  flex-grow: 0;
+  font-size: 18px;
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:400;
+  font-style: normal;
+}
+
+.box .slider input {
+  height: 10px;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border-radius: 25px;
+ 
+}
+
+/* Screen Button */
+.screen {
+  margin-top: -30px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+  border-radius: 50px;
+}
+.screen i{
+  font-size:25px;
+}
+
+.screen:hover {
+  background-color: rgb(65, 63, 63);
+}
+
+
+/***********************************************************/
+
+
+/* Fullscreen active state */
+.fullscreen-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-top:0;
+  background-color: #e0dede;
+  z-index: 1000;
+  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.fullscreen-active #Visualization {
+  display: block;
+  width: 100%;
+  height: calc(100% - 10px);
+}
+
+.fullscreen-active .navbar,
+.fullscreen-active .sidebar,
+.fullscreen-active .content-container:not(#Visualization) {
+  display: none;
+}
+
+.fullscreen-active .controls {
+  position: relative;
+  bottom: 100px;
+  margin-right: auto;
+  margin-left:100px;
+  margin-top: -60px;
+  transform: translateX(-50%);
+  width: auto;
+
+}
+
+.fullscreen-active .screen {
+  display: none;
+}
+
+.fullscreen-active .cancel {
+  display: block;
+}
+
+.fullscreen-active .menu1,
+.fullscreen-active .menu2 {
+  margin-right: 0;
+}
+
+.fullscreen-active .linear-visual {
+  width: 100%;
+  height: 80%;
+  flex-wrap: wrap;
+}
+.fullscreen-active .main {
+  
+  position: relative; /* Allows the absolute positioning of child elements */
+  
+}
+.fullscreen-active .main p{
+  position: absolute;
+  top: -5px;          /* Adjust this value to move the element vertically */
+  left: 120px; 
+  margin-top: -10px;
+}
+.fullscreen-active .array {
+  flex-wrap: nowrap;
+  margin-left: 150px;
+  margin-top: 0px;
+  
+}
+
+.fullscreen-active .key {
+  position: absolute; /* Absolute positioning within the .main container */
+  width:50px;
+  height: 50px;
+  top: 25px;          /* Adjust this value to move the element vertically */
+  left: 120px;         /* Adjust this value to move the element horizontally */
+  margin-top: -10px;  /* Additional vertical adjustment */
+}
+.fullscreen-active .identity
+{
+  margin-left: 90px;
+}
+.fullscreen-active .prompt
+{
+  margin-top:260px;
+  margin-left:-130px ;
+  width:100%;
+
+}
+.fullscreen-active .prompt .create {
+ 
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  width: 180px;
+  max-width: 1000px;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-left: 10px;
+  z-index: 999;
+}
+
+.fullscreen-active .prompt .prompt-menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  background-color: #f2f2f2;
+  color: #090909;
+  height: 50px;
+  margin-top: 5px;
+  width: 0;
+  overflow: hidden;
+  transform: translateX(100%);
+  transition: transform 0.5s ease, width 0.5s ease;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.fullscreen-active .prompt-menu.visible {
+  width: 40%;
+  transform: translateX(0);
+}
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Style for element values */
+.fullscreen-active .element-value {
+  width: 60px;
+  height: 60px;
+  font-size: 25px;
+}
+.fullscreen-active #array-container {
+  margin-top: 50px;
+
+}
+/* Style for element indexes */
+.fullscreen-active .element-index {
+  font-size: 18px;
+}
+
+.fullscreen-active  h3 {
+  margin-top: -130px;
+}
+.fullscreen-active .key input[type="number"] {
+  width: 80px;
+  height: 80px;
+  font-size: 30px;
+}
+.fullscreen-active .menu-2 {
+  position: absolute;
+  
+  top: 190px; /* Distance from the top */
+  right: 20px; /* Align to the right edge */
+  margin: 0; /* Remove any default margin */
+  height:80px;
+  
+}
+.fullscreen-active .menu-3 {
+  position: absolute;
+  height:250px;
+  top: 280px; /* Distance from the top */
+  right: 20px; /* Align to the right edge */
+  margin: 0; /* Remove any default margin */
+  
+  
+}
+.fullscreen-active .menu-3 .code{
+  height:100%;
+  padding: 5px;
+  font-size: 25px;
+}
+.fullscreen-active .menu1 h1
+{
+  font-size: 18px;
+}
+.fullscreen-active .menu2 {
+  position: absolute;
+  top: 240px; /* Distance from the top */
+  right: 16px; /* Align to the right edge */
+  margin: 0; /* Remove any default margin */
+  width: 400px; /* Set the width of the menu */
+  height: 220px;
+}
+.fullscreen-active .menu2 h4 {
+  padding-top: 5px;
+}
+.fullscreen-active .box
+{
+  margin-top: 270px;
+  position: absolute;
+  right: -90px;
+}
+.fullscreen-active .box h4
+{
+  font-size:20px;
+}
+/* Full Screen Button */
+.cancel {
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background-color: #333; /* Added background color for visibility */
+  color: #fff; /* Text color */
+  position: absolute;
+  top: 30px; /* Distance from the top */
+  right: 20px; /* Distance from the right */
+  display: none; /* Hidden by default */
+}
+
+.cancel:hover {
+  background-color: rgb(65, 63, 63); /* Darker background on hover */
+}
+
+
+.cancel i {
+  margin-top: 5px;
+}
+
+.cancel:hover {
+  background-color: rgb(65, 63, 63);
+}

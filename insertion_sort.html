@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Insertion sort</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/insertion.css">
+    </head>
+    <body>
+    
+        <nav class="navbar" >
+            <div class="navbar-left">
+                <a href="index.html" style="text-decoration: none;"><img src="img/logo2.jpg" alt="AlgoVerse Logo" class="logo"></a>
+            </div>
+            <div class="navbar-right">
+                <a href="#about" class="nav-link">ABOUT US</a>
+                <a href="#help" class="nav-link">HELP</a>
+                <button class="algo-code-button">Algo code</button>
+            </div>
+        </nav>
+        
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h3>Insertion Sort</h3>
+                <button class="close-btn" onclick="closeSidebar()" ><span class="material-symbols-outlined" id="close">
+                    close
+                    </span></button>
+            </div>
+            <ul>
+                <li class="has-submenu">
+                    <a href="javascript:void(0);" onclick="toggleSubmenu1()" class="menu-title">
+                        Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-solid fa-angle-down arrow-icon"></i>
+                    </a>
+                    <div class="submenu" id="submenu1">
+                        <div class="step-indicator">
+                            <div class="step" id="step1">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Theory" class="sidebar-link">Theory</a></div>
+                            </div>
+                            <div class="step" id="step2">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Advantages" class="sidebar-link">Advantages</a></div>
+                            </div>
+                            <div class="step" id="step3">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Disadvantages" class="sidebar-link">Disadvantages</a></div>
+                            </div>
+                            <div class="step" id="step4">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Applications" class="sidebar-link">Applications</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                
+                <li class="has-submenu">
+                    <a href="javascript:void(0);" onclick="toggleSubmenu2()">Algorithm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-solid fa-angle-down arrow-icon2" ></i>
+                    </a>
+                    <ul class="submenu" id="submenu2">
+                        <div class="step-indicator2">
+                            <div class="step" id="step1">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#pseudocode">Pseudocode</a></div>
+                            </div>
+                            <div class="step" id="step2">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#flowchart">Flowchart</a></div>
+                            </div>
+                            <div class="step" id="step3">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#example">Example</a></div>
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+                
+                <li><a href="#Visualization">Visualization</a></li>
+                <li><a href="#tcomplexity" >Time complexity</a></li>
+                <li><a href="#scomplexity" >Space Complexity</a></li>
+            </ul>
+        </div>
+        
+    
+        <button class="menu-btn" onclick="openSidebar()"><span class="material-symbols-outlined" style="color:#fff;">
+            dock_to_left
+            </span></button>
+
+            <div class="content">
+                <div id="Theory" class="content-container">
+                    
+                     <div class="article-title">
+                       <h1>Insertion Sort Algorithm</h1>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="text" style="height: 1800px; overflow: hidden; mask-image: linear-gradient(rgb(0, 0, 0) 80%, transparent);">
+                        <p dir="ltr" style="text-align: justify;">
+        
+                           <b>Insertion Sort</b> is a simple and intuitive sorting algorithm that builds the final sorted array one item at a time.</p><br> <p>It’s akin to the way you might sort playing cards in your hands by inserting each card into its correct position among the already-sorted cards.</p>
+                        <br><br>
+                        <p dir="ltr" style="text-align: justify;">
+                            <h2>HOW IT WORKS ?</h2>
+                            </p>
+                            <br>
+                            <ol>
+                                <p><strong>Initial Assumption:</strong></p><br>
+                                <ul>
+                                    <li>Consider the first element of the array as a sorted portion. Initially, the sorted portion consists of just the first element</li>
+                                </ul><br><br>
+                              
+                                <p><strong>Iterate Over Unsorted Elements: </strong></p><br>
+                                <ul>
+                                    <li>Starting from the second element, take each element one by one (let’s call this the "key" element).
+                                    </b></li>
+                                </ul><br><br>
+                               
+                                <p><strong>Insert the Key Element:</strong></p><br>
+                                <ul>
+                                    <li>Compare the key element with the elements in the sorted portion (i.e., the elements before the key).</li><br>
+                                    <li>Shift the elements in the sorted portion that are greater than the key element to the right.</li><br>
+                                    <li>Insert the key element into its correct position in the sorted portion</li>
+                                </ul><br><br>
+                                <p><strong>Repeat:</strong></p><br>
+                                <ul>
+                                    <li> Continue this process for each element until the entire array is sorted.
+                                    </li>
+                                </ul><br>
+                            </ol>
+                        </div>
+                    </div>
+        
+        <!-- advantages -->
+        
+                <div id="Advantages" class="content-container">
+                    <div class="article-title text">
+                        <h1>Advantages</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br><br>
+                    <div class="article-title text">
+                        
+                            <ol>
+                               
+                                    <ul>
+                                        <li><strong>Simplicity:</strong> he algorithm is straightforward to understand and implement. It’s often taught as an introduction to sorting algorithms.</li>
+                                   <br><br>
+                               
+                                
+                                        <li><strong>Adaptive:</strong>It performs well on partially sorted arrays. If the array is already nearly sorted, insertion sort can be very efficient.</li><br><br>
+                                
+                                        <li><strong>Stable:</strong>It preserves the relative order of equal elements, which can be important in applications where the order of equivalent items needs to be maintained.</li>
+                                    <br><br>
+                               
+                                   
+                                        <li><strong>In-place:</strong> It requires only a small, constant amount of additional memory space, making it memory efficient.
+        
+                                        </li>
+                                   <br><br>
+                                
+                                   <li><strong>Efficient for Small Data Sets: </strong> For small lists, the overhead of more complex algorithms often outweighs the advantages. Insertion sort can be faster on small arrays or when the data is nearly sorted.
+                                   </li>
+                                   <br><br>
+                                   <li><strong>Online Sorting:  </strong>  Insertion sort can be used as an online sorting algorithm. This means it can sort a list as it receives new elements, which is useful in situations where you need to sort data in real-time.
+                                   </li>
+                                   <br><br>
+                                   <li><strong>Low Overhead: </strong> Due to its simplicity, insertion sort has minimal overhead compared to more complex algorithms. It doesn't require complex data structures or additional function calls, making it easy to implement in low-level programming environments.
+                                   </li>
+                                   <br><br>
+                                </ul>
+                            </ol>
+                        
+                        
+                     </div>
+        
+                </div>
+        
+        
+        <!-- disadvantages -->
+        
+        
+                <div id="Disadvantages" class="content-container">
+                    <div class="article-title text">
+                        <h1>Disadvantages</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br><br>
+                    <div class="article-title text">
+                        <ol>
+                            <ul>
+                                <li><strong>Time Complexity:</strong> Its average and worst-case time complexity is O(n<super>2</super>), where 
+                                    n is the number of elements in the array. This makes it inefficient for large datasets compared to more advanced algorithms like quicksort or mergesort
+                                    </li>
+                           <br><br>
+                       
+                        
+                                <li><strong>Scalability: </strong>It doesn't scale well with large data sets. For very large arrays, its performance can be prohibitively slow compared to other sorting algorithms.
+        
+                                </li><br><br>
+                        
+                                <li><strong>Comparison and Movement Cost: </strong>Inserting an element into the sorted portion of the array requires shifting elements, which involves a lot of comparisons and movements, especially in the worst case.
+                                </li>
+                            <br><br>
+                       
+                           
+                                <li><strong>Inefficiency in Sorting Linked Lists: </strong> Although insertion sort can be applied to linked lists, it may not be as efficient in this context compared to other algorithms specifically optimized for linked lists, such as merge sort, which can operate with O(n log n) complexity.
+        
+                                </li>
+                           <br><br>
+                        
+                           <li><strong>Doesn't Exploit Cache Hierarchy: </strong>Insertion sort doesn’t take advantage of modern CPU cache hierarchies as effectively as some other algorithms. It involves frequent element movement and comparisons, which can lead to poor cache performance and slower execution on modern hardware.
+                           </li>
+                           <br><br>
+                           <li><strong>Difficulty in Handling Constraints: </strong> Insertion sort may struggle with scenarios where additional constraints are imposed on the sorting process, such as sorting with specific ordering constraints or custom comparison functions that require more sophisticated handling
+        
+                           </li>
+                           <br><br>
+                            
+                        </li>
+                        </ul>
+                        </ol>
+                    
+                     </div>
+        
+                </div>
+        
+        
+        <!-- applications -->
+        
+        
+                <div id="Applications" class="content-container">
+                    <div class="article-title text">
+                        <h1>Applications</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br>
+                    <div class="article-title text">
+                        <ol>
+                            <ul>
+                                <li><strong>Small Data Sets: </strong> Insertion sort is particularly effective for sorting small lists or arrays. Its simplicity and low overhead make it ideal for cases where the dataset size is small enough that the quadratic time complexity does not significantly impact performance.
+                                    
+                                    </li>
+                           <br><br>
+                       
+                        
+                                <li><strong>Partially Sorted Data: </strong> When data is already nearly sorted or only requires minimal rearrangement, insertion sort can be very efficient. For example, in applications where data is continuously updated and only a small portion changes, insertion sort can handle the updates quickly.
+        
+        
+                                </li><br><br>
+                        
+                                <li><strong>Online Sorting:</strong> Insertion sort can be used for online sorting applications where elements are added one by one and the list must be kept sorted at all times. This is useful in real-time systems where data arrives incrementally, such as live data feeds or interactive systems.</li>
+                            <br><br>
+                       
+                           
+                                <li><strong>Simple Data Structures:</strong>For simple or small data structures, like small arrays or simple lists in embedded systems or educational contexts, insertion sort provides a straightforward and effective sorting solution.
+        
+                                </li>
+                           <br><br>
+                        
+                           <li><strong> Hybrid Sorting Algorithms: </strong> Insertion sort is often used in hybrid sorting algorithms like Timsort (used in Python’s built-in sort) and introsort (used in C++’s standard library sort). These algorithms combine insertion sort with other more efficient algorithms (like merge sort or quicksort) to optimize performance for different types of data.
+        
+                           </li>
+                           <br><br>
+                           <li><strong>Sorting Small Segments in External Algorithms:</strong> In external sorting algorithms (used when dealing with large datasets that don’t fit into memory), insertion sort can be used to sort small segments of data before merging them. This can be efficient when the segments are small enough to benefit from insertion sort’s characteristics.
+        
+                           </li>
+                           <br><br>
+                           <li><strong>Data Preprocessing:</strong> In cases where data is preprocessed before applying more complex algorithms, insertion sort can be used to quickly sort small subsets or partitions of the data to facilitate subsequent processing steps.
+        
+                           </li>
+                        </ul>
+                        </ol>
+                    
+                     </div>
+                </div>
+        
+        
+        
+                <!-- pseudocode -->
+        
+                <div id="pseudocode" class="content-container">
+                    <div class="article-title text">
+                        <h1>Pseudocode</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br><br>
+        <div class="pseudo">
+            <div class="article-title text" style="background-color: rgb(18, 16, 16); border-radius: 7px; justify-content: center; align-items: center; margin-left: 4px; width: 90%;">
+                <h4 style="margin-left: 10px;">InsertionSort(array) <br>
+                    for i from 1 to length(array) - 1 do<br>
+                    key = array[i]
+                    <br>
+                    j = i - 1<br>
+                    while j >= 0 and array[j] > key do<br>
+                    array[j + 1] = array[j]<br>
+                    j = j - 1   <br>
+                    array[j + 1] = key<br>
+                    end for<br>
+            
+                </h4><br><br>
+             </div>
+             <div class="article-title text">
+                <br>
+                <h1>Explanation</h1><br>
+              <p>array is the input array that we want to sort.</p><br>
+              <p>The for loop starts from index 1 and goes to the end of the array. The element at index 0 is considered already sorted, so the loop begins with the second element.</p><br>
+              <p>i is the index of the element to be inserted into the sorted portion of the array.</p><br>
+             <p>key is the element currently being inserted into the sorted portion.</p><br>
+            <p>j is initialized to the index of the last element in the sorted portion.</p><br>
+            <p>The while loop moves elements that are greater than key one position to the right. This creates space for the key to be inserted into its correct position in the sorted portion of the array.
+            </p><br>
+            <p>array[j + 1] = array[j] shifts the element at index j to index j + 1.
+            </p><br>
+            <p>j = j - 1 decrements the index to continue comparing and shifting elements</p><br>
+            <p>After finding the correct position for key (when array[j] <= key or j becomes less than 0), the key is placed at array[j + 1].</p><br>
+            <p>The outer loop continues until all elements have been processed. Each iteration effectively expands the sorted portion of the array by one element.</p><br>
+            </div>
+             <br>
+        </div>
+                </div>
+        
+        <!-- flowchart -->
+        
+        
+                <div id="flowchart" class="content-container" style="height: 190vh;">
+                    <div class="article-title text">
+                        <h1>Flowchart</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <img src="img/insertion_sort.png" alt="AlgoVerse Logo" class="logo" style="width: 500px; /* Specify the width of the image */
+                     height: 500px; /* Maintain aspect ratio */
+                     border-radius: 5px;
+                     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                     margin-top: 30px;">
+                     <br><br>
+        
+         
+                </div>
+        
+         
+        
+                <!-- example -->
+        
+                <div id="example" class="content-container" style="height: 250vh;">
+                    <br><br>
+                    <div class="article-title text">
+                        <h1>Example</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <p>
+                        <br><br>
+                        </p>
+                        <p>Let's sort the list [4,3,2,10,12] using Insertion sort:</p><br>
+                       <p><strong>Initial List: </strong> [4,3,2,10,12]</p><br><br>
+                        <ol>
+                           <ul>
+                            <li>
+                                <p><strong>Start with the second element (3):
+        
+                                </strong></p><br>
+                                <li>Compare with 4. Since 3 is smaller, move 4 to the right.</li><br>
+                                <li>Place 3 in the correct position: [3, 4, 2, 10, 12].</li><br><br>
+                            </li>
+                            <li>
+                                <p><strong>Move to the next element (2):</strong></p><br>
+                                <li>Compare with 4 and 3. Move 4 and 3 to the right.</li><br>
+                                <li>Place 2 in the correct position: [2, 3, 4, 10, 12].</li><br><br>
+                            </li>
+                            <li>
+                                <p><strong>Continue with 10 and 12, which are already in the correct positions</strong></p><br>
+                             
+                           </ul>
+                        </ol>
+                        <strong>After processing all elements, the array is fully sorted.</strong><br>
+                        </div>
+        
+        
+        
+                <!-- visualization -->
+        
+        
+                <div id="Visualization" class="content-container">
+                    <div class="article-title text">
+                        <h1>Visualization</h1>
+                     </div>
+                     <hr>
+                     <div class="cancel" onclick="normalscreen()"><i class="fa-solid fa-xmark"></i></div>
+                     <div id="container"></div>
+                     <div class="menu1">
+                        <div class="arrow1" onclick="showarrow1()">
+                            <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                        </div>
+                        <h1 class="data">Insertion sort</h1>
+                    </div>
+                    <div class="menu2">
+                        <div class="arrow2" onclick="showarrow2()">
+                            <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                        </div>
+                        <div class="menu2-info">
+                            <div class="code">
+                                <h4 class="e1">function insertionSort(array):</h4><br>
+                                <h4 class="e2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n=length(array)</h4><br>
+                                <h4 class="e3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i from 1 to n - 1:</h4><br>
+                                <h4 class="e4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; key = array[i]</h4><br>
+                                <h4 class="e5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j = i - 1</h4><br>
+                                <h4 class="e6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while j >= 0 and array[j] > key:</h4><br>
+                                <h4 class="e7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[j + 1] = array[j]</h4>
+                                <h4 class="e8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j = j - 1</h4>
+                                <h4 class="e9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;array[j + 1] = key</h4>
+                                
+                            </div>
+                        </div>
+                    </div>
+                     <!-- <div>
+                             <button id="sortButton">Sort</button>
+                             <button id="sortDescendingButton">Sort Descending</button>
+                             <button id="restartButton">Restart</button>
+                             <button id="pauseButton">Pause</button>
+                             <button id="playButton">Play</button>
+                     </div> -->
+                     <div class="screen" onclick="fullscreen()"><i class="fa-solid fa-expand"></i></div>
+                     <div class="box">
+                        <h4>Speed: </h4>
+                        <div class="slider">
+                            <p style="font-size: 1.3em; padding-right: 10px; font-weight:800; color:#000;">1x</p>
+                            <input id="speed" type="range" min="0" max="3" value="0">
+                            <p style="font-size: 1.3em; padding-left: 10px; font-weight:800; color:#000;">2x</p>
+                        </div>
+                    </div>
+                    <div class="prompt">
+                        <div class="box-1">
+                            <button id="sortButton" class="btn1-startasc">Start Ascending&nbsp;<i class="fa-solid fa-play"></i></button>
+                            <button id="sortDescendingButton" class="btn1-startdsc">Start Descending&nbsp;<i class="fa-solid fa-arrow-rotate-left"></i></button>
+                            <button id="restartButton" class="btn1-re-start none">Restart&nbsp;<i class="fa-solid fa-arrow-rotate-left"></i></button>
+                        </div>
+                        <div class="box-2">
+                            <button id="pauseButton" class="btn2-pause" disabled>Pause &nbsp; <i class="fa-solid fa-pause"></i></button>
+                            <button id="playButton" class="btn2-resume none" disabled>Resume&nbsp;<i class="fa-regular fa-circle-play"></i></button>
+                        </div>
+                        <button onclick="toggle()" class="create">Create an example</button>
+                        <div class="prompt-menu" id="promptMenu">
+                            <label for="array-input">Enter Array Values (comma-separated):</label>
+                            <input type="text" id="array-input" />
+                            <button onclick="toggle(); initializeArray(); " id="goButton" >Go</button>
+                        </div>                
+                    </div>
+                    
+                </div>
+        
+        <!-- time complexity -->
+                <div id="tcomplexity" class="content-container">
+                    <div class="article-title text">
+                    <h1>Time complexity</h1>
+                 </div>
+                 <br>
+                 <hr><br><br>
+                 <p><strong>Definition:</strong> Time complexity measures the amount of time an algorithm takes to complete as a function of the size of the input. For linear search, the time complexity can be expressed in different scenarios:</p>
+                 <br><br>
+                     <p><strong>Best-Case Time Complexity:O(n)</strong></p><br>
+                       
+                             <p>The best-case scenario occurs when the input array is already sorted. In this case, the algorithm only needs to make a single pass through the array, and each element is inserted into its correct position without needing to move other elements.</p>
+                             <br><br>
+                     
+                             <p><strong>Average-Case Time Complexity:O(n<super>2</super>)</strong></p><br>
+                       
+                             <p>On average, the algorithm has to perform approximately n<super>2</super>/4 comparisons and shifts. This occurs when the input array is in a random order.</p>
+                             <br><br>
+                             <p><strong>Worst-Case Time Complexity:O(n<super>2</super>)</strong></p><br>
+                       
+                             <p>The worst-case scenario happens when the input array is sorted in reverse order. Each new element must be compared with all previously sorted elements and shifted to the beginning of the array.</p>
+                             <br>
+             </div>
+        
+        
+        
+        <!-- space compleity -->
+        
+                <div id="scomplexity" class="content-container">
+                    <div class="article-title text">
+                    <h1>Space complexity</h1>
+                 </div>
+                 <br>
+                 <hr><br>
+                 <h2>Space Complexity</h2><br>
+                 <p><strong>Definition:</strong> Space complexity measures the amount of memory an algorithm uses relative to the size of the input. For linear search, the space complexity is straightforward:</p>
+                 <br><br>
+                       <p><strong>Auxiliary Space Complexity: O(1)</strong></p><br>
+                 <p>Insertion sort is an in-place sorting algorithm, meaning it requires a constant amount of additional memory space regardless of the input size. It sorts the array by rearranging the elements within the same array.
+                    
+                    </p><br><br>
+                    
+                       <p><strong>Total Space Complexity: O(n)</strong></p><br>
+                 <p> The total space complexity includes the space used by the input array itself, which is O(n). However, since the additional space required by the algorithm is constant, the overall space complexity is dominated by the space needed to store the input array.
+                    
+                    </p><br><br>
+                 <br><br>
+             
+                </div>
+            </div>
+
+
+
+<!-- script -->
+
+<script >
+    function openSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+    
+        sidebar.style.width = '280px'; // Set the sidebar width to its full size
+        sidebar.style.transform = 'translateX(0)'; // Slide the sidebar into view
+        menuBtn.style.display = 'none'; // Hide the menu button
+    }
+    function closeSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+    
+        sidebar.style.transform = 'translateX(-100%)'; // Slide the sidebar out of view
+        menuBtn.style.display = 'flex'; // Show the menu button
+    }
+    
+
+function toggleSubmenu1() {
+const submenu = document.getElementById("submenu1");
+submenu.classList.toggle("expanded");
+const arrowIcon = document.querySelector(".arrow-icon");
+arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+function toggleSubmenu2() {
+const submenu = document.getElementById("submenu2");
+submenu.classList.toggle("expanded");
+const arrowIcon = document.querySelector(".arrow-icon2");
+arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+const sidebar = document.querySelector('.sidebar');
+
+sidebar.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        
+        const targetId = e.target.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            // Quickly scroll to the target element
+            window.scrollTo({
+                top: targetElement.offsetTop - 100, // Adjust for fixed header
+                behavior: 'auto' // No smooth scrolling, immediate jump
+            });
+
+            // Update active link immediately
+            document.querySelectorAll('.sidebar a').forEach(link => link.classList.remove('active'));
+            e.target.classList.add('active');
+        }
+    }
+});
+});
+
+
+window.onload = function() {
+document.getElementById("Visualization").scrollIntoView();
+};
+
+</script>
+<script src="js/insertion.js"></script>
+ <!-- Bootstrap JS and dependencies -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+ <script>
+    function handleStepActivation(selector, stepClass) {
+        document.querySelectorAll(selector + ' .step a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                
+                // Find the index of the clicked step
+                const clickedStepIndex = Array.from(this.closest('.step').parentNode.children).indexOf(this.closest('.step'));
+                // Reset all steps to default state
+                document.querySelectorAll(selector + ' .step').forEach((step, index) => {
+                    if (index < clickedStepIndex) {
+                        step.classList.add('active');
+                        step.querySelector('.line').style.backgroundColor = '#007bff';
+                    } else if (index === clickedStepIndex) {
+                        step.classList.add('active');
+                        step.querySelector('.line').style.backgroundColor = '#d3d3d3'; // Keep the line color of the clicked step default
+                    } else {
+                        step.classList.remove('active');
+                        step.querySelector('.line').style.backgroundColor = '#d3d3d3';
+                    }
+                });
+            });
+        });
+    }
+
+    // Handle steps for Description submenu
+    handleStepActivation('.has-submenu .step-indicator', 'step');
+
+    // Handle steps for Algorithm submenu
+    handleStepActivation('.has-submenu .step-indicator2', 'step');
+ </script>
+</body>
+</html>

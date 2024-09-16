@@ -1,0 +1,888 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+#merge-sort-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 80%;
+}
+
+.level {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.array-container {
+    display: flex;
+    justify-content: center;
+}
+
+.array-element {
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.merged {
+    background-color: #28a745;
+}
+.level-1
+{
+    border-radius: 5px solid #000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.level-2
+{
+    border-radius: 5px solid #000;
+    display: flex;
+    flex-direction: row;
+    gap:50px;
+    margin-top: -20px;
+    justify-content: center;
+    align-items: center;
+   
+}
+.level-2 .array-container
+{
+    background-color: #778899;
+}
+.level-3 .array-container
+{
+    background-color: #B0C4DE;
+}
+.level-4 .array-container
+{
+    border-radius: 5px;
+    background-color: #F08080;
+}
+.level-3
+{
+    border-radius: 5px solid #000;
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+    margin-top: -20px;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+.array-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.k-container {
+    display: flex;
+    flex-direction: row;
+    background-color: #e0e0e0;
+    border: 2px solid blue; /* Border for visibility */
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.array-element {
+    margin: 0 5px;
+    padding: 5px;
+    background-color: #0101eab5;
+    border-radius: 3px;
+    text-align: center;
+}
+.level-4 {
+    
+    padding: 10px;
+    width:100%;
+    max-width: 300px;
+    margin-top: -20px;
+    display: block; /* Ensure it's visible */
+}
+
+.highlight {
+    background-color: yellow;
+    color:#000;
+}
+.highlight-green {
+    background-color: green;
+}
+.array-element {
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+.element-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.array-element-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.index-label {
+    font-size: 15px;
+    margin-top: 2px;
+    color: #000000; /* Optional: You can adjust the color */
+}
+.combined-container
+{
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+}
+.move-up {
+    transform: translateY(-20px);
+    transition: transform 0.5s ease-in-out;
+}
+.highlight-blue {
+    background-color: blue;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.highlight-yellow {
+    background-color: yellow;
+    transition: background-color 0.5s ease-in-out;
+}
+/* CSS */
+.highlight-green {
+    background-color: green; /* Light green background */
+    color: black; /* Dark green text color */
+}
+
+/* page css */
+.sidebar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 15px 0px;
+    margin-top: 0;
+    gap: 35px;
+  }
+  .sidebar-header h3 {
+    margin: 0;
+    margin-left: -180px;
+    font-size:18px;
+   
+  }
+  .close-btn {
+  background: none;
+  border: 0;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  margin-top: -55px;
+  margin-right: -230px;
+  }
+  #Theory
+  {
+    margin-top: -50px;
+    height: calc(175vh - 100px);
+  }
+.sidebar {
+    width: 250px;/* Start with sidebar visible */
+    height: calc(100% - 50px); 
+ 
+    color: white;
+    position: fixed;
+    top: 55px; 
+    left: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: transform 0.3s ease, width 0.3s ease; /* Smooth transition */
+    padding-top: 20px;
+    z-index: 2;
+  
+    transform: translateX(0); /* Sidebar starts visible */
+  }
+  
+
+  /* arrow css */
+  .menu2 {
+    position: relative;
+    width: 400px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    background-color: #090909;
+    height: 275px;
+    margin-top: -115px;
+    color:#fff;
+    right:0;
+    padding: 0;
+    margin-left: auto;
+    border: 1px solid #fff;
+    transform: translateX(0);
+    z-index: 999;
+    transition: transform 1.5s ease,width 1.5s ease;
+  
+  }
+  .menu2-info
+  {
+    padding: 0;
+  }
+
+  .menu2.going{
+    top:-25%;
+  }
+  .menu2 .e1,
+  .menu2 .e2,
+  .menu2 .e3,
+  .menu2 .e4,
+  .menu2 .e5,
+  .menu2 .e6,
+  .menu2 .e7,
+  .menu2 .e8,
+  .menu2 .e9{
+   
+    
+    transition: background-color 0.5s ease;
+    font-size: 15px;
+  }
+  .menu2 .e1,
+  .menu2 .e2,
+  .menu2 .e3,
+  .menu2 .e4,
+  .menu2 .e5,
+  .menu2 .e6,
+  .menu2 .e7
+  { 
+    margin-top:-9px;
+  }
+  .menu2.e1.flow{
+    display: block; 
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-size:10px;
+    font-weight: bold;
+    font-style: normal;
+    border: 0px solid transparent;
+      
+  }
+  
+  .menu2 .arrow2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    border: 1px solid #fff;
+    transition: transform 0.5s ease;
+  }
+  
+  .menu2-info {
+    flex-grow: 2;
+    padding: 5px;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  
+  .menu2.expand .menu2-info{
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  
+  .menu2.expand {
+    width: 17px;
+    transform: translateX(100%);
+    
+  }
+  
+  .menu2 .arrow1.rotate {
+    transform: rotate(180deg);
+  }
+  
+  .menu2.expand .code {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  .menu1 {
+   
+    top: 0; /* Position it at the top of the container or viewport */
+    right: 0; /* Align it to the left side of the container or viewport */
+    border: 1px solid #fff;
+    width: 100%; /* Full width on small screens */
+    max-width: 400px; /* Max width on larger screens */
+    margin-top: 350px; /* Reset margin-top */
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    background-color: #28a745;
+    z-index: 999; /* Ensure it's above other elements */
+    transition: width 1.5s ease, transform 1.5s ease;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.menu1
+
+.menu1 .arrow1 {
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    transition: transform 0.5s ease;
+}
+
+.menu1 h1 {
+    font-size: 15px;
+    padding: 5px;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.menu1.expand {
+    width: 17px;
+    margin-right:-15px;
+    transform: translateX(0);
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+.menu2-info .code{
+    
+    font-size: 10px;
+}
+/* Button Styles */
+#start-button,
+#restart-button,
+.btn2-pause,
+.btn2-resume{
+    width: 100%;
+    max-width: 80px; /* Max width for larger screens */
+    height: 50px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 600;
+    border: 0;
+    margin: 5px;
+    font-size:10px;
+    transition: background-color 0.3s ease;
+}
+#restart-button
+{
+    margin-left: 5px;
+    position: absolute;
+    
+    width: 100%;
+    max-width: 80px;
+}
+.box-1
+{
+    width: 100%;
+    max-width: 300px;
+    height:70px;
+    display: flex;
+    flex-direction: row;
+    
+    
+    order: -1;
+    position: absolute;
+}
+.box-2
+{
+    width: 50%;
+    height:70px;
+    display: flex;
+    flex-direction: row;
+    
+    margin-left: 100px;
+    
+    order:-1;
+    z-index:999
+}
+.btn2-resume
+{
+    margin-left: 5px;
+    position: absolute;
+    
+    width: 100%;
+    max-width: 80px;
+}
+#start-button i,
+#restart-button i,
+.btn2-pause i,
+.btn2-resume i {
+    color: #000;
+}
+
+#start-button:hover,
+#restart-button :hover,
+.btn2-pause:hover,
+.btn2-resume:hover {
+    background-color: rgba(100, 91, 91, 0.712);
+    color: #fff;
+}
+
+#start-button:hover i,
+#restart-button :hover i,
+.btn2-pause:hover i,
+.btn2-resume:hover i {
+    color: #fff;
+}
+/* Create Button */
+.create {
+    width: 200px;
+    height: 35px;
+    border-radius: 5px;
+    color: #000;
+    margin: 0;
+    margin-top: 0;
+    position: relative;
+    right: 0;
+    order: 1;
+    background-color: #f0f0f0; /* Added for visibility */
+    text-align: center; /* Centers the text */
+    line-height: 35px; /* Vertically centers the text */
+    font-size: 16px; /* Font size of the text */
+}
+
+
+.create:hover {
+    background-color: rgba(100, 91, 91, 0.712);
+    color: #fff;
+}
+
+/* Prompt Section */
+.prompt {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 50%;
+    height: 100px;
+    max-width: 300px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    margin-left: 10px;
+  }
+  
+  .prompt-menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    background-color: #f2f2f2;
+    color: #090909;
+    height: 30px;
+    margin-left: 197px;
+    margin-top: 65px;
+    width: 0;
+    border: 1px solid #fff;
+    transform: translateX(100%);
+    overflow: hidden;
+    transition: transform 0.5s ease, width 0.5s ease;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: absolute;
+}
+
+.prompt-menu.visible {
+    width: 450px;
+    transform: translateX(0);
+}
+
+  
+  .prompt-menu li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    white-space: nowrap;
+  }
+  
+  .prompt-menu input {
+    margin-left: 10px;
+    padding: 5px;
+  }
+  
+  .prompt-menu .go {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    width: 25px;
+    height: 25px;
+    margin-top: 0px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+  }
+  .prompt-menu .arrays{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .prompt-menu .arrays p{
+  
+    margin-top: 15px;
+  }
+  .prompt-menu .go:hover {
+    background-color: #0056b3;
+  }
+/* Array Input */
+#array-input {
+    width: 100%;
+    max-width: 150px; /* Max width for larger screens */
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    font-family: "Teachers", sans-serif;
+    font-size: 0.8em;
+}
+/*Box section*/
+.box {
+    background: none;
+    height: 50px;
+    width: 100%;
+    max-width: 500px; /* Max width for larger screens */
+    margin-top: 60px;
+    padding: 0;
+   
+    display: flex;
+    position: absolute;
+    right: -90px;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+    margin-left: auto;
+    flex-grow: 2;
+  }
+  
+  .box .slider {
+    width: 100%;
+    max-width: 300px; /* Max width for larger screens */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    flex-grow: 0;
+  }
+  
+  .box h4 {
+    flex-grow: 0;
+    font-size: 18px;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:400;
+    font-style: normal;
+  }
+  
+  .box .slider input {
+    height: 10px;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    background-color: #e0dede;
+    border-radius: 25px;
+  
+  }
+/*toggle*/
+.none {
+    display: none;
+}
+.show
+{
+    background-color: #007bff;
+}
+
+
+
+/* Fullscreen active state */
+.fullscreen-active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top:0;
+    background-color: #e0dede;
+    z-index: 1000;
+    overflow: hidden;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .fullscreen-active #Visualization {
+    display: block;
+    width: 100%;
+    height: calc(100% - 10px);
+  }
+  
+  .fullscreen-active .navbar,
+  .fullscreen-active .sidebar,
+  .fullscreen-active .content-container:not(#Visualization) {
+    display: none;
+  }
+  
+  .fullscreen-active .controls {
+    position: relative;
+    bottom: 100px;
+    margin-right: auto;
+    margin-left:100px;
+    margin-top: -60px;
+    transform: translateX(-50%);
+    width: auto;
+  
+  }
+  
+  .fullscreen-active .screen {
+    display: none;
+  }
+  
+  .fullscreen-active .cancel {
+    display: block;
+    margin-top:50px;
+  }
+  .fullscreen-active .menu2
+  {
+    height:260px;
+  }
+  .fullscreen-active .menu1,
+  .fullscreen-active .menu2 {
+      margin-top: 50px;
+  }
+/* Apply margin-top to elements with class e2, e3, etc. inside fullscreen-active */
+
+
+  .fullscreen-active .menu2 .menu2-info .code
+  {
+    padding: -5px;
+  }
+  .fullscreen-active .menu2 .menu2-info .code .e1,
+  .fullscreen-active .menu2 .menu2-info .code .e2,
+  .fullscreen-active .menu2 .menu2-info .code .e3,
+  .fullscreen-active .menu2 .menu2-info .code .e4,
+  .fullscreen-active .menu2 .menu2-info .code .e5,
+  .fullscreen-active .menu2 .menu2-info .code .e6
+  {
+    margin-top: -10px;
+  }
+  .fullscreen-active .menu2 .menu2-info .code h4 {
+  
+    margin-bottom: 5px; /* Adjust the bottom margin */
+    padding-left: 10px; /* Adjust left padding for indentation */
+    font-size: 12px;
+}
+
+  
+  .fullscreen-active .linear-visual {
+    width: 100%;
+    height: 80%;
+    flex-wrap: wrap;
+  }
+  .fullscreen-active .main {
+    
+    position: relative; /* Allows the absolute positioning of child elements */
+    
+  }
+  .fullscreen-active .main p{
+    position: absolute;
+    top: -5px;          /* Adjust this value to move the element vertically */
+    left: 120px; 
+    margin-top: -10px;
+  }
+  .fullscreen-active .array {
+    flex-wrap: nowrap;
+    margin-left: 150px;
+    margin-top: 0px;
+  }
+  .fullscreen-active #container{
+    margin-top: 10px;
+  }
+  .fullscreen-active .cont {
+    position: fixed;
+    right: 0; /* Align to the right side of the viewport */
+    margin-right: 20px; /* Ensure there's no extra margin on the right */
+    /* You may also want to specify top or bottom positioning if needed */
+    top: 150px; /* Optional: Adjust as needed */
+    /* Add any other desired styles */
+}
+
+  .fullscreen-active .prompt
+{ 
+  position: fixed;
+  margin-top:400px;
+  margin-left:-60% ;
+  width:100%;
+  height: 150px;
+  
+}
+.fullscreen-active .prompt .create {
+ 
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 200px;
+    height: 55px;
+    line-height: 40px;
+
+  }
+  .fullscreen-active .prompt .prompt-menu {
+    position: fixed;
+    margin-top: 72px;
+    margin-left: 209px;
+    width: 0;
+    overflow: hidden;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, width 0.5s ease;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+    line-height:40px;
+  }
+  .fullscreen-active .prompt-menu.visible {
+    width: 36%;
+    transform: translateX(0);
+  }
+  .fullscreen-active #array-input{
+    margin-top:10px;
+    width: 100%;
+    max-width: 150px; /* Max width for larger screens */
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    font-family: "Teachers", sans-serif;
+    font-size: 0.8em;
+  }
+  .fullscreen-active #goButton
+  {
+    width: 35px;
+    height:35px;
+    margin-top: 5px;
+    line-height: 30px;
+    border-radius: 5px;
+  }
+  .fullscreen-active .box{
+    position: fixed;
+    margin-top:530px;
+  }
+  .fullscreen-active  .menu2.expand{
+    margin-right: 10px;
+  }
+  .fullscreen-active  .menu1.expand{
+    margin-right: -5px;
+  }
+  .cancel
+{
+    margin-left:auto;
+    width: 30px;
+    height:30px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50px;
+    margin-left: auto;
+    display: none;
+
+}
+.cancel i{
+    margin-top: 5px;
+}
+.cancel:hover{
+    background-color: rgb(65, 63, 63); 
+}
+.cont
+{
+    display: flex;
+    justify-content: flex-end; /* Aligns children to the right */
+    align-items: flex-start; /* Aligns children to the top */
+    position: relative; /* Ensures the `.identity` element is positioned relative to this container */
+    
+}
+.identity {
+    position: relative;
+    margin-left: auto; /* Pushes the element to the right within the container */
+    right:0;
+    top: 50px; /* Adjusts the vertical position */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    z-index: 999;
+}
+
+
+
+.leftident div{
+  width:15px;
+  height:15px;
+  background-color: cyan;
+  position: absolute;
+  margin-left: -30px;
+}
+.rightident div{
+  width:15px;
+  height:15px;
+  background-color: red;
+  position: absolute;
+  margin-left: -30px;
+}
+.levelident-1 div{
+  width:15px;
+  height:15px;
+  background-color: #778899;
+  position: absolute;
+  margin-left: -30px;
+}
+.levelident-2 div{
+  width:15px;
+  height:15px;
+  background-color: #B0C4DE;
+  position: absolute;
+  margin-left: -30px;
+
+}
+.levelident-3 div{
+  width:15px;
+  height:15px;
+  background-color: #F08080;
+  position: absolute;
+  margin-left: -30px;
+
+}

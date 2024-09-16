@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/skiplist.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html" style="text-decoration: none;"><img src="img/logo2.jpg" alt="AlgoVerse Logo" class="logo"></a>
+        </div>
+        <div class="navbar-right">
+            <a href="#about" class="nav-link">ABOUT US</a>
+            <a href="#help" class="nav-link">HELP</a>
+            <button class="algo-code-button">Algo code</button>
+        </div>
+    </nav>
+    <div class="skiplist">
+        <!-- Level 3 -->
+        <div class="level" id="level3">
+            <div class="node" id="node1-3" data-next="1-8" value="1" >+∞</div>
+            <div class="node" id="node8-3" data-next="8-16">8</div>
+            <div class="node" id="node16-3" data-next="16-16" value="14">-∞</div>
+        </div>
+        <!-- Level 2 -->
+        <div class="level" id="level2">
+            <div class="node" id="node1-2" data-next="1-4" value="1">+∞</div>
+            <div class="node" id="node5-2" data-next="4-8">4</div>
+            <div class="node" id="node8-2" data-next="8-12">8</div>
+            <div class="node" id="node10-2" data-next="12-16">12</div>
+            <div class="node" id="node16-2" data-next="16-16" value="14">-∞</div>
+        </div>
+        <!-- Level 1 -->
+        <div class="level" id="level1">
+            <div class="node" id="node1" data-next="1-2" value="1">+∞</div>
+            <div class="node" id="node3" data-next="2-5">2</div>
+            <div class="node" id="node5" data-next="4-6">4</div>
+            <div class="node" id="node6" data-next="6-8">6</div>
+            <div class="node" id="node8" data-next="8-10">8</div>
+            <div class="node" id="node9" data-next="10-12">10</div>
+            <div class="node" id="node10" data-next="12-14">12</div>
+            <div class="node" id="node11" data-next="14-16">14</div>
+            <div class="node" id="node16" data-next="16-16" value="14">-∞</div>
+        </div>
+        <!-- Level 0 -->
+        <div class="level" id="level0">
+            <div class="node" value="1">+∞</div>
+            <div class="node">1</div>
+            <div class="node">2</div>
+            <div class="node">3</div>
+            <div class="node">4</div>
+            <div class="node">5</div>
+            <div class="node">6</div>
+            <div class="node">7</div>
+            <div class="node">8</div>
+            <div class="node">9</div>
+            <div class="node">10</div>
+            <div class="node">11</div>
+            <div class="node">12</div>
+            <div class="node">13</div>
+            <div class="node">14</div>
+            <div class="node"value="14">-∞</div>
+        </div>
+    </div>
+    <div class="btns">
+     
+        <button onclick="toggleWithDelay()">Start Search</button>
+        <button  onclick="expands()">key</button>
+        <div class="key-box">
+            <h4> Enter Key:</h4>
+            <input id="key-input" type="number">
+            <button class="go">Go</button>
+        </div>
+    </div>
+    <script src="js/skiplist.js"></script>
+</body>
+</html>

@@ -1,0 +1,397 @@
+
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins',sans-serif ;
+    box-sizing: border-box;
+
+}
+html{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    background: #fff;
+    color: black;
+    overflow-x: hidden;
+}
+
+nav{
+    width: 100%;
+    height: 80px;
+    background-color: #000000;
+    box-shadow: 0 0 15px 0 #171515;
+    color: rgb(151, 145, 145);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.logo
+{
+    width: 250px;
+
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: white;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+.algo-code-button {
+    background-color: #fff;
+    border: 1px solid #000;
+    color:#000;
+    font-weight: 600;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 15px;
+  }
+
+  .navbar-right a{
+    color:#000;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .algo-code-button:hover {
+    background-color: rgb(35, 33, 33);
+    color:#fff;
+  }
+.container
+{
+    margin-top: 100px;
+    background-color: transparent;
+    height: 200px;
+    margin-left: 20%;
+    margin-right: 20%;
+    justify-content: center;
+    
+}
+.container h1
+{
+padding-top: 30px;
+}
+.spacer
+{
+    width: 100%;
+    height: 10px;
+}
+.spacer1
+{
+    width: 100%;
+    height: 100px;
+}
+
+.header
+{
+    border-radius: 20px;
+ 
+    margin-top: 100px;
+    width:100%;
+ 
+  
+
+
+    height: 95vh;
+}
+.header div h1{
+align-items: center;
+text-align: center;
+justify-content: center;
+}
+.data
+{
+
+    font-size: 13px;
+    font-weight: 300;
+    width: 100%;
+    height: 300px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left:0%;
+
+   
+}
+.data .item{
+width: 340px;
+height: 300px;
+background-color: black;
+margin: 35px;
+border-radius: 10px;
+align-items: center;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+text-align: center;
+border: 1px solid #000;
+transition: transform 0.5s ease;
+background-color: #312b2b;
+
+}
+.data .item:hover{
+  box-shadow: 10px 10px 10px 5px #747474;
+  transform:translateY(-10px)
+}
+.data .item button{
+  background-color: transparent;
+  width:150px;
+  color:#ffffff;
+  border:0;
+  font-size: larger;
+  font-weight: 600;
+  height:30px;
+}
+.data div img
+{
+    width: 320px;
+    height: 250px;
+    margin-top: 10px;
+    
+    border-radius: 8px;
+}
+
+/* sidebar */
+.sidebar {
+    width: 250px;
+    height: calc(100% - 200px);
+    background-color: #000000;
+    color: white;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    overflow-y: auto;
+    transition: 0.3s;
+    padding-top: 20px;
+    z-index: 2;
+    border: 1px solid;
+    border-color: white;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 20px;
+    
+}
+
+.sidebar-header h3 {
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar ul li {
+    padding: 10px 20px;
+    background-color: #000000; 
+    border-radius: 5px; 
+    margin: 10px 5px 0.1px 0.1px;
+    width: 200px; 
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0; 
+}
+
+.sidebar ul li a:hover {
+    background-color: #000000;
+    border-radius: 5px; 
+}
+
+
+.sidebar ul li a:hover {
+    background-color: #0b0a0a;
+}
+.sidebar ul li a.active::before {
+  content: '►'; 
+  color: #ffffff; 
+  margin-right: 10px;
+}
+
+.sidebar a.active
+{
+  background-color: #0b0a0a;
+  color: #5b93e2; 
+}
+
+
+.menu-btn {
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 110px;
+    left: 10px;
+    color: #f6f0f0;
+    z-index: 2;
+}
+
+
+.heading-title
+{
+margin-left: 30px;
+margin-top: 20px;
+}
+
+
+
+
+
+
+/* Base Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #171515;
+    padding: 5px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Navbar Left */
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .brand-name {
+    color: white;
+    font-size: 24px;
+  }
+  
+  /* Navbar Right */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-link {
+    color: white;
+    margin-right: 40px;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+
+
+  
+  /* Responsive Adjustments */
+  @media (max-width: 1024px) {
+    .navbar {
+      padding: 10px;
+    }
+  
+    .navbar-right {
+      flex-wrap: wrap;
+    }
+  
+    .nav-link {
+      margin-right: 10px;
+      font-size: 14px;
+    }
+  
+    .algo-code-button {
+      padding: 6px 12px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-left,
+    .navbar-right {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+  
+    .navbar-left {
+      margin-bottom: 10px;
+    }
+  
+    .nav-link {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .algo-code-button {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .brand-name {
+      font-size: 20px;
+    }
+  
+    .nav-link {
+      font-size: 12px;
+    }
+  
+    .algo-code-button {
+      font-size: 12px;
+      padding: 5px 10px;
+    }
+  }
+  
+
+

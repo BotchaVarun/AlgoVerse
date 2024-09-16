@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/binary.css">
+</head>
+<body>
+
+    <nav class="navbar" >
+        <div class="navbar-left">
+            <a href="index.html" style="text-decoration: none;"><img src="img/logo2.jpg" alt="AlgoVerse Logo" class="logo"></a>
+        </div>
+        <div class="navbar-right">
+            <a href="#about" class="nav-link">ABOUT US</a>
+            <a href="#help" class="nav-link">HELP</a>
+            <button class="algo-code-button">Algo code</button>
+        </div>
+    </nav>
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Binary Search</h3>
+            <button class="close-btn" onclick="closeSidebar()" ><span class="material-symbols-outlined" id="close">
+                close
+                </span></button>
+        </div>
+        <ul>
+            <li class="has-submenu">
+                <a href="javascript:void(0);" onclick="toggleSubmenu1()" class="menu-title">
+                    Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa-solid fa-angle-down arrow-icon"></i>
+                </a>
+                <div class="submenu" id="submenu1">
+                    <div class="step-indicator">
+                        <div class="step" id="step1">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#Theory" class="sidebar-link">Theory</a></div>
+                        </div>
+                        <div class="step" id="step2">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#Advantages" class="sidebar-link">Advantages</a></div>
+                        </div>
+                        <div class="step" id="step3">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#Disadvantages" class="sidebar-link">Disadvantages</a></div>
+                        </div>
+                        <div class="step" id="step4">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#Applications" class="sidebar-link">Applications</a></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            <li class="has-submenu">
+                <a href="javascript:void(0);" onclick="toggleSubmenu2()">Algorithm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa-solid fa-angle-down arrow-icon2" ></i>
+                </a>
+                <ul class="submenu" id="submenu2">
+                    <div class="step-indicator2">
+                        <div class="step" id="step1">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#pseudocode">Pseudocode</a></div>
+                        </div>
+                        <div class="step" id="step2">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#flowchart">Flowchart</a></div>
+                        </div>
+                        <div class="step" id="step3">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#example">Example</a></div>
+                        </div>
+                    </div>
+                </ul>
+            </li>
+            
+            <li><a href="#Visualization">Visualization</a></li>
+            <li><a href="#tcomplexity" >Time complexity</a></li>
+            <li><a href="#scomplexity" >Space Complexity</a></li>
+        </ul>
+    </div>
+    
+
+    <button class="menu-btn" onclick="openSidebar()"><span class="material-symbols-outlined" style="color:#fff;">
+        dock_to_left
+        </span></button>
+
+
+
+
+    <div class="content">
+        <div id="Theory" class="content-container">
+            
+             <div class="article-title">
+               <h1>Binary Search Algorithm</h1>
+            </div>
+            <hr>
+            <div class="text" style="height: 1800px; overflow: hidden; mask-image: linear-gradient(rgb(0, 0, 0) 80%, transparent);">
+                <p dir="ltr" style="text-align: justify;">
+
+                   <b>Binary search </b> is a highly efficient algorithm used for finding an element in a sorted list or array. It works by repeatedly dividing the search interval in half, which significantly reduces the search space and time complexity compared to linear search                </p>
+                <br>
+                <p dir="ltr" style="text-align: justify;">
+
+                    Binary search relies on the fact that the list or array must be sorted. It operates by comparing the target value to the middle element of the current search interval. Depending on whether the target is less than or greater than the middle element, the search interval is adjusted to the left or right half of the list. This process continues until the target is found or the search interval is empty.                </p>
+                <br><p dir="ltr" style="text-align: justify;">
+                    <h2>HOW IT WORKS ?</h2>
+                    </p>
+                    <br>
+                    <ol>
+                        <p><strong>Initialization:</strong></p><br>
+                        <ul>
+                            <li>Set two pointers or indices: low (the start of the list) and high (the end of the list).</li>
+                        </ul><br>
+                      
+                        <p><strong>Calculate Middle:</strong></p><br>
+                        <ul>
+                            <li>Compute the middle index of the current search interval using the formula: <br><b>mid = low + (high - low) / 2.</b></li>
+                        </ul><br>
+                       
+                        <p><strong>Comaprison:</strong></p><br>
+                        <ul>
+                            <p>Compare the target value with the middle element of the list.</p>
+                            <li>If the target value is equal to the middle element, the search is complete, and the index of the middle element is returned.</li>
+                            <li>If the target value is less than the middle element, adjust the search interval to the left half of the list (set high to mid - 1).</li>
+                            <li>If the target value is greater than the middle element, adjust the search interval to the right half of the list (set low to mid + 1).</li>
+                        </ul><br>
+                        <p><strong>Repeat:</strong></p><br>
+                        <ul>
+                            <li>Repeat steps 2 and 3 until the target value is found or the low pointer exceeds the high pointer</li>
+                        </ul><br>
+                        <p><strong>Termination:</strong></p><br>
+                        <ul>
+                            <li>If the search interval is empty (low > high), the target value is not in the list, and a special value (e.g., -1 or null) is returned to indicate that the target is not present.</li>
+                        </ul><br>
+                    </ol>
+                </div>
+            </div>
+
+<!-- advantages -->
+
+        <div id="Advantages" class="content-container">
+            <div class="article-title text">
+                <h1>Advantages</h1>
+             </div>
+             <br>
+             <hr>
+             <br>
+            <div class="article-title text">
+                
+                    <ol>
+                        <p><li><strong>Efficiency</strong></p><br>
+                            <ul>
+                                <li><strong>Time Complexity:</strong> Binary search significantly reduces the number of comparisons needed to find an item compared to linear search. With each comparison, it effectively halves the search space. In the worst case,it requires log<sub>2</sub>n comparisons, where 
+                                     n is the number of elements in the list. This is much faster than linear search’s O(n) time complexity, especially for large datasets.</li>
+                            </ul><br>
+                        </li>
+                        <p><li><strong>Predictable Performance</strong></p><br>
+                            <ul>
+                                <li><strong>Consistent Runtime: </strong> The time complexity of binary search is O(logn) regardless of the size of the dataset. This means that its performance is predictable and does not degrade as the size of the input increases, unlike algorithms with linear time complexity where performance degrades directly with input size.</li>
+                            </ul><br>
+                        </li>
+                        <p><li><strong>Simple Implementation</strong></p><br>
+                            <ul>
+                                <li><strong>Ease of Coding:</strong>Binary search is straightforward to implement. It requires only a few lines of code and is easy to understand, making it accessible even for beginners in computer science.</li>
+                            </ul><br>
+                        </li>
+                        <p><li><strong>Adaptability</strong></p><br>
+                            <ul>
+                                <li><strong>Versatility:</strong>  Binary search can be adapted for various applications beyond simple search operations. For example, it can be used for finding insertion points, detecting duplicates, and even solving problems in sorted arrays with constraints.</li>
+                            </ul><br>
+                        </li>
+                        <p><li><strong>Works Well with Large Data Sets:</strong></p><br>
+                            <ul>
+                                <li><strong>Scalability:</strong> Because of its logarithmic time complexity, binary search is particularly effective for large datasets. For instance, while a linear search might require billions of operations on a large list, binary search will require only a few dozen operations due to its logarithmic nature.</li>
+                            </ul><br>
+                        </li>
+                        <p><li><strong>Effective for Data Structures:</strong></p><br>
+                            <ul>
+                                <li><strong>Array-Based Structures:</strong> Binary search is particularly effective for data structures that provide random access, such as arrays. In contrast, it is not suitable for data structures like linked lists, where accessing the middle element is not efficient.</li>
+                            </ul><br>
+                        </li>
+                    </ol>
+                
+                
+             </div>
+
+        </div>
+
+
+<!-- disadvantages -->
+
+
+        <div id="Disadvantages" class="content-container">
+            <div class="article-title text">
+                <h1>Disadvantages</h1>
+             </div>
+             <br>
+             <hr>
+             <br>
+            <div class="article-title text">
+                <ol>
+                    <p><li><strong>Requires Sorted Data</strong></p><br>
+                        <ul>
+                            <li><strong>Pre-Sorting Requirement:</strong> Binary search can only be applied to datasets that are already sorted. If the data is not sorted, you must sort it first, which adds additional time complexity (typically 
+                                O(nlogn) for sorting). This can negate the efficiency benefits of binary search if sorting is required frequently.</li>
+                        </ul><br>
+                    </li>
+                    <li> <p><strong>Not Suitable for Dynamic Data</strong></p><br>
+                        <ul>
+                            <li><strong>Static Data Assumption:</strong> Binary search assumes that the dataset remains static (unchanged). If the dataset is frequently updated with insertions, deletions, or modifications, maintaining the sorted order can be costly. For dynamic datasets, maintaining sorted order and performing binary search might be less efficient compared to other data structures like balanced trees.
+                            </li>
+                        </ul><br>
+                    </li>
+                    <li> <p><strong>Overhead of Maintaining Sorted Order</strong></p><br>
+                        <ul>
+                            <li><strong>Insertion and Deletion Costs:</strong>Insertion and deletion operations in a sorted dataset are not trivial. For instance, inserting a new element into a sorted array might require shifting elements to maintain order, which has a time complexity of 
+                                O(n). Similarly, deletion requires reordering, which can be costly.</li>
+                        </ul><br>
+                    </li>
+                    <li> <p><strong>Not Ideal for Linked Lists</strong></p><br>
+                        <ul>
+                            <li><strong>Inefficient for Linked Lists:</strong>Binary search is not efficient for linked lists because accessing the middle element requires traversal from the head of the list, which takes linear time 
+                               O(n). Therefore, while binary search can be used with arrays, it is not suitable for linked lists where direct access to the middle element is not possible.</li>
+                        </ul><br>
+                    </li>
+                    <li> <p><strong>Overhead in Small Datasets</strong></p><br>
+                        <ul>
+                            <li><strong>Less Optimal for Small Datasets:</strong> For very small datasets, the overhead of setting up binary search and performing the logarithmic number of comparisons might outweigh the benefits compared to a simple linear search, which is easier to implement and still very efficient for small datasets.</li>
+                        </ul><br>
+                    </li>
+                </ol>
+            
+             </div>
+
+        </div>
+
+
+<!-- applications -->
+
+
+        <div id="Applications" class="content-container">
+            <div class="article-title text">
+                <h1>Applications</h1>
+             </div>
+             <br>
+             <hr>
+             <br>
+            <div class="article-title text">
+                <ol>
+                    <li><p><strong>Basic Searching in Sorted Arrays</strong></p><br>
+                        <ul>
+                            <li><strong>Element Lookup: </strong> The most common use of binary search is to quickly find an element in a sorted array or list. Given its 
+                               O(logn) time complexity, it is ideal for large datasets where quick lookups are necessary.</li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Optimization Problems</strong></p><br>
+                        <ul>
+                            <li><strong>Finding Optimal Values:</strong>Binary search is used in optimization problems where the goal is to find the maximum or minimum value that satisfies certain conditions. For example, it can be applied to find the smallest or largest value that meets a specified criterion in a range. </li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Finding Insertion Points</strong></p><br>
+                        <ul>
+                            <li><strong>Insertions in Sorted Arrays:</strong> Binary search can be used to find the correct position to insert a new element into a sorted array while maintaining the order. This is useful in applications where maintaining a sorted order is crucial.</li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Binary Search Trees (BSTs)</strong></p><br>
+                        <ul>
+                            <li><strong>Efficient Tree Operations: </strong> In binary search trees, binary search is used to efficiently locate nodes. BSTs leverage the properties of binary search to maintain balanced structure and provide fast insertions, deletions, and lookups.
+                            </li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>String Matching</strong></p><br>
+                        <ul>
+                            <li><strong>Pattern Matching: </strong> Binary search is used in string matching algorithms where patterns are preprocessed and the search space is sorted. For instance, it is used in conjunction with algorithms like Boyer-Moore for efficient string searching.</li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Resource Allocation</strong></p><br>
+                        <ul>
+                            <li><strong>Efficient Resource Distribution:</strong> Binary search can be applied to problems involving resource allocation where the goal is to distribute resources efficiently based on certain constraints or criteria. For example, in job scheduling or load balancing tasks.</li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Game Development</strong></p><br>
+                        <ul>
+                        <li><strong>In-Game Searching:</strong>In game development, binary search can be used for efficient lookups in sorted lists, such as finding a player's rank in a leaderboard or identifying the correct position of a game element based on sorted attributes.</li>
+                        </ul><br>
+                    </li>
+                </ol>
+            
+             </div>
+        </div>
+
+
+
+        <!-- pseudocode -->
+
+        <div id="pseudocode" class="content-container">
+            <div class="article-title text">
+                <h1>Pseudocode</h1>
+             </div>
+             <br>
+             <hr>
+             <br><br>
+<div class="pseudo">
+    <div class="article-title text" style=" border-radius: 7px; justify-content: center; align-items: center; margin-left: 4px; width: 90%;">
+        <h3>BinarySearch(array, target) <br>
+            low = 0<br>
+            high = length(array) - 1<br>
+            while low <= high<br>
+             mid = low + (high - low) / 2<br>
+             if array[mid] == target<br>
+             return mid  // Target found at index mid<br>
+             else if array[mid] < target<br>
+             low = mid + 1  // Search in the right half<br>
+             else<br>
+             high = mid - 1  // Search in the left half<br>
+             return -1  // Target not found<br>
+          
+        </h3><br><br>
+     </div>
+     <div class="article-title text">
+        <br>
+        <h1>Explanation</h1><br>
+        <ol>
+           
+                <ul>
+                        <li>low is initialized to 0, which is the index of the first element in the array.</li>
+                        <br>
+                        <li>high is initialized to length(array) - 1, which is the index of the last element in the array.</li>           
+                        <br>
+                        <li>The while loop continues as long as low is less than or equal to high. This ensures that the search space is valid and not empty.</li>
+                        <br>
+                        <li>mid is calculated as low + (high - low) / 2. This expression calculates the middle index of the current search space. It avoids potential overflow issues that can occur with the expression (low + high) / 2 in some programming languages with fixed-size integers.</li>
+                        <br>
+                        <li>Target Found: If array[mid] equals target, the target value is found at index mid, and mid is returned.</li>
+                        <br>
+                        <li>Search Right Half: If array[mid] is less than target, the target must be in the right half of the current search space. Therefore, set low to mid + 1 to narrow the search to the right half.</li>
+                        <br>
+                        <li>Search Left Half: If array[mid] is greater than target, the target must be in the left half of the current search space. Therefore, set high to mid - 1 to narrow the search to the left half.</li>
+                        <br>
+                        <li>If the while loop exits without finding the target (i.e., when low becomes greater than high), the target is not present in the array. In this case, return -1 to indicate that the target was not found.</li>
+                </ul>
+        </ol>
+<br><br>
+     </div>
+     <br>
+</div>
+        </div>
+
+<!-- flowchart -->
+
+        <div id="flowchart" class="content-container" style="height: 190vh;">
+            <div class="article-title text">
+                <h1>Flowchart</h1>
+             </div>
+             <br>
+             <hr>
+             <img src="img/binary_search.png" alt="AlgoVerse Logo" class="logo" style="width: calc(100% - 250px); /* Specify the width of the image */
+             height: auto; /* Maintain aspect ratio */
+             border-radius: 5px;
+             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+             margin-top: 30px;">
+             <br><br>
+        </div>
+
+
+
+        <!-- example -->
+
+        <div id="example" class="content-container" style="height: 250vh;">
+            <br><br>
+            <div class="article-title text">
+                <h1>Example</h1>
+             </div>
+             <br>
+             <hr>
+             
+                <br><br>
+               <p> Let's say we have an array of integers:<br><br>
+
+                Sorted Array: [3, 6, 8, 12, 15, 18, 21, 25, 30]
+            </p><br>
+                <p>Target Value: 18</p><br><br>
+                <ol>
+                <ul>
+                    <p><strong>Initialization:</strong></p><br>
+                        <li>Set low to the index of the first element: low = 0</li><br>
+                        <li>Set high to the index of the last element: high = 8 (since there are 9 elements)</li><br><br>
+                        <p><strong>First Iteration:</strong></p><br>
+                        <li>Search Left Half: If array[mid] is greater than target, the target must be in the left half of the current search space. Therefore, set high to mid - 1 to narrow the search to the left half.</li><br><br>
+                        <p><strong>Check Midpoint:</strong></p><br>
+                    
+                        <li>Compute the midpoint index: mid=low + (high-low)/2 = 0+(8-0)/2 = 4
+                        </li><br>
+                        <li>Check the value at index 4: array[4]=15</li><br>
+                        <li>Compare array[mid] with the target:Since 15 < 18, the target must be in the right half of the current search space.</li><br>
+                        <li>Update low to mid + 1: low= 4+1=5</li><br><br>
+                    
+                        <p><strong>Second Iteration:</strong></p><br>
+                        <li>Compute the new midpoint index: mid= low+(high-low)/2 = 5+(8-5)/2=6</li><br>
+                        <li>Check the value at index 6: array[6]=21</li><br>
+                        <li>Compare array[mid] with the target:Since 21 > 18, the target must be in the left half of the current search space.</li><br>
+                        <li>Update high to mid - 1: high = 6-1 = 5</li><br><br>
+                   
+               <p><strong>Third Iteration:</strong></p><br>
+               
+                        <li>Compute the new midpoint index: mid= low+(high-low)/2 =5+(5-5)/2=5</li><br>
+                        <li>Check the value at index 5: array[5]=18</li><br>
+                        <li>Compare array[mid] with the target: Since 18 == 18, we have found the target.</li><br><br>
+                        <p><strong>Result</strong></p><br>
+               <p>The target value '18' is found at index '5' in the array</p>
+
+</p>
+</ul>
+</ol>
+        </div>
+
+
+
+        <!-- visualization -->
+
+
+        <div id="Visualization" class="content-container">
+            <div class="article-title text">
+                <h1>Visualization</h1>
+             </div>
+             <hr>
+             <div class="cancel" onclick="normalscreen()"><i class="fa-solid fa-xmark"></i></div>
+             <div class="animation">
+                 <div class="main">
+                     <p class="p1">key element</p>
+                     <div class="key">
+                         <input class="input-key" type="text" value="10" oninput="updateValue(this.value)">
+                     </div>
+                     <div class="array" id="array"></div>
+                 </div>
+                 <div class="identity">
+                     <div class="lowid"><div></div> low</div>
+                     <div class="highid"><div></div> high</div>
+                     <div class="midid"><div></div> mid</div>
+                     <div class="foundid"><div></div> found</div>
+                 </div>
+                 <div class="menu-2">
+                     <div class="arrow1" onclick="showarrow1()">
+                         <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                     </div>
+                     <h4 class="e1" style="margin-left:10px;">binary Search</h4>
+                 </div>
+                 <div class="menu-3">
+                     <div class="arrow2" onclick="showarrow2()">
+                         <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                     </div>
+                     <div class="code">
+                         <div class="e1"><b>binary_search(array, target):</b></div>
+                         <div class="e2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;low = 0<br>&nbsp;&nbsp;&nbsp;&nbsp; high = length(array) - 1</div>
+                         <br>
+                         <div class="e3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while low <= high:</div>
+                         <div class="e4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mid = (low + high) / 2</div>
+                         <div class="e5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if array[mid] == target:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return mid</div>
+                         <div class="e6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else if array[mid] < target:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;low = mid + 1</div>
+                         <div class="e7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;high = mid - 1</div>
+                         <div class="e8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return -1</div>
+                     </div>
+                 </div>
+            
+             <div class="screen" onclick="fullscreen()"><i class="fa-solid fa-expand"></i></div>
+             <div class="box">
+                 <h4>Speed: </h4>
+                 <div class="slider">
+                     <p style="font-size: 1.3em; padding-right: 10px; font-weight:800; color:#000;">1x</p>
+                     <input id="speed" type="range" min="0" max="3" value="0">
+                     <p style="font-size: 1.3em; padding-left: 10px; font-weight:800; color:#000;">2x</p>
+                 </div>
+             </div>
+             <div class="prompt">
+                 <div class="box-1">
+                     <button  class="btn1-start">Start &nbsp; <i class="fa-solid fa-play"></i></button>
+                     <button   class="btn1-re-start none">Restart&nbsp;<i class="fa-solid fa-arrow-rotate-left"></i></button>
+                 </div>
+                 <div class="box-2">
+                     <button  class="btn2-pause">Pause &nbsp; <i class="fa-solid fa-pause"></i></button>
+                     <button  class="btn2-resume none" >Resume&nbsp;<i class="fa-regular fa-circle-play"></i></button>
+                 </div>
+                 <button onclick="toggle()" class="create">Create an example</button>
+                 <ul class="prompt-menu">
+                     <li class="arrays"><p>Enter Array Values (comma-separated):</p><input type="text" id="array-input"/></li>
+                     <li class="go" onclick="initializeSearch1();toggle();">Go</li>
+                 </ul>
+             </div>
+        </div>
+    </div>
+
+<!-- time complexity -->
+        <div id="tcomplexity" class="content-container">
+            <div class="article-title text">
+            <h1>Time complexity</h1>
+         </div>
+         <br>
+         <hr><br>
+         <p><strong>Definition:</strong> Time complexity measures the amount of time an algorithm takes to complete as a function of the size of the input. For linear search, the time complexity can be expressed in different scenarios:</p>
+         <br><ol>
+             <li><p><strong>Best-Case Time Complexity:</strong></p><br>
+                 <ul>
+                     <li><strong>Scenario:</strong> The best case occurs when the target value is located exactly at the middle of the array on the very first comparison.</li><br>
+                     <li><strong>Analysis:</strong> In this scenario, binary search finds the target in just one comparison, because the middle element is the target value itself.This represents the most efficient possible outcome for binary search.</li>
+                     <br> <li><strong>Complexity:</strong> O(1), where <code>n</code> is the number of elements in the list.</li>
+                     </ul><br>
+             </li>
+             <li><strong>Worst-Case Time Complexity:</strong></p><br>
+                 <ul>
+                     <li><strong>Scenario:</strong> The worst case occurs when the target value is either not present in the array or is found after the maximum number of iterations required to search the entire space. This also includes the case where the target is found at the very end of the search process.</li><br>
+                     <li><strong>Analysis:</strong>  Regardless of whether the target is found or not, each iteration reduces the search space by half. The maximum number of iterations needed to narrow down to a single element or determine that the target is not present is proportional to log<sub>2</sub>
+                     </li><br>
+                     <li><strong>Complexity:</strong> O(log n)</li>
+                 </ul><br>
+             </li>
+             <li><strong>Average-Case Time Complexity:</strong></p><br>
+                 <ul>
+                     <li><strong>Scenario:</strong> The average case occurs when the target value is located somewhere in the array, and we need to perform several iterations to find it. This scenario assumes that the target is equally likely to be in any position in the sorted array.</li><br>
+                     <li><strong>Analysis:</strong> Each iteration halves the search space. The number of iterations required to reduce the search space to a single element is proportional to the logarithm of the number of elements.Over many searches, the average number of comparisons needed will be proportional to log<sub>2</sub>n</li>
+                     <br><li><strong>Complexity:</strong> O(log n)</li>
+                 </ul><br>
+             </li>
+         </ol>
+     </div>
+
+
+
+<!-- space compleity -->
+
+        <div id="scomplexity" class="content-container">
+            <div class="article-title text">
+            <h1>Space complexity</h1>
+         </div>
+         <br>
+         <hr><br>
+         <h2>Space Complexity</h2><br>
+         <p><strong>Definition:</strong> Space complexity measures the amount of memory an algorithm uses relative to the size of the input. For linear search, the space complexity is straightforward:</p>
+         <br><ol>
+           
+            <li><strong>Iterative Implementation: O(1)</strong></p><br>
+                <ul>
+                   <p>In an iterative implementation of binary search, the algorithm uses a constant amount of extra memory, regardless of the size of the input array. This constant memory is used for:</p><br>
+                    <li>Variables to store the indices ('low', 'high', and 'mid').</li>
+                    <br><li>The target value and the array.</li>
+                </ul><br>
+            </li>
+            <li><strong>Recursive Implementation: O(log n)</strong></p><br>
+                <ul>
+                   <p>In a recursive implementation of binary search, each recursive call adds a new layer to the call stack. The maximum depth of the recursion is proportional to the number of times the search space is halved, which is log<sub>2</sub>n for an array of size n</p><br>
+                    <li>Each recursive call requires a small, constant amount of memory for the function call stack (including parameters and local variables).</li>
+                    <br><li>The depth of the recursion tree is 
+                        O(logn), as the search space is divided by half in each call.</li>
+                </ul><br>
+            </li>
+            </ol>
+            
+     
+        </div>
+    </div>
+
+
+
+<!-- script -->
+
+
+
+<script >
+    function openSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+        console.log("Sidebar opened");
+        sidebar.style.width = '280px'; // Set the sidebar width to its full size
+        sidebar.style.transform = 'translateX(0)'; // Slide the sidebar into view
+        menuBtn.style.display = 'none'; // Hide the menu button
+    }
+
+    function closeSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+        console.log("Sidebar closed");
+        sidebar.style.transform = 'translateX(-100%)'; // Slide the sidebar out of view
+        menuBtn.style.display = 'flex'; // Show the menu button
+    }
+    
+
+function toggleSubmenu1() {
+const submenu = document.getElementById("submenu1");
+submenu.classList.toggle("expanded");
+const arrowIcon = document.querySelector(".arrow-icon");
+arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+function toggleSubmenu2() {
+const submenu = document.getElementById("submenu2");
+submenu.classList.toggle("expanded");
+const arrowIcon = document.querySelector(".arrow-icon2");
+arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+const sidebar = document.querySelector('.sidebar');
+
+sidebar.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        
+        const targetId = e.target.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            // Quickly scroll to the target element
+            window.scrollTo({
+                top: targetElement.offsetTop - 100, // Adjust for fixed header
+                behavior: 'auto' // No smooth scrolling, immediate jump
+            });
+
+            // Update active link immediately
+            document.querySelectorAll('.sidebar a').forEach(link => link.classList.remove('active'));
+            e.target.classList.add('active');
+        }
+    }
+});
+});
+
+
+window.onload = function() {
+document.getElementById("Visualization").scrollIntoView();
+};
+
+</script>
+<script src="js/binary.js"></script>
+ <!-- Bootstrap JS and dependencies -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+ <script>
+    function handleStepActivation(selector, stepClass) {
+        document.querySelectorAll(selector + ' .step a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                
+                // Find the index of the clicked step
+                const clickedStepIndex = Array.from(this.closest('.step').parentNode.children).indexOf(this.closest('.step'));
+                // Reset all steps to default state
+                document.querySelectorAll(selector + ' .step').forEach((step, index) => {
+                    if (index < clickedStepIndex) {
+                        step.classList.add('active');
+                        step.querySelector('.line').style.backgroundColor = '#007bff';
+                    } else if (index === clickedStepIndex) {
+                        step.classList.add('active');
+                        step.querySelector('.line').style.backgroundColor = '#d3d3d3'; // Keep the line color of the clicked step default
+                    } else {
+                        step.classList.remove('active');
+                        step.querySelector('.line').style.backgroundColor = '#d3d3d3';
+                    }
+                });
+            });
+        });
+    }
+
+    // Handle steps for Description submenu
+    handleStepActivation('.has-submenu .step-indicator', 'step');
+
+    // Handle steps for Algorithm submenu
+    handleStepActivation('.has-submenu .step-indicator2', 'step');
+ </script>
+</body>
+</html>

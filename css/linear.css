@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Container for the array elements */
+#array-container {
+    display: flex;
+    flex-wrap: wrap; /* Wrap elements on smaller screens */
+    justify-content: center;
+    margin-top: 80px;
+    padding: 0 10px; /* Add padding for better spacing */
+}
+
+/* Style for individual array elements */
+.array-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 5px;
+    color: #000;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* Style for element values */
+.element-value {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightblue;
+    border: 1px solid #000;
+    font-size: 18px;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: background-color 0.5s ease, transform 0.5s ease, margin-top 0.5s ease;
+}
+
+/* Style for element indexes */
+.element-index {
+    font-size: 18px;
+    margin-top: 5px;
+    font-weight: bolder;
+    color: #000;
+}
+
+/* Highlight and found styles */
+.highlight {
+    background-color: yellow;
+    transform: scale(1.2);
+}
+
+.found {
+    background-color: lightgreen;
+    transform: scale(1.2);
+    margin-top: -20px;
+}
+
+.compared {
+    margin-top: -20px;
+}
+
+/* Input and button styling */
+input, button {
+    margin: 10px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+#array-container h3 {
+    margin-top: -30px;
+}
+
+/* Key styling */
+.key {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+    margin-top: -75px;
+    margin-left: 30px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    background-color: lightblue;
+}
+
+/* Number input styles */
+.key input::-webkit-outer-spin-button,
+.key input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.key input[type="number"] {
+    -moz-appearance: textfield;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 3px;
+    margin: 0;
+    background-color: lightblue;
+    border: 0;
+    font-weight: bold;
+    position: absolute;
+}
+
+/* Controls section */
+.controls {
+    margin-top: 20px;
+    display: flex;
+    position: fixed;
+    flex-wrap: wrap;
+    width: 80%;
+    gap:5px;
+}
+
+/* Style for heading */
+h3 {
+    position: absolute;
+    margin-top: -120px;
+    margin-left: 30px;
+}
+
+i {
+    color: #fff;
+}
+
+/* Menu 1 styling */
+.menu1 {
+    border: 1px solid #fff;
+    width: 100%; /* Full width on small screens */
+    max-width: 400px; /* Max width on larger screens */
+    margin-top: 25px;
+    display: flex;
+    margin-left:auto;
+    flex-direction: row;
+    height: 60px;
+    background-color: #090909;
+    transition: width 0.7s ease, transform 0.7s ease;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.menu1 .arrow1 {
+    border: 1px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    transition: transform 0.5s ease;
+}
+
+.menu1 h1 {
+    font-size: 15px;
+    padding: 5px;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    color:#fff;
+}
+
+.menu1.expand {
+    width: 18px;
+    transform: translateX(0);
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+/* Menu 2 styling */
+.menu2 {
+    border: 1px solid #fff;
+    width: 100%; /* Full width on small screens */
+    max-width: 400px; /* Max width on larger screens */
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    height: 245px;
+    background-color: #090909;
+    margin-left:auto;
+    transform: translateX(0);
+    transition: width 0.7s ease, transform 0.7s ease;
+    overflow: hidden;
+}
+
+.menu2 .arrow2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    transition: transform 0.5s ease;
+}
+
+.menu2-info {
+    border: 1px solid #fff;
+    flex-grow: 2;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.menu2.expand .menu2-info {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.menu2.expand {
+    width: 18px;
+    transform: translateX(100%);
+    margin-right: 15px;
+}
+
+.menu2 .arrow2.rotate {
+    transform: rotate(180deg);
+}
+
+.menu2 h4 {
+    padding-top: 1px;
+    font-size: 18px;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:400;
+    font-style: normal;
+    color:#fff;
+}
+.show
+{
+    background-color: #007bff;
+}
+
+
+/* Linear Visual Styling */
+.linear-visual {
+    margin-top: -20px;
+    
+        position: relative; /* Needed for absolute positioning of child elements */
+
+    width: 100%;
+    height: 80%;
+}
+
+/* Controls Section */
+.box {
+    background: none;
+    height: 50px;
+    width: 100%;
+    max-width: 500px; /* Max width for larger screens */
+    margin-top: 60px;
+    padding: 0;
+   
+    display: flex;
+    position: absolute;
+    right: -150px;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+    margin-left: auto;
+    flex-grow: 2;
+}
+
+.box .slider {
+    width: 100%;
+    max-width: 300px; /* Max width for larger screens */
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+    flex-grow: 0;
+}
+
+.box h4 {
+    flex-grow: 0;
+    font-size: 18px;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight:400;
+    font-style: normal;
+}
+
+.box .slider input {
+    height: 10px;
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    background-color: #f2f2f2;
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Styles */
+.btn1-start,
+.btn1-re-start,
+.btn2-pause,
+.btn2-resume {
+    width: 100%;
+    max-width: 100px; /* Max width for larger screens */
+    height: 50px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 600;
+    border: 0;
+    margin: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn1-start i,
+.btn1-re-start i,
+.btn2-pause i,
+.btn2-resume i {
+    color: #000;
+}
+
+.btn1-start:hover,
+.btn1-re-start:hover,
+.btn2-pause:hover,
+.btn2-resume:hover {
+    background-color: rgba(100, 91, 91, 0.712);
+    color: #fff;
+}
+
+.btn1-start:hover i,
+.btn1-re-start:hover i,
+.btn2-pause:hover i,
+.btn2-resume:hover i {
+    color: #fff;
+}
+
+/* Toggle Class for Display Buttons */
+.display {
+    display: block;
+    background-color: aqua;
+}
+
+.none {
+    display: none;
+}
+
+/* Prompt Section */
+.prompt {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    max-width: 1000px;
+    padding:5;
+    margin-top: 50px;
+    
+    box-sizing: border-box;
+    margin-left: -10px;
+}
+
+.prompt-menu {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    background-color: #f2f2f2;
+    color: #090909;
+    height: 50px;
+    margin-top: 5px;
+    width: 0;
+    overflow: hidden;
+    transform: translateX(100%);
+    transition: transform 0.5s ease, width 0.5s ease;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.prompt-menu.visible {
+    width: 55%;
+    transform: translateX(0);
+}
+
+.prompt-menu li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+    white-space: nowrap;
+}
+
+.prompt-menu input {
+    margin-left: 10px;
+    padding: 5px;
+}
+
+.prompt-menu .go {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 40px;
+    margin-top: 3px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+.prompt-menu .go:hover {
+    background-color: #0056b3;
+}
+
+/* Create Button */
+.create {
+    width: 100%;
+    max-width: 220px; /* Max width for larger screens */
+    height: 50px;
+    flex-grow: 0;
+    border-radius: 5px;
+    color: #000;
+    margin: 5px;
+}
+
+.create:hover {
+    background-color: rgba(100, 91, 91, 0.712);
+    color: #fff;
+}
+
+/* Array Input */
+#array-input {
+    width: 100%;
+    max-width: 150px; /* Max width for larger screens */
+    height: 35px;
+    border-radius: 3px;
+    border: 1px solid #000;
+    font-family: "Teachers", sans-serif;
+    font-size: 0.8em;
+}
+
+.disabled {
+    pointer-events: none;  /* Disable click */
+    opacity: 0.5;  /* Reduce visibility to indicate it's disabled */
+}

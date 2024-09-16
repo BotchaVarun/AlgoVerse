@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="linear.css">
+</head>
+<body>
+
+    <nav class="navbar" style="background-color: black;">
+        <div class="navbar-left">
+            <img src="Algoverse.png" alt="AlgoVerse Logo" class="logo">
+        </div>
+        <div class="navbar-right">
+            <a href="#about" class="nav-link">ABOUT US</a>
+            <a href="#help" class="nav-link">HELP</a>
+            <button class="algo-code-button">Algo code</button>
+        </div>
+    </nav>
+    
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Selection Sort </h3>
+            <button class="close-btn" onclick="closeSidebar()" ><span class="material-symbols-outlined" id="close">
+                close
+                </span></button>
+        </div>
+        <ul>
+            <li class="has-submenu">
+                <a href="javascript:void(0);" onclick="toggleSubmenu1()" class="menu-title">
+                    Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa-solid fa-angle-down arrow-icon"></i>
+                </a>
+                <div class="submenu" id="submenu1">
+                    <div class="step-indicator">
+                        <div class="step" id="step1">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#Theory" class="sidebar-link">Theory</a></div>
+                        </div>
+                        <div class="step" id="step2">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#Advantages" class="sidebar-link">Advantages</a></div>
+                        </div>
+                        <div class="step" id="step3">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#Disadvantages" class="sidebar-link">Disadvantages</a></div>
+                        </div>
+                        <div class="step" id="step4">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#Applications" class="sidebar-link">Applications</a></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            <li class="has-submenu">
+                <a href="javascript:void(0);" onclick="toggleSubmenu2()">Algorithm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa-solid fa-angle-down arrow-icon2" ></i>
+                </a>
+                <ul class="submenu" id="submenu2">
+                    <div class="step-indicator2">
+                        <div class="step" id="step1">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#pseudocode">Pseudocode</a></div>
+                        </div>
+                        <div class="step" id="step2">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#flowchart">Flowchart</a></div>
+                        </div>
+                        <div class="step" id="step3">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#example">Example</a></div>
+                        </div>
+                    </div>
+                </ul>
+            </li>
+            
+            <li><a href="#Visualization">Visualization</a></li>
+            <li><a href="#tcomplexity" >Time complexity</a></li>
+            <li><a href="#scomplexity" >Space Complexity</a></li>
+        </ul>
+    </div>
+    
+
+    <button class="menu-btn" onclick="openSidebar()"><span class="material-symbols-outlined" style="color:#fff;">
+        dock_to_left
+        </span></button>
+
+
+
+
+    <div class="content">
+        <div id="Theory" class="content-container">
+             <div class="article-title">
+               <h1>Selection Sort Algorithm</h1>
+            </div>
+            <hr style="color:#fff;">
+            <div class="text" style="height: 1800px; overflow: hidden; mask-image: linear-gradient(rgb(0, 0, 0) 80%, transparent);">
+                <p dir="ltr" style="text-align: justify;">
+
+                    <b>Selection Sort </b>Selection sort is a simple and efficient sorting algorithm that works by repeatedly selecting the smallest (or largest) element from the unsorted portion of the list and moving it to the sorted portion of the list. </p>
+                <br>
+                <p dir="ltr" style="text-align: justify;">
+
+                    The algorithm repeatedly selects the smallest (or largest) element from the unsorted portion of the list and swaps it with the first element of the unsorted part. This process is repeated for the remaining unsorted portion until the entire list is sorted. </p>
+                <p dir="ltr" style="text-align: justify;">The average and worst-case complexity of selection sort is <code>O(n2)</code>, where n is the number of items. Due to this, it is not suitable for large data sets.</p>
+                <br>
+                <p dir="ltr" style="text-align: justify;">
+                    <h2>HOW IT WORKS ?</h2>
+                    </p>
+                    <br>
+                    <ol>
+                        <p><strong>Initialization:</strong></p><br>
+                        <ul>
+                            <li>The entire array is considered unsorted initially.</li>
+                        </ul><br>
+                      
+                        <p><strong>Find The Minimum:</strong></p><br>
+                        <ul>
+                            <li>The algorithm starts by searching for the smallest (or largest, depending on the sort order) element in the unsorted part of the array.</li>
+                        </ul><br>
+                       
+                        <p><strong>Swap:</strong></p><br>
+                        <ul>
+                            <li>Once the minimum element is found, it is swapped with the first element of the unsorted part of the array.</li>
+                            <li>This element is now in its correct position, so the sorted part of the array grows by one element.</li>
+                        </ul>
+
+                        <p><strong>Repeat:</strong></p><br>
+                        <ul>
+                            <li> Repeat the process for the rest of the array, moving the boundary between the sorted and unsorted parts one element to the right each time, until the entire array is sorted.</li>
+                        </ul>
+                    </ol>
+                </div>
+            </div>
+
+<!-- advantages -->
+
+        <div id="Advantages" class="content-container">
+            <div class="article-title text">
+                <h1>Advantages</h1>
+             </div>
+             <hr>
+            <div class="article-title text">
+                    <ol>
+                        <p><li><strong>Simplicity</strong></p><br>
+                            <ul>
+                                <li>The algorithm is easy to understand and implement, making it a good choice for teaching the basics of sorting algorithms.</li>
+                            </ul><br>
+                        </li>
+                        <p><li><strong>In-Place Sorting</strong></p><br>
+                            <ul>
+                                <li>It only requires a constant amount of additional memory <code>(O(1))</code>, as it sorts the array in place without needing extra storage space.</li>
+                            </ul><br>
+                        </li>
+                        <p><li><strong>No Extra Space Required</strong></p><br>
+                            <ul>
+                                <li><strong>Since it operates directly on the input array, no additional memory allocation is necessary beyond the array itself.</li>
+                            </ul><br>
+                        </li>
+                        <p><li><strong>Works Well with Small Datasets:</strong></p><br>
+                            <ul>
+                                <li> For small datasets, the simplicity and minimal overhead can make it a practical choice.</li>
+                            </ul><br>
+                        </li>
+                        <p><li><strong>Stability in Worst-Case Time Complexity</strong></p><br>
+                            <ul>
+                                <li>The worst-case time complexity is <code>O(n ^2),</code> and this doesn't change depending on the input data, giving predictable performance.</li>
+                            </ul><br>
+                        </li>
+                    </ol>
+             </div>
+        </div>
+<!-- disadvantages -->
+
+
+        <div id="Disadvantages" class="content-container">
+            <div class="article-title text">
+                <h1>Disadvantages</h1>
+             </div>
+<hr>
+            <div class="article-title text">
+                <ol>
+                    <p><li><strong>Inefficiency with Large Datasets:</strong></p><br>
+                        <ul>
+                            <li>With a time complexity of <code>O(n 2)</code>, Selection Sort becomes impractical for large datasets, as it performs poorly compared to more advanced algorithms like Quick Sort or Merge Sort.</li>
+                        </ul><br>
+                    </li>
+                    <li> <p><strong>Not Stable </strong></p><br>
+                        <ul>
+                            <li>Selection Sort is not a stable sort, meaning that it may change the relative order of equal elements during sorting.</li>
+                        </ul><br>
+                    </li>
+                    <li> <p><strong>High Number of Comparisons:</strong></p><br>
+                        <ul>
+                            <li>Even in the best case, Selection Sort performs a large number of comparisons, making it inefficient for nearly sorted arrays.</li>
+                        </ul><br>
+                    </li>
+                    <li> <p><strong> Slow Compared to Other Algorithms: </strong></p><br>
+                        <ul>
+                            <li>Other algorithms like Quick Sort or Merge Sort, which have average-case time complexities of <code>O(nlogn)</code>, are significantly faster for most datasets</li>
+                        </ul><br>
+                    </li>
+                    <li> <p><strong>Fixed Performance Regardless of Input:</strong></p><br>
+                        <ul>
+                            <li>Unlike algorithms that adapt to already-sorted or partially-sorted input (e.g., Insertion Sort), Selection Sort always performs the same number of comparisons, regardless of the initial order of the data.</li>
+                        </ul><br>
+                    </li>
+                </ol>
+            
+             </div>
+
+        </div>
+
+
+<!-- applications -->
+
+
+        <div id="Applications" class="content-container">
+            <div class="article-title text">
+                <h1>Applications</h1>
+             </div>
+<hr>
+            <div class="article-title text">
+                <ol>
+                    <li><p><strong>Small Datasets</strong></p><br>
+                        <ul>
+                            <li>For sorting small datasets where the overhead of more complex algorithms isn't justified, Selection Sort's simplicity and minimal memory usage make it a reasonable choice.</li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Embedded Systems</strong></p><br>
+                        <ul>
+                            <li>In systems with limited memory (e.g., embedded systems), where minimizing memory usage is critical, Selection Sort's in-place sorting can be advantageou.</li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Easy-to-Understand Sorting for Teaching:</strong></p><br>
+                        <ul>
+                            <li>In educational environments, Selection Sort is often used to teach sorting concepts due to its straightforward nature.</li>
+                                <li> It helps beginners understand how sorting works without the complexity of more advanced algorithms.</li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Sorting When Memory is a Constraint</strong></p><br>
+                        <ul>
+                            <li>In scenarios where available memory is very limited, such as certain real-time systems or low-end hardware, the constant space requirement of Selection Sort makes it a viable option.</li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Sorting a Few Elements:</strong></p><br>
+                        <ul>
+                            <li>When you need to sort just a small number of elements, for example, sorting the top few minimum or maximum values in an array, Selection Sort can be a simple and effective method.</li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Dataset with High Swapping Costs:</strong></p><br>
+                        <ul>
+                            <li>If the cost of swapping elements is significantly higher than comparing them (e.g., in distributed systems where data resides on different nodes), Selection Sort's approach of minimizing swaps by only swapping once per iteration can be beneficial.</li>
+                        </ul><br>
+                    </li>
+                 
+                </ol>
+            
+             </div>
+        </div>
+
+
+
+        <!-- pseudocode -->
+
+
+        <div id="pseudocode" class="content-container">
+            <div class="article-title text">
+                <h1>Pseudocode</h1>
+             </div>
+             <br>
+             <hr>
+             <br><br>
+<div class="pseudo">
+    <div class="article-title text" style="background-color: rgb(18, 16, 16); border-radius: 7px; justify-content: center; align-items: center; margin-left: 4px; width: 90%;">
+        <h3 style="margin-left: 10px;">SELECTIONSORT(array, n):<br>
+            for i from 0 to n-1:<br>
+                minIndex = i<br>
+                for j from i+1 to n-1:<br>
+                    if array[j] < array[minIndex]:<br>
+                        minIndex = j<br>
+                swap(array[i], array[minIndex])<br>
+            <br></h3><br><br>
+     </div>
+    
+     <div class="article-title text">
+        <br>
+        <h1>Explanation</h1><br><br>
+        <ol>
+           
+                <ul>
+                  <strong>Function Definition: </strong>  <li><strong>selectionSort(array, n):</strong> </li><li>Defines the function selectionSort that takes an array and its size n as parameters.</li>
+                </ul><br>
+           
+         
+                <ul>
+                        <li><strong>Outer Loop: </strong> for i from 0 to n-1: Iterates over each element of the array, treating the range from the beginning of the array up to the second-to-last element. Here, i represents the current position in the array where the smallest unsorted element will be placed.</li>
+                        <li><strong>Initialization: </strong>minIndex = i: Initializes minIndex to the current index i. This variable keeps track of the index of the smallest element found in the unsorted part of the array.
+                            .</li>
+                        <li><strong>Inner loop :</strong> for j from i+1 to n-1: Starts a nested loop from the position right after i to the end of the array. The purpose is to find the smallest element in the unsorted part of the array.</li>
+                        <li><strong>Find Minimum:</strong> if array[j] < array[minIndex]: Compares the current element array[j] with the element at minIndex. If array[j] is smaller, it updates minIndex to j. This ensures that minIndex always points to the smallest element in the unsorted portion of the array.</li>
+                        <li><strong>Swap:</strong>swap(array[i], array[minIndex]): After the inner loop completes, the smallest element found is swapped with the element at the current position i. This places the smallest element in its correct position in the sorted portion of the array.</li>
+                        </ul> 
+                </ul>  
+        </ol>
+<br><br>
+     </div>
+     <br>
+</div>
+        </div>
+
+<!-- flowchart -->
+
+
+        <div id="flowchart" class="content-container" >
+            <div class="article-title text">
+                <h1>Flowchart</h1>
+             </div>
+             <br>
+             <hr>
+             <img src="flowchart_linear.jpg" alt="AlgoVerse Logo" class="logo" style="width: calc(100% - 250px); /* Specify the width of the image */
+             height: auto; /* Maintain aspect ratio */
+             border-radius: 5px;
+             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+             margin-top: 30px;">
+             <br><br>
+ <!--<div class="article-title text">
+    <hr>
+    <h1>Visual Flowchart Representation:</h1><br><br>
+ </div>
+ <p style="margin-left: 50px;">Start <br><br>
+    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br><br>
+    Input array/list and target value<br><br>
+    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br><br>
+    Initialize i = 0<br><br>
+    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br><br>
+    i < length of array?<br><br>
+    Yes → Go to next step<br><br>
+    No → Go to step 9<br><br>
+    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br><br>
+    array[i] == target?<br><br>
+    Yes → Output i, then go to step 8<br><br>
+    No → Increment i = i + 1, then go back to step 7<br><br>
+    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br><br>
+    Output i<br><br>
+    &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↓<br><br>
+    End</p><br>
+ <br>
+ 
+        </div>--->
+
+
+
+        <!-- example -->
+
+        <div id="example" class="content-container" style="height: 250vh;">
+            <br><br>
+            <div class="article-title text">
+                <h1>Example</h1>
+             </div>
+             <br>
+             <hr>
+             <p>
+                <br><br>
+                Let's say we have an array of integers:<br><br>
+
+array = [64,25,12,22]<br><br>
+Initialize the element:[64,25,12,22]<br><br>
+Selection Sort Steps:<br><br>
+<strong>Iteration 1:</strong><br><br>
+
+Find Minimum from Index 0 to 3:<br><br>
+Compare 64 with 25. Minimum is 25.<br><br>
+Compare 25 with 12. Minimum is 12.<br><br>
+Compare 12 with 22. Minimum is 12.<br><br>
+Swap: Swap 64 (at index 0) with 12 (at index 2).<br><br>
+Array after swap:
+12,25,64,22<br><br>
+
+<strong>Iteration 2:</strong><br><br>
+Find Minimum from Index 1 to 3:<br><br>
+Compare 25 with 64. Minimum is 25.<br><br>
+Compare 25 with 22. Minimum is 22.<br><br>
+Swap: Swap 25 (at index 1) with 22 (at index 3).<br><br>
+Array after swap: 12,22,64,25<br><br>
+
+<strong>Iteration 3:</strong><br><br>
+Find Minimum from Index 2 to 3:<br><br>
+Compare 64 with 25. Minimum is 25.<br><br>
+Swap: Swap 64 (at index 2) with 25 (at index 3).<br><br>
+Array after swap: 
+12,22,25,64<br><br>
+
+<strong>Iteration 4:</strong><br><br>
+Find Minimum from Index 3 to 3:<br><br>
+Only one element left (64), which is already in the correct position.<br><br>
+<strong>Final Sorted Array:</strong><br><br>
+[12,22,25,64]<br><br>
+In each iteration, we find the smallest element in the remaining unsorted portion of the array and place it in the correct position by swapping.<br><br>
+After completing all iterations, the array is sorted.<br><br>
+</p>
+        </div>
+
+
+
+        <!-- visualization -->
+
+        <div id="Visualization" class="content-container">
+            <div class="article-title text">
+                <h1>Visualization</h1>
+            </div>
+            <hr>
+            <div class="linear-visual">
+                <div class="cancel" onclick="normalscreen()"><i class="fa-solid fa-xmark"></i></div>
+                <div id="array-container"></div>
+                <h3>key</h3>
+                <div class="key">
+                    <input type="number" id="search-value" value="10">
+                </div>
+                <div class="menu1">
+                    <div class="arrow1" onclick="showarrow1()">
+                        <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                    </div>
+                    <h1 class="data">Linear Search</h1>
+                </div>
+                <div class="menu2">
+                    <div class="arrow2" onclick="showarrow2()">
+                        <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                    </div>
+                    <div class="menu2-info">
+                        <div class="code">
+                            <h4 class="e1">procedure linear_search(list, key)</h4><br>
+                            <h4 class="e2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for each item in the list</h4><br>
+                            <h4 class="e3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if item == key</h4><br>
+                            <h4 class="e4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return index of item</h4><br>
+                            <h4 class="e5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return -1 (indicating key not found)</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="screen" onclick="fullscreen()"><i class="fa-solid fa-expand"></i></div>
+                <div class="controls">
+
+                </div>
+                <div class="box">
+                    <h4>Speed: </h4>
+                    <div class="slider">
+                        <p style="font-size: 1.3em; padding-right: 10px; font-weight:800; color:#fff;">1x</p>
+                        <input id="speed" type="range" min="0" max="3" value="0">
+                        <p style="font-size: 1.3em; padding-left: 10px; font-weight:800; color:#fff;">2x</p>
+                    </div>
+                </div>
+                <div class="prompt">
+                    <div class="box-1">
+                        <button onclick="startSearch()" class="btn1-start">Start &nbsp; <i class="fa-solid fa-play"></i></button>
+                        <button onclick="restartSearch()" class="btn1-re-start none">Restart&nbsp;<i class="fa-solid fa-arrow-rotate-left"></i></button>
+                    </div>
+                    <div class="box-2">
+                        <button onclick="pauseSearch()" class="btn2-pause">Pause &nbsp; <i class="fa-solid fa-pause"></i></button>
+                        <button onclick="resumeSearch()" class="btn2-resume none">Resume&nbsp;<i class="fa-regular fa-circle-play"></i></button>
+                    </div>
+                    <button onclick="toggle()" class="create">Create an example</button>
+                    <ul class="prompt-menu">
+                        <li class="array">Enter Array Values (comma-separated):<input type="text" id="array-input"/></li>
+                        <li class="go" onclick="initializeArray();toggle();">Go</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    
+        <!-- Time Complexity Section -->
+        <div id="tcomplexity" class="content-container">
+            <div class="article-title text">
+                <h1>Time Complexity</h1>
+            </div>
+            <br>
+            <hr><br>
+            <p><strong>Definition:</strong> Time complexity measures the amount of time an algorithm takes to complete as a function of the size of the input. For linear search, the time complexity can be expressed in different scenarios:</p>
+            <br>
+            <ol>
+                <li>
+                    <p><strong>Worst-Case Time Complexity:</strong></p><br>
+                    <ul>
+                        <li><code>O(n²)</code>, as it performs n(n-1)/2 comparisons in the worst case.</li>
+                    </ul><br>
+                </li>
+                <li>
+                    <p><strong>Best-Case Time Complexity:</strong></p><br>
+                    <ul>
+                        <li><code>O(n²)</code>, as it still needs to compare each element with every other element.</li>
+                    </ul><br>
+                </li>
+                <li>
+                    <p><strong>Average-Case Time Complexity:</strong></p><br>
+                    <ul>
+                        <li><code>O(n²)</code>, as it requires approximately n²/2 comparisons on average.</li>
+                    </ul><br>
+                </li>
+            </ol>
+        </div>
+    
+        <!-- Space Complexity Section -->
+        <div id="scomplexity" class="content-container">
+            <div class="article-title text">
+                <h1>Space Complexity</h1>
+            </div>
+            <hr>
+            <p><strong>Definition:</strong> Space complexity measures the amount of memory an algorithm uses relative to the size of the input. For linear search, the space complexity is straightforward:</p>
+            <br>
+            <ul>
+                <li><strong>Scenario:</strong> Selection Sort sorts an array by finding the minimum element from the unsorted portion and swapping it with the first unsorted element, using only a few extra variables like loop counters, an index variable, and a temporary variable.</li><br>
+                <li><strong>Analysis:</strong>he memory used is constant, as it does not depend on the input size, and no additional arrays or significant memory allocation are required.</li><br>
+                <li><strong>Complexity:</strong> <code>O(1)</code>, indicating constant space usage.</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+<!-- script -->
+
+
+    <script >
+        function openSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const menuBtn = document.querySelector('.menu-btn');
+        
+            sidebar.style.width = '280px'; // Set the sidebar width to its full size
+            sidebar.style.transform = 'translateX(0)'; // Slide the sidebar into view
+            menuBtn.style.display = 'none'; // Hide the menu button
+        }
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const menuBtn = document.querySelector('.menu-btn');
+        
+            sidebar.style.transform = 'translateX(-100%)'; // Slide the sidebar out of view
+            menuBtn.style.display = 'flex'; // Show the menu button
+        }
+        
+
+function toggleSubmenu1() {
+    const submenu = document.getElementById("submenu1");
+    submenu.classList.toggle("expanded");
+    const arrowIcon = document.querySelector(".arrow-icon");
+    arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+function toggleSubmenu2() {
+    const submenu = document.getElementById("submenu2");
+    submenu.classList.toggle("expanded");
+    const arrowIcon = document.querySelector(".arrow-icon2");
+    arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.querySelector('.sidebar');
+    
+    sidebar.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            
+            const targetId = e.target.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Quickly scroll to the target element
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100, // Adjust for fixed header
+                    behavior: 'auto' // No smooth scrolling, immediate jump
+                });
+
+                // Update active link immediately
+                document.querySelectorAll('.sidebar a').forEach(link => link.classList.remove('active'));
+                e.target.classList.add('active');
+            }
+        }
+    });
+});
+
+
+window.onload = function() {
+    document.getElementById("Visualization").scrollIntoView();
+  };
+
+    </script>
+    <script src="linear.js"></script>
+     <!-- Bootstrap JS and dependencies -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     
+     <script>
+        function handleStepActivation(selector, stepClass) {
+            document.querySelectorAll(selector + ' .step a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    
+                    // Find the index of the clicked step
+                    const clickedStepIndex = Array.from(this.closest('.step').parentNode.children).indexOf(this.closest('.step'));
+                    // Reset all steps to default state
+                    document.querySelectorAll(selector + ' .step').forEach((step, index) => {
+                        if (index < clickedStepIndex) {
+                            step.classList.add('active');
+                            step.querySelector('.line').style.backgroundColor = '#007bff';
+                        } else if (index === clickedStepIndex) {
+                            step.classList.add('active');
+                            step.querySelector('.line').style.backgroundColor = '#d3d3d3'; // Keep the line color of the clicked step default
+                        } else {
+                            step.classList.remove('active');
+                            step.querySelector('.line').style.backgroundColor = '#d3d3d3';
+                        }
+                    });
+                });
+            });
+        }
+    
+        // Handle steps for Description submenu
+        handleStepActivation('.has-submenu .step-indicator', 'step');
+    
+        // Handle steps for Algorithm submenu
+        handleStepActivation('.has-submenu .step-indicator2', 'step');
+     </script>
+</body>
+</html>

@@ -1,0 +1,590 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+/*navbar*/
+nav{
+    width: 100%;
+    height: 70px;
+    background-color: #000000;
+    box-shadow: 0 0 15px 0 #171515;
+    color: rgb(151, 145, 145);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.logo
+{
+    width: 250px;
+
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: white;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+.algo-code-button {
+    background-color: #fff;
+    border: 1px solid #000;
+    color:#000;
+    font-weight: 600;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 15px;
+  }
+
+  .navbar-right a{
+    color:#000;
+    font-weight: 500;
+    margin-top:-20px;
+    text-decoration: none;
+  }
+  
+  .algo-code-button:hover {
+    background-color: rgb(35, 33, 33);
+    color:#fff;
+  }
+  /* Base Navbar Styles */
+
+  
+
+  
+  .nav-link {
+    color: white;
+    margin-right: 40px;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+  
+/**/
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    margin-top:130px;
+}
+
+.graph {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.node {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid black;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.edge {
+    position: absolute;
+    width: 2px;
+    background-color: black;
+    transform-origin: 0 0;
+}
+
+
+.weight{
+    position: relative;
+    background-color: white;
+    padding: 2px 5px;
+    border-radius: 5px;
+    width:100px;
+    height: 0;
+    border: 1px solid black;
+    font-size: 12px;
+}
+#SA{
+   transform: rotate(145deg);
+  
+   width: 125px;
+   height: 0px;
+   position: relative;
+   margin-left:-47px;
+   margin-top:15px;
+}
+#SA i{
+    margin-left:122px;
+    
+    position: absolute;
+    margin-top:-29px;
+    transform: rotate(125deg);
+}
+#SA div{
+    margin-top:10px;
+    margin-right: 50px;
+    transform: rotate(180deg);
+}
+#SB{
+
+    transform: rotate(100deg);
+    width: 100px;
+    height: 0px;
+    position: relative;
+    margin-left: -35px;
+    margin-top: -1px;
+}
+#SB i{
+    margin-left: 94px;
+    position: absolute;
+    margin-top: -29px;
+    transform: rotate(125deg);
+}
+#SB div{
+    margin-top:10px;
+    margin-right: 50px;
+    transform: rotate(180deg);
+}
+#SC{
+
+    transform: rotate(46deg);
+    width: 90px;
+    height: 0px;
+    position: relative;
+    margin-left: -25px;
+    margin-top: -11px;
+}
+#SC i{
+    margin-left: 87px;
+    position: absolute;
+    margin-top: -6px;
+    transform: rotate(125deg);
+}
+#SC div{
+    margin-left: 39px;
+    position: absolute;
+    margin-top: -24px;
+    transform: rotate(3deg);
+}
+#AD{
+
+    transform: rotate(59deg);
+    width: 83px;
+    height: 0px;
+    position: relative;
+    margin-left: -30px;
+    margin-top: 0px;
+}
+#AD i{
+    margin-left: 79px;
+    position: absolute;
+    margin-top: -30px;
+    transform: rotate(120deg);
+}
+#AD div{
+    margin-top:10px;
+    margin-right: 50px;
+    transform: rotate(180deg);
+}
+#AB{
+
+    transform: rotate(23deg);
+    width: 83px;
+    height: 0px;
+    position: relative;
+    margin-left: -24px;
+    margin-top: -2px;
+}
+#AB i{
+    margin-left: 77px;
+    position: absolute;
+    margin-top: 2px;
+    transform: rotate(125deg);
+}   
+#AB div{
+    margin-top: -22px;
+    margin-left: 37px;
+    transform: rotate(0deg);
+}
+#BD{
+
+    transform: rotate(133deg);
+    width: 52px;
+    height: 0px;
+    position: relative;
+    margin-left: -12px;
+    margin-top: -11px;
+}
+#BD i{
+    margin-left: 47px;
+    position: absolute;
+    margin-top: -6px;
+    transform: rotate(125deg);
+}
+#BD div{
+    margin-left: 19px;
+    position: absolute;
+    margin-top: 7px;
+    transform: rotate(180deg);
+}
+#CD{
+
+    transform: rotate(147deg);
+    width: 185px;
+    height: 0px;
+    position: relative;
+    margin-left: -71px;
+    margin-top: 6px;
+}
+#CD i{
+    margin-left: 180px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(125deg);
+}
+#CD div{
+    margin-left: 66px;
+    position: absolute;
+    margin-top: 9px;
+    transform: rotate(178deg);
+}
+#CE{
+
+    transform: rotate(67deg);
+    width: 54px;
+    height: 0px;
+    position: relative;
+    margin-left: -12px;
+    margin-top: -14px;
+}
+#CE i{
+    margin-left: 47px;
+    position: absolute;
+    margin-top: -6px;
+    transform: rotate(125deg);
+}
+#CE div{
+    margin-left: 23px;
+    position: absolute;
+    margin-top: -29px;
+    transform: rotate(3deg);
+}
+#CF{
+
+    transform: rotate(114deg);
+    width: 130px;
+    height: 0px;
+    position: relative;
+    margin-left: -46px;
+    margin-top: -7px;
+}
+#CF i{
+    margin-left: 128px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(125deg);
+}
+#CF div{
+    margin-left: 66px;
+    position: absolute;
+    margin-top: 9px;
+    transform: rotate(178deg);
+}
+#DF{
+
+    transform: rotate(24deg);
+    width: 80px;
+    height: 0px;
+    position: relative;
+    margin-left: -24px;
+    margin-top: -2px;
+}
+#DF i{
+    margin-left: 75px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(125deg);
+}
+#DF div{
+    margin-left: 41px;
+    position: absolute;
+    margin-top: -26px;
+    transform: rotate(10deg);
+}
+#DH{
+    margin-left: -15px;
+    position: absolute;
+    margin-top: 23px;
+    width: 69px;
+    transform: rotate(140deg);
+}
+#DH i{
+    margin-left: 66px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(125deg);
+}
+#DH div{
+    margin-left: 29px;
+    position: absolute;
+    margin-top: 9px;
+    transform: rotate(178deg);
+}
+#DI{
+    margin-left: -15px;
+    position: absolute;
+    margin-top: 20px;
+    width: 52px;
+    transform: rotate(91deg);
+}
+#DI i{
+    margin-left: 46px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(115deg);
+}
+#DI div{
+    margin-left: 20px;
+    position: absolute;
+    margin-top: 9px;
+    transform: rotate(178deg);
+}
+#EG{
+    margin-left: -10px;
+    position: absolute;
+    margin-top: 19px;
+    width: 54px;
+    transform: rotate(68deg);
+}
+#EG i{
+    margin-left: 48px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(115deg);
+}
+#EG div{
+    margin-left: 11px;
+    position: absolute;
+    margin-top: -31px;
+    transform: rotate(3deg);
+
+}
+#FG{
+    margin-left: -31px;
+    position: absolute;
+    margin-top: 22px;
+    width: 96px;
+    transform: rotate(12deg);
+}
+#FG i{
+    margin-left: 90px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(115deg);
+}
+#FG div{
+    margin-left: 47px;
+    position: absolute;
+    margin-top: -31px;
+    transform: rotate(3deg);
+
+}
+#HI{
+    margin-left: -10px;
+    position: absolute;
+    margin-top: 22px;
+    width: 50px;
+    transform: rotate(22deg);
+}
+#HI i{
+    margin-left: 47px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(120deg);
+}
+#HI div{
+    margin-left: 24px;
+    position: absolute;
+    margin-top: -22px;
+    transform: rotate(3deg);
+
+}
+#HJ{
+    margin-left: -54px;
+    position: absolute;
+    margin-top: 21px;
+    width: 127px;
+    transform: rotate(53deg);
+}
+#HJ i{
+    margin-left: 123px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(120deg);
+}
+#HJ div{
+    margin-left: 72px;
+    position: absolute;
+    margin-top: 15px;
+    transform: rotate(175deg);
+
+}
+#IJ{
+    margin-left: -19px;
+    position: absolute;
+    margin-top: 17px;
+    width: 65px;
+    transform: rotate(87deg);
+}
+#IJ i{
+    margin-left: 62px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(120deg);
+}
+#IJ div{
+    margin-left: 28px;
+    position: absolute;
+    margin-top: -20px;
+    transform: rotate(0deg)
+
+}
+#IK{
+    margin-left: -35px;
+    position: absolute;
+    margin-top: 19px;
+    width: 100px;
+    transform: rotate(51deg);
+}
+#IK i{
+    margin-left: 95px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(120deg);
+}
+#IK div{
+    margin-left: 47px;
+    position: absolute;
+    margin-top: -25px;
+    transform: rotate(0deg);
+}
+#JK{
+    margin-left: -6px;
+    position: absolute;
+    margin-top: 19px;
+    width: 45px;
+    transform: rotate(0deg);
+}
+#JK i{
+    margin-left: 39px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(120deg);
+}
+#JK div{
+    margin-left: 15px;
+    position: absolute;
+    margin-top: -25px;
+    transform: rotate(0deg);
+}
+#IG{
+    margin-left: -97px;
+    position: absolute;
+    margin-top: 31px;
+    width: 229px;
+    transform: rotate(-6deg);
+}
+#IG i{
+    margin-left: 224px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(120deg);
+}
+#IG div{
+    margin-left: 86px;
+    position: absolute;
+    margin-top: -22px;
+    transform: rotate(0deg);
+}
+#KG{
+    margin-left: -69px;
+    position: absolute;
+    margin-top: 24px;
+    width: 180px;
+    transform: rotate(-37deg)
+}
+#KG i{
+    margin-left: 174px;
+    position: absolute;
+    margin-top: -5px;
+    transform: rotate(120deg);
+}
+#KG div{
+    margin-left: 64px;
+    position: absolute;
+    margin-top: -25px;
+    transform: rotate(0deg);
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------- */
+.info {
+    width: 25%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    overflow-y: auto;
+}
+
+#closed-list {
+    list-style: none;
+    padding: 0;
+}
+
+#closed-list li {
+    margin-bottom: 10px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+

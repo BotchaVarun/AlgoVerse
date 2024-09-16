@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A* Algorithm Visualization</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/A.css">
+</head>
+<body>
+    <nav class="navbar" style="background-color: #fff;">
+        <div class="navbar-left">
+            <a href="index.html" style="text-decoration: none;"><img src="img/logo2.jpg" alt="AlgoVerse Logo" class="logo"></a>
+        </div>
+        <div class="navbar-right">
+            <a href="#about" class="nav-link">ABOUT US</a>
+            <a href="#help" class="nav-link">HELP</a>
+            <button class="algo-code-button">Algo code</button>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="graph">
+            <!-- Nodes and edges will be added here dynamically -->
+        </div>
+        <div class="info">
+            <h3>Closed List</h3>
+            <ul id="closed-list">
+                <!-- Closed list items will be added here dynamically -->
+            </ul>
+            <div>
+                <label for="source-node">Source Node:</label>
+                <input type="text" id="source-node" value="S">
+            </div>
+            <div>
+                <label for="goal-node">Goal Node:</label>
+                <input type="text" id="goal-node" value="J">
+            </div>
+            <button id="start-btn">Start</button>
+            <button id="path-btn">Find All Paths</button>
+        </div>
+    </div>
+    <script src="js/A.js"></script>
+</body>
+</html>

@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bubble sort</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/bubble.css">
+    </head>
+    <body>
+    
+        <nav class="navbar">
+            <div class="navbar-left">
+                <a href="index.html" style="text-decoration: none;"><img src="img/logo2.jpg" alt="AlgoVerse Logo" class="logo"></a>
+            </div>
+            <div class="navbar-right">
+                <a href="#about" class="nav-link">ABOUT US</a>
+                <a href="#help" class="nav-link">HELP</a>
+                <button class="algo-code-button">Algo code</button>
+            </div>
+        </nav>
+        
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h3>Bubble Sort</h3>
+                <button class="close-btn" onclick="closeSidebar()"  ><span class="material-symbols-outlined" id="close" sty>
+                    close
+                    </span></button>
+            </div>
+            <ul>
+                <li class="has-submenu">
+                    <a href="javascript:void(0);" onclick="toggleSubmenu1()" class="menu-title">
+                        Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-solid fa-angle-down arrow-icon"></i>
+                    </a>
+                    <div class="submenu" id="submenu1">
+                        <div class="step-indicator">
+                            <div class="step" id="step1">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Theory" class="sidebar-link">Theory</a></div>
+                            </div>
+                            <div class="step" id="step2">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Advantages" class="sidebar-link">Advantages</a></div>
+                            </div>
+                            <div class="step" id="step3">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Disadvantages" class="sidebar-link">Disadvantages</a></div>
+                            </div>
+                            <div class="step" id="step4">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Applications" class="sidebar-link">Applications</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                
+                <li class="has-submenu">
+                    <a href="javascript:void(0);" onclick="toggleSubmenu2()">Algorithm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-solid fa-angle-down arrow-icon2" ></i>
+                    </a>
+                    <ul class="submenu" id="submenu2">
+                        <div class="step-indicator2">
+                            <div class="step" id="step1">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#pseudocode">Pseudocode</a></div>
+                            </div>
+                            <div class="step" id="step2">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#flowchart">Flowchart</a></div>
+                            </div>
+                            <div class="step" id="step3">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#example">Example</a></div>
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+                
+                <li><a href="#Visualization">Visualization</a></li>
+                <li><a href="#tcomplexity" >Time complexity</a></li>
+                <li><a href="#scomplexity" >Space Complexity</a></li>
+            </ul>
+        </div>
+        
+    
+        <button class="menu-btn" onclick="openSidebar()"><span class="material-symbols-outlined" style="color:#fff;">
+            dock_to_left
+            </span></button>
+
+    <div class="content">
+        <div id="Theory" class="content-container">
+            
+             <div class="article-title">
+               <h1>Bubble Sort Algorithm</h1>
+            </div>
+            <br>
+            <hr>
+            <br>
+            <div class="text" style="height: 1800px; overflow: hidden; mask-image: linear-gradient(rgb(0, 0, 0) 80%, transparent);">
+                <p dir="ltr" style="text-align: justify;">
+
+                   <b>Bubble Sort</b> is a simple sorting algorithm that works by repeatedly stepping through the list to be sorted, comparing adjacent items, and swapping them if they are in the wrong order. The process is repeated until the list is sorted. </p>
+                <br>
+                <p dir="ltr" style="text-align: justify;">
+                    <h2>HOW IT WORKS ?</h2>
+                    </p>
+                    <br>
+                    <ol>
+                        <p><strong>Initial Pass:</strong></p><br>
+                        <ul>
+                            <li>Start at the beginning of the list.</li>
+                        </ul><br>
+                      
+                        <p><strong>Compare Adjacent Elements:</strong></p><br>
+                        <ul>
+                            <li>Compare the first element with the second element. If the first element is greater than the second, swap them.
+                            </b></li>
+                        </ul><br>
+                       
+                        <p><strong>Move to the Next Pair:</strong></p><br>
+                        <ul>
+                            <li>Move to the next pair of adjacent elements and repeat the comparison and swap if necessary.</li>
+                        </ul><br>
+                        <p><strong>Repeat:</strong></p><br>
+                        <ul>
+                            <li>Continue this process for each pair of adjacent elements until the end of the list is reached. This completes one pass.
+                            </li>
+                        </ul><br>
+                        <p><strong>Reduce Scope: </strong></p><br>
+                        <ul>
+                            <li>With each pass, the largest unsorted element will "bubble up" to its correct position at the end of the list. Therefore, the next pass can ignore the last element of the list, as it is already sorted.
+                            </li>
+                        </ul><br>
+                        <p><strong>Check for Completion:</strong></p><br>
+                        <ul>
+                            <li>Repeat the process for the remaining unsorted part of the list. Continue doing so until no swaps are needed in a pass, indicating that the list is fully sorted.
+                            </li>
+                        </ul><br>
+                    </ol>
+                </div>
+            </div>
+
+<!-- advantages -->
+
+        <div id="Advantages" class="content-container">
+            <div class="article-title text">
+                <h1>Advantages</h1>
+             </div>
+             <br>
+             <hr>
+             <br><br>
+            <div class="article-title text">
+                
+                    <ol>
+                       
+                            <ul>
+                                <li><strong>Simplicity:</strong> Bubble sort is very easy to understand and implement. Its straightforward approach of repeatedly comparing and swapping adjacent elements makes it a good educational tool for teaching basic sorting concepts.</li>
+                           <br><br>
+                       
+                        
+                                <li><strong>Stability: </strong>Bubble sort is a stable sorting algorithm. This means that if two elements have equal values, their relative order is preserved in the sorted output. This property can be important when sorting records that have multiple fields.</li><br><br>
+                        
+                                <li><strong>Adaptive:</strong>An optimized version of bubble sort can detect if the list is already sorted. If no swaps are made during a pass through the list, the algorithm can terminate early, potentially reducing the number of comparisons and swaps.</li>
+                            <br><br>
+                       
+                           
+                                <li><strong>Easy Debugging: </strong> Due to its simple logic, bubble sort is relatively easy to debug and understand how it works step-by-step, which can be helpful for learning and troubleshooting.
+
+                                </li>
+                           <br><br>
+                        
+                           <li><strong>Good for Small Datasets:</strong> For very small lists or datasets where performance is not a critical issue, the simplicity of bubble sort might make it a reasonable choice, especially when the ease of implementation outweighs the need for efficiency.
+
+                           </li>
+                           <br><br>
+                           <li><strong>In-Place Sorting:</strong> Bubble sort sorts the list in place, meaning it doesn’t require additional memory proportional to the size of the input list. It only requires a constant amount of extra space for the swaps.
+
+                           </li>
+                           <br><br>
+                            
+                        </li>
+                        </ul>
+                    </ol>
+                
+                
+             </div>
+
+        </div>
+
+
+<!-- disadvantages -->
+
+
+        <div id="Disadvantages" class="content-container">
+            <div class="article-title text">
+                <h1>Disadvantages</h1>
+             </div>
+             <br>
+             <hr>
+             <br><br>
+            <div class="article-title text">
+                <ol>
+                    <ul>
+                        <li><strong>Inefficiency: </strong> Bubble sort has a worst-case and average-case time complexity of 
+                           O(n<super>2</super>) where n is the number of elements in the list. This quadratic time complexity makes it inefficient for large datasets compared to more advanced sorting algorithms like quicksort, mergesort, or heapsort, which have better average-case performance.
+                            
+                            </li>
+                   <br><br>
+               
+                
+                        <li><strong>High Number of Comparisons and Swaps:</strong>The algorithm performs many comparisons and potentially many swaps, even when only a few elements are out of place. This can be particularly costly for large lists and can lead to excessive computational overhead.
+
+                        </li><br><br>
+                
+                        <li><strong>Not Suitable for Large Data Sets:</strong>Due to its quadratic time complexity, bubble sort becomes impractical for sorting large datasets. It can become slow and unmanageable as the size of the dataset grows.</li>
+                    <br><br>
+               
+                   
+                        <li><strong>Unnecessary Comparisons: </strong> Even if the list is almost sorted, bubble sort will continue to make comparisons and swaps. This can be inefficient if the data is already near the sorted state or if a more efficient algorithm could capitalize on this.
+
+                        </li>
+                   <br><br>
+                
+                   <li><strong>No Built-in Optimizations: </strong> The basic implementation of bubble sort doesn’t have built-in optimizations for early termination or other performance improvements, although optimized versions do exist. However, even with such optimizations, its performance often still lags behind more advanced algorithms.
+                   </li>
+                   <br><br>
+                   <li><strong>Not Adaptive in Basic Form:</strong> In its basic form, bubble sort does not adapt well to the existing order of the data. Although optimized versions can detect already sorted arrays, the basic implementation does not take advantage of partially sorted data.
+
+                   </li>
+                   <br><br>
+                    
+                </li>
+                </ul>
+                </ol>
+            
+             </div>
+
+        </div>
+
+
+<!-- applications -->
+
+
+        <div id="Applications" class="content-container">
+            <div class="article-title text">
+                <h1>Applications</h1>
+             </div>
+             <br>
+             <hr>
+             <br>
+            <div class="article-title text">
+                <ol>
+                    <ul>
+                        <li><strong>Simple Use Cases:</strong> For applications where the dataset is very small, bubble sort's inefficiency becomes less of an issue. In such cases, its simplicity can be an advantage. For example, sorting a list of a few dozen elements in a small embedded system or a simple utility program might be done efficiently with bubble sort.
+                            
+                            </li>
+                   <br><br>
+               
+                
+                        <li><strong>Quick Prototyping: </strong> When developing prototypes or proof-of-concept applications, bubble sort can be used to quickly implement sorting functionality without worrying about the complexities of more advanced algorithms.
+
+
+                        </li><br><br>
+                
+                        <li><strong>Not Suitable for Large Data Sets:</strong>Due to its quadratic time complexity, bubble sort becomes impractical for sorting large datasets. It can become slow and unmanageable as the size of the dataset grows.</li>
+                    <br><br>
+               
+                   
+                        <li><strong>Resource-Constrained Environments:</strong> In environments with limited computational resources (e.g., microcontrollers or small embedded systems), bubble sort might be used due to its low memory overhead and simplicity. This is especially true if the dataset being sorted is small.
+
+                        </li>
+                   <br><br>
+                
+                   <li><strong>Algorithm Comparison: </strong> Bubble sort can serve as a benchmark for comparing more advanced sorting algorithms. By implementing bubble sort alongside other algorithms, students and researchers can analyze performance differences and understand the improvements made by more complex algorithms.
+
+                   </li>
+                   <br><br>
+                   <li><strong>Maintaining Relative Order:</strong> Bubble sort is a stable sorting algorithm, meaning it preserves the relative order of equal elements. This property can be important in scenarios where the stability of the sorting process is required, such as when sorting records that include multiple fields and the order of items with equal keys should be preserved.
+
+                   </li>
+                   <br><br>
+                   <li><strong>Debugging Other Sorts:</strong>  Bubble sort can be used to verify the correctness of other, more complex sorting algorithms. By comparing the output of a more advanced sorting algorithm against the output of bubble sort, developers can ensure that their sorting implementations are correct.
+
+                   </li>
+                   <br><br>
+                   <li><strong>Benchmarking and Optimization:</strong>Researchers might use bubble sort to study algorithm optimization techniques or to benchmark improvements in sorting algorithms. Its predictable performance characteristics make it a useful tool for understanding how optimizations impact sorting efficiency.
+                   </li>
+                   <br><br>
+                </li>
+                </ul>
+                </ol>
+            
+             </div>
+        </div>
+
+
+
+        <!-- pseudocode -->
+
+        <div id="pseudocode" class="content-container">
+            <div class="article-title text">
+                <h1>Pseudocode</h1>
+             </div>
+             <br>
+             <hr>
+             <br><br>
+<div class="pseudo">
+    <div class="article-title text" style="border-radius: 7px; justify-content: center; align-items: center; margin-left: 4px; width: 90%;">
+        <h4 style="margin-left: 10px;">Bubblesort(array A) <br>
+            n = length(A)<br>
+            for i from 0 to n-1 do  
+            <br>
+            // Flag to detect if any swap happened<br>
+            swapped = false<br>
+            for j from 0 to n-i-2 do<br>
+            if A[ j ] > A[ j+1 ] then    <br>
+            // Swap elements<br>
+            swap A[ j ] with A[ j+1 ]<br>
+            swapped = true<br>
+            // If no elements were swapped, the array is sorted<br>
+            if not swapped then<br>
+            break<br>
+          
+        </h4><br><br>
+     </div>
+     <div class="article-title text">
+        <br>
+        <h1>Explanation</h1><br><br>
+      <p>'n' is the length of the array A.</p><br><br>
+      <p>Runs from 0 to n-1. Each iteration represents a pass through the array. With each pass, the largest unsorted element is moved to its correct position.</p><br><br>
+      <p>Runs from 0 to n-i-2. This loop compares adjacent elements in the array and swaps them if they are in the wrong order. The range decreases with each pass because the largest elements are progressively sorted to the end.</p><br><br>
+     <p>If A[j] is greater than A[j+1], the two elements are swapped. This places the larger element in its correct position for the current pass.</p><br><br>
+    <p>The swapped flag tracks whether any elements were swapped during the inner loop. If no swaps occurred, the array is already sorted, and the algorithm can terminate early to save unnecessary passes.</p><br><br>
+    <p>If no elements were swapped in a pass (i.e., swapped is false), the algorithm breaks out of the outer loop, since the array is sorted.
+    </p><br><br>
+    
+    </div>
+     <br>
+</div>
+        </div>
+
+<!-- flowchart -->
+
+
+        <div id="flowchart" class="content-container" style="height: 190vh;">
+            <div class="article-title text">
+                <h1>Flowchart</h1>
+             </div>
+             <br>
+             <hr>
+             <img src="img/bubble_sort.png" alt="AlgoVerse Logo" class="logo" style="width: 500px; /* Specify the width of the image */
+             height: 500px; /* Maintain aspect ratio */
+             border-radius: 5px;
+             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+             margin-top: 30px;">
+             <br><br>
+        </div>
+
+
+
+        <!-- example -->
+
+        <div id="example" class="content-container" style="height: 250vh;">
+            <br><br>
+            <div class="article-title text">
+                <h1>Example</h1>
+             </div>
+             <br>
+             <hr>
+             <p>
+                <br><br>
+                </p>
+                <p>Let's sort the list [5, 3, 8, 4, 2] using bubble sort:</p><br>
+               <strong>Initial List: </strong> [5, 3, 8, 4, 2]<br><br>
+                <ol>
+                   <ul>
+                    <li>
+                        <p><strong>Pass 1:</strong></p><br>
+                        <li>Compare 5 and 3 → Swap → [3, 5, 8, 4, 2]</li><br>
+                        <li>Compare 5 and 8 → No Swap → [3, 5, 8, 4, 2]</li><br>
+                        <li>Compare 8 and 4 → Swap → [3, 5, 4, 8, 2]</li><br>
+                        <li>Compare 8 and 2 → Swap → [3, 5, 4, 2, 8]</li><br><br>
+
+                    </li>
+                    <li>
+                        <p><strong>Pass 2:</strong></p><br>
+                        <li>Compare 3 and 5 → No Swap → [3, 5, 4, 2, 8]</li><br>
+                        <li>Compare 5 and 4 → Swap → [3, 4, 5, 2, 8]</li><br>
+                        <li>Compare 5 and 2 → Swap → [3, 4, 2, 5, 8]</li><br><br>
+                    </li>
+                    <li>
+                        <p><strong>Pass 3:</strong></p><br>
+                        <li>Compare 3 and 4 → No Swap → [3, 4, 2, 5, 8]</li><br>
+                        <li>Compare 4 and 2 → Swap → [3, 2, 4, 5, 8]</li><br><br>
+                    </li>
+                    <li>
+                        <p><strong>Pass 4:</strong></p><br>
+                        <li>Compare 3 and 2 → Swap → [2, 3, 4, 5, 8]</li><br><br>
+                    </li>
+                   </ul>
+                </ol>
+                <strong>The sorted list is : [2, 3, 4, 5, 8].</strong><br>
+                </div>
+
+
+
+        <!-- visualization -->
+
+
+        <div id="Visualization" class="content-container">
+            <div class="article-title text">
+                <h1>Visualization</h1>
+             </div>
+             <hr>
+             <div class="cancel" onclick="normalscreen()"><i class="fa-solid fa-xmark"></i></div>
+             <div id="container"></div>
+             <div class="menu1">
+                <div class="arrow1" onclick="showarrow1()">
+                    <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                </div>
+                <h1 class="data">Bubblesort</h1>
+            </div>
+            <div class="menu2">
+                <div class="arrow2" onclick="showarrow2()">
+                    <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                </div>
+                <div class="menu2-info">
+                    <div class="code">
+                        <h4 class="e1">Bubblesort(array A)</h4><br>
+                        <h4 class="e2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n=length(A)</h4><br>
+                        <h4 class="e3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for i from 0 to n-1 do</h4><br>
+                        <h4 class="e4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if A[j] > A[j+1]</h4><br>
+                        <h4 class="e5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swap A[j] with A[j+1]</h4>
+                        <h4 class="e6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;swapped = true</h4>
+                        <h4 class="e7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not swapped then</h4>
+                        <h4 class="e8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</h4>
+                    </div>
+                </div>
+            </div>
+             <!-- <div>
+                 <button id="sortButton" class="">Sort Ascending</button>
+                 <button id="sortDescendingButton">Sort Descending</button>
+                 <button id="pauseButton" disabled>Pause</button>
+                 <button id="playButton" disabled>Play</button>
+                 <button id="restartButton">Restart</button>
+             </div> -->
+             <div class="screen" onclick="fullscreen()"><i class="fa-solid fa-expand"></i></div>
+             <div class="box">
+                <h4>Speed: </h4>
+                <div class="slider">
+                    <p style="font-size: 1.3em; padding-right: 10px; font-weight:800; color:#000;">1x</p>
+                    <input id="speed" type="range" min="0" max="3" value="0">
+                    <p style="font-size: 1.3em; padding-left: 10px; font-weight:800; color:#000;">2x</p>
+                </div>
+            </div>
+            <div class="prompt">
+                <div class="box-1">
+                    <button id="sortButton" class="btn1-startasc">Start Ascending&nbsp;<i class="fa-solid fa-play"></i></button>
+                    <button id="sortDescendingButton" class="btn1-startdsc">Start Descending&nbsp;<i class="fa-solid fa-arrow-rotate-left"></i></button>
+                    <button id="restartButton" class="btn1-re-start none">Restart&nbsp;<i class="fa-solid fa-arrow-rotate-left"></i></button>
+                </div>
+                <div class="box-2">
+                    <button id="pauseButton" class="btn2-pause" disabled>Pause &nbsp; <i class="fa-solid fa-pause"></i></button>
+                    <button id="playButton" class="btn2-resume none" disabled>Resume&nbsp;<i class="fa-regular fa-circle-play"></i></button>
+                </div>
+                <button onclick="toggle()" class="create">Create an example</button>
+                <div class="prompt-menu" id="promptMenu">
+                    <label for="array-input">Enter Array Values (comma-separated):</label>
+                    <input type="text" id="array-input" />
+                    <button onclick="toggle(); initializeArray(); " id="goButton" >Go</button>
+                </div>                
+            </div>
+            
+        </div>
+
+<!-- time complexity -->
+        <div id="tcomplexity" class="content-container">
+            <div class="article-title text">
+            <h1>Time complexity</h1>
+         </div>
+         <br>
+         <hr><br>
+         <p><strong>Definition:</strong> Time complexity measures the amount of time an algorithm takes to complete as a function of the size of the input. For linear search, the time complexity can be expressed in different scenarios:</p>
+         <br>
+             <p><strong>Best-Case Time Complexity:O(n)</strong></p><br>
+               
+                     <p>If the list is already sorted, bubble sort can be optimized to terminate early. The best-case scenario occurs when no swaps are needed. This can be achieved by adding a flag to check if any swaps were made during a pass. If no swaps occur, the algorithm stops early, making the time complexity linear in this case.</p>
+                     <br><br>
+             
+                     <p><strong>Average-Case Time Complexity:O(n<super>2</super>)</strong></p><br>
+               
+                     <p>On average, bubble sort still performs O(n<super>2</super>) comparisons and swaps. Although the exact number of swaps might be less than in the worst case, the quadratic nature of the algorithm remains.</p>
+                     <br><br>
+                     <p><strong>Worst-Case Time Complexity:O(n<super>2</super>)</strong></p><br>
+               
+                     <p>In the worst case, bubble sort has to perform a maximum number of comparisons and swaps. This occurs when the list is sorted in reverse order. For each pass through the list, bubble sort compares adjacent elements and potentially swaps them. Since each pass requires n-1 comparisons, and there are up to 
+                        n passes, the total number of comparisons is proportional to n<super>2</super>.</p>
+                     <br>
+     </div>
+
+
+
+<!-- space compleity -->
+
+        <div id="scomplexity" class="content-container">
+            <div class="article-title text">
+            <h1>Space complexity</h1>
+         </div>
+         <br>
+         <hr><br>
+         <h2>Space Complexity</h2><br>
+         <p><strong>Definition:</strong> Space complexity measures the amount of memory an algorithm uses relative to the size of the input. For linear search, the space complexity is straightforward:</p>
+         <br><p><strong>Space Complexity of bubble sort is :O(1)</strong></p><br>
+               
+         <p>Bubble sort is an in-place sorting algorithm. It does not require any additional storage proportional to the input size. It only uses a constant amount of extra space for variables (like a temporary variable for swapping). Thus, the space complexity is 
+             O(1), which indicates that the amount of extra memory used by bubble sort is constant regardless of the size of the input list.
+            
+            </p>
+         <br><br>
+     
+        </div>
+    </div>
+
+
+
+<!-- script -->
+
+<script >
+    function openSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+    
+        sidebar.style.width = '280px'; // Set the sidebar width to its full size
+        sidebar.style.transform = 'translateX(0)'; // Slide the sidebar into view
+        menuBtn.style.display = 'none'; // Hide the menu button
+    }
+    function closeSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+    
+        sidebar.style.transform = 'translateX(-100%)'; // Slide the sidebar out of view
+        menuBtn.style.display = 'flex'; // Show the menu button
+    }
+    
+
+function toggleSubmenu1() {
+const submenu = document.getElementById("submenu1");
+submenu.classList.toggle("expanded");
+const arrowIcon = document.querySelector(".arrow-icon");
+arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+function toggleSubmenu2() {
+const submenu = document.getElementById("submenu2");
+submenu.classList.toggle("expanded");
+const arrowIcon = document.querySelector(".arrow-icon2");
+arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+const sidebar = document.querySelector('.sidebar');
+
+sidebar.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        
+        const targetId = e.target.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            // Quickly scroll to the target element
+            window.scrollTo({
+                top: targetElement.offsetTop - 100, // Adjust for fixed header
+                behavior: 'auto' // No smooth scrolling, immediate jump
+            });
+
+            // Update active link immediately
+            document.querySelectorAll('.sidebar a').forEach(link => link.classList.remove('active'));
+            e.target.classList.add('active');
+        }
+    }
+});
+});
+
+
+window.onload = function() {
+document.getElementById("Visualization").scrollIntoView();
+};
+
+</script>
+<script src="js/bubble.js"></script>
+ <!-- Bootstrap JS and dependencies -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+ <script>
+    function handleStepActivation(selector, stepClass) {
+        document.querySelectorAll(selector + ' .step a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                
+                // Find the index of the clicked step
+                const clickedStepIndex = Array.from(this.closest('.step').parentNode.children).indexOf(this.closest('.step'));
+                // Reset all steps to default state
+                document.querySelectorAll(selector + ' .step').forEach((step, index) => {
+                    if (index < clickedStepIndex) {
+                        step.classList.add('active');
+                        step.querySelector('.line').style.backgroundColor = '#007bff';
+                    } else if (index === clickedStepIndex) {
+                        step.classList.add('active');
+                        step.querySelector('.line').style.backgroundColor = '#d3d3d3'; // Keep the line color of the clicked step default
+                    } else {
+                        step.classList.remove('active');
+                        step.querySelector('.line').style.backgroundColor = '#d3d3d3';
+                    }
+                });
+            });
+        });
+    }
+
+    // Handle steps for Description submenu
+    handleStepActivation('.has-submenu .step-indicator', 'step');
+
+    // Handle steps for Algorithm submenu
+    handleStepActivation('.has-submenu .step-indicator2', 'step');
+ </script>
+</body>
+</html>

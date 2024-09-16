@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Merge sort</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/merge2.css">
+    </head>
+    <body>
+    
+        <nav class="navbar" >
+            <div class="navbar-left">
+                <a href="index.html" style="text-decoration: none;"><img src="img/logo2.jpg" alt="AlgoVerse Logo" class="logo"></a>
+            </div>
+            <div class="navbar-right">
+                <a href="#about" class="nav-link">ABOUT US</a>
+                <a href="#help" class="nav-link">HELP</a>
+                <button class="algo-code-button">Algo code</button>
+            </div>
+        </nav>
+        
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h3>Merge Sort</h3>
+                <button class="close-btn" onclick="closeSidebar()" ><span class="material-symbols-outlined" id="close">
+                    close
+                    </span></button>
+            </div>
+            <ul>
+                <li class="has-submenu">
+                    <a href="javascript:void(0);" onclick="toggleSubmenu1()" class="menu-title">
+                        Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-solid fa-angle-down arrow-icon"></i>
+                    </a>
+                    <div class="submenu" id="submenu1">
+                        <div class="step-indicator">
+                            <div class="step" id="step1">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Theory" class="sidebar-link">Theory</a></div>
+                            </div>
+                            <div class="step" id="step2">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Advantages" class="sidebar-link">Advantages</a></div>
+                            </div>
+                            <div class="step" id="step3">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Disadvantages" class="sidebar-link">Disadvantages</a></div>
+                            </div>
+                            <div class="step" id="step4">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#Applications" class="sidebar-link">Applications</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                
+                
+                <li class="has-submenu">
+                    <a href="javascript:void(0);" onclick="toggleSubmenu2()">Algorithm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <i class="fa-solid fa-angle-down arrow-icon2" ></i>
+                    </a>
+                    <ul class="submenu" id="submenu2">
+                        <div class="step-indicator2">
+                            <div class="step" id="step1">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#pseudocode">Pseudocode</a></div>
+                            </div>
+                            <div class="step" id="step2">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#flowchart">Flowchart</a></div>
+                            </div>
+                            <div class="step" id="step3">
+                                <div class="circle"><i class="fas fa-check"></i></div>
+                                <div class="line"></div>
+                                <div class="word"><a href="#example">Example</a></div>
+                            </div>
+                        </div>
+                    </ul>
+                </li>
+                
+                <li><a href="#Visualization">Visualization</a></li>
+                <li><a href="#tcomplexity" >Time complexity</a></li>
+                <li><a href="#scomplexity" >Space Complexity</a></li>
+            </ul>
+        </div>
+        
+    
+        <button class="menu-btn" onclick="openSidebar()"><span class="material-symbols-outlined" style="color:#fff;">
+            dock_to_left
+            </span></button>
+
+            <div class="content">
+                <div id="Theory" class="content-container">
+                    
+                     <div class="article-title">
+                       <h1>Merge Algorithm</h1>
+                    </div>
+                    <br>
+                    <hr>
+                    <br>
+                    <div class="text" style="height: 1800px; overflow: hidden; mask-image: linear-gradient(rgb(0, 0, 0) 80%, transparent);">
+                        <p dir="ltr" style="text-align: justify;">
+        
+                            <b> Merge Sort </b> is a sorting algorithm that follows the divide-and-conquer approach. It works by recursively dividing the input array into smaller subarrays and sorting those subarrays then merging them back together to obtain the sorted array.
+                        </p>
+                        <br>
+                        <p dir="ltr" style="text-align: justify;">
+        
+                            <b>Divide:</b> The algorithm starts with breaking up the array into smaller and smaller pieces until one such sub-array only consists of one element.</p>
+                            <p><b>Conquer:</b>The algorithm merges the small pieces of the array back together by putting the lowest values first, resulting in a sorted array.</p>
+                        </p>
+                        <p dir="ltr" style="text-align: justify;">In simple terms, we can say that the process of merge sort is to divide the array into two halves, sort each half, and then merge the sorted halves back together. This process is repeated until the entire array is sorted.</p>
+                                        </p>
+                        <br>
+                        <p dir="ltr" style="text-align: justify;">
+                            <h2>HOW IT WORKS ?</h2>
+                            </p>
+                            <br>
+                            <ol>
+                                <p><strong>Initialization:</strong></p><br>
+                                <ul>
+                                    <li>1.Input: Start with an unsorted list or array of elements.</li>
+                                    <li>2.Base Case Check: If the list contains one or zero elements, it is already sorted, so return it.</li>
+                                </ul><br>
+                              
+                                <p><strong>Recursive Splitting and Merging:</strong></p><br>
+                                <ul>
+                                    <li>Splitting:
+        
+                                        Divide the list into two approximately equal halves.
+                                        Recursively apply the merge sort algorithm to both halves.</li>
+                                    <li>Merging:
+        
+                                        After the two halves are sorted, merge them back together into one sorted list.
+                                        Compare the smallest unmerged elements from both halves.
+                                        Add the smaller element to the merged list and move to the next element in the corresponding half.
+                                        Continue merging until all elements from both halves have been added to the merged list.</li>
+                                    <li></li>
+                                </ul><br>
+                               
+                                <p><strong>Termination:</strong></p><br>
+                                <ul>
+                                    <li>The process terminates when all recursive calls are completed and the original list has been merged into one fully sorted list.</li>
+                                    <li>Return the sorted list.</li>
+                                    <li></li>
+                                </ul>
+                            </ol>
+                        </div>
+                    </div>
+        
+        <!-- advantages -->
+        
+                <div id="Advantages" class="content-container">
+                    <div class="article-title text">
+                        <h1>Advantages</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br>
+                    <div class="article-title text">
+                        
+                            <ol>
+                                <p><li><strong>Efficiency with Large Datasets:</strong></p><br>
+                                    <ul>
+                                        <li><strong>Time Complexity: </strong> Merge sort has a time complexity of <code>O(n log n)</code>, which is more efficient than<code> O(n²)</code>algorithms (like bubble sort or insertion sort) for large datasets. The logarithmic component comes from the recursive splitting, making it well-suited for large-scale data sorting.</li>
+                                        <li><strong>Stable Sorting:</strong> The algorithm's basic structure is minimal and intuitive, requiring only basic looping and comparison operations. This simplicity is advantageous for educational purposes and quick implementations.</li>
+                                    </ul><br>
+                                </li>
+                                <p><li><strong>Scalability</strong></p><br>
+                                    <ul>
+                                        <li><strong>Scalable for Large Data:</strong>The divide-and-conquer approach makes merge sort scalable, as it breaks down the dataset into smaller parts, sorts them, and then merges them efficiently. This ensures that the algorithm handles large datasets without significant performance degradation.</li>
+                                        <li><strong>Parallelizable:</strong> Merge sort can be easily parallelized, as the splitting and merging of lists can be done concurrently. This allows for performance improvements on multi-core systems.
+                                        </li>
+                                    </ul><br>
+                                </li>
+                                <p><li><strong>Predictable Performance</strong></p><br>
+                                    <ul>
+                                        <li><strong>Consistent O(n log n) Complexity: </strong>Merge sort consistently performs in <code> O(n log n)</code> time, regardless of the input data's order. This predictability is beneficial for worst-case performance scenarios, unlike algorithms like quicksort, which can degrade to <code>O(n²)</code> in certain cases.
+                                        </li>
+                                        <li><strong>Not Data Dependent:</strong>The performance of merge sort does not depend on the initial order of the data. Whether the list is already sorted, partially sorted, or in random order, merge sort will take the same amount of time.
+        
+                                        </li>
+                                    </ul><br>
+                                </li>
+                                <p><li><strong>Versatility</strong></p><br>
+                                    <ul>
+                                        <li><strong>Applicability to Linked Lists:</strong> Merge sort works well on linked lists as it does not require random access to elements. This makes it a good choice for sorting data structures that do not support direct access by index.</li>
+                                        <li><strong>External Sorting: </strong> Merge sort is ideal for external sorting, where the data is too large to fit into memory (e.g., sorting data from a disk). It can handle large volumes of data efficiently by merging sorted chunks stored on disk.</li>
+                                    </ul><br>
+                                </li>
+                                <p><li><strong>Robustness</strong></p><br>
+                                    <ul>
+                                        <li><strong>Handles Diverse Data Types:</strong>Merge sort can sort any data type that supports comparison operations, including numbers, strings, and complex objects. It works consistently across different types of datasets.</li>
+                                        <li><strong>Stable and Reliable:</strong>The algorithm's stability and reliability make it a good choice when dealing with datasets that require consistent ordering of equivalent elements.
+                                        </li>
+                                    </ul><br>
+                                </li>
+                            </ol>
+                        
+                        
+                     </div>
+        
+                </div>
+        
+        
+        <!-- disadvantages -->
+        
+        
+                <div id="Disadvantages" class="content-container">
+                    <div class="article-title text">
+                        <h1>Disadvantages</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br>
+                    <div class="article-title text">
+                        <ol>
+                            <p><li><strong> Space Complexity:</strong></p><br>
+                                <ul>
+                                    <li><strong>High Space Requirement:</strong> Merge sort requires additional space proportional to the size of the input data (O(n)). This extra space is needed for the temporary arrays used during the merging process, which can be problematic for systems with limited memory.</li>
+                                    <li><strong>In-Place Limitation:</strong>Unlike algorithms like quicksort, which can be implemented in place (using constant space), merge sort’s space complexity can be a disadvantage, particularly when dealing with large datasets in memory-constrained environments.
+                                    </li>
+                                </ul><br>
+                            </li>
+                            <li> <p><strong>Complexity of Implementation:</strong></p><br>
+                                <ul>
+                                    <li><strong>More Complex than Simple Sorts: </strong> Compared to simpler sorting algorithms like bubble sort or insertion sort, merge sort is more complex to implement due to its recursive nature and the need to manage multiple arrays during the merging process.</li>
+                                    <li><strong>Overhead of Recursion:</strong> The recursive calls in merge sort add overhead, especially in environments where recursion depth is limited. This can result in performance issues or even stack overflow errors if not handled properly..</li>
+                                </ul><br>
+                            </li>
+                            <li> <p><strong>Not Optimal for Small Datasets:</strong></p><br>
+                                <ul>
+                                    <li><strong>Overkill for Small Data:</strong> For small datasets, the overhead of splitting, recursive calls, and merging can outweigh the benefits of merge sort’s efficient time complexity. Simpler algorithms like insertion sort may perform better for small datasets due to their lower constant factors For small datasets, the overhead of splitting, recursive calls, and merging can outweigh the benefits of merge sort’s efficient time complexity. Simpler algorithms like insertion sort may perform better for small datasets due to their lower constant factors</li>
+                                    <li><strong>Hybrid Sorting Required:</strong> Often, hybrid approaches (e.g., combining merge sort with insertion sort for small subarrays) are used to mitigate this disadvantage, adding complexity to the overall algorithm.</li>
+                                </ul><br>
+                            </li>
+                            <li> <p><strong>Inefficient for In-Place Sorting</strong></p><br>
+                                <ul>
+                                    <li><strong>Not In-Place :</strong>Merge sort requires additional space for temporary storage during the merging process, unlike algorithms like quicksort, which can be implemented in place. This makes merge sort less suitable for situations where memory usage needs to be minimized.
+        
+        
+        
+        
+        
+                                    </li>
+                                </ul><br>
+                            </li>
+                            <li> <p><strong>Limited Benefits for Static or Already Sorted Data:</strong></p><br>
+                                <ul>
+                                    <li><strong>No Advantage for Sorted Data:</strong> Unlike some algorithms (like insertion sort), merge sort does not take advantage of partially sorted data. Whether the data is already sorted or completely random, merge sort will still perform the same series of operations.</li>
+                                    <li><strong>Unnecessary Work for Static Data:</strong>For static datasets that do not require frequent sorting, the overhead of merge sort might be unnecessary. Algorithms that adapt to data order (like quicksort) can be more efficient in such cases.
+                                    </li>
+                                </ul><br>
+                            </li>
+                        </ol>
+                    
+                     </div>
+        
+                </div>
+        
+        
+        <!-- applications -->
+        
+        
+                <div id="Applications" class="content-container">
+                    <div class="article-title text">
+                        <h1>Applications</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br>
+                    <div class="article-title text">
+                        <ol>
+                            <li><p><strong>Large  Datasets</strong></p><br>
+                                <ul>
+                                    <li><strong>Efficient Sorting: Merge sort is ideal for sorting large datasets due to its O(n log n) time complexity, which ensures that even as the dataset grows, the performance remains predictable and manageable.</strong></li>
+                                </ul><br>
+                            </li>
+                            <li><p><strong>External Sorting</strong></p><br>
+                                <ul>
+                                    <li><strong>Handling Big Data:</strong> Merge sort is commonly used in external sorting, where data is too large to fit into memory. It splits the data into manageable chunks, sorts them, and then merges them efficiently.</li>
+                                    
+                                </ul><br>
+                            </li>
+                            <li><p><strong>Linked Lists</strong></p><br>
+                                <ul>
+                                    <li><strong>Sequential Access:</strong> Merge sort works efficiently with linked lists because it does not require random access to elements, unlike algorithms like quicksort that rely on indexed access.</li>
+                                </ul><br>
+                            </li>
+                            <li><p><strong>Database Queries</strong></p><br>
+                                <ul>
+                                    <li><strong>Index Merge:</strong> In databases, merge sort is used during merge joins, where two sorted datasets (such as database tables) are merged based on a common key to produce a sorted result.</li>
+                                </ul><br>
+                            </li>
+                            <li><p><strong>Debugging and Testing</strong></p><br>
+                                <ul>
+                                    <li><strong>Performance and Benchmark:</strong>  Merge sort is used as a benchmark for testing and comparing the efficiency of other sorting algorithms. Its predictable performance makes it a standard for evaluating sorting tasks.</li>
+                                </ul><br>
+                            </li>
+                         
+                        </ol>
+                    
+                     </div>
+                </div>
+        
+        
+        
+                <!-- pseudocode -->
+        
+                <div id="pseudocode" class="content-container">
+                    <div class="article-title text">
+                        <h1>Pseudocode</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <br><br>
+        <div class="pseudo">
+            <div class="article-title text" style=" border-radius: 7px; justify-content: center; align-items: center; margin-left: 4px; width: 90%;">
+                <h3 style="margin-left: 10px;">MERGE-SORT(array)<br>
+        
+                    if length of array <= 1
+                        return array<br>
+                    
+                    mid = length of array // 2<br>
+                    
+                    left_half = MERGE-SORT(array[0:mid])<br>
+                    right_half = MERGE-SORT(array[mid:])<br>
+                    
+                    return MERGE(left_half, right_half)<br>
+                    
+                    
+                    MERGE(left, right)<br>
+                    
+                    result = empty list<br>
+                    i = 0, j = 0<br>
+                    
+                    while i < length of left and j < length of right<br>
+                        if left[i] <= right[j]<br>
+                            append left[i] to result<br>
+                            i = i + 1<br>
+                        else<br>
+                            append right[j] to result<br>
+                            j = j + 1<br>
+                    
+                    append remaining elements of left (if any) to result<br>
+                    append remaining elements of right (if any) to result<br>
+                    
+                    return result<br>
+                    <br></h3><br><br>
+             </div>
+             <div class="article-title text">
+                <br>
+                <h1>Explanation</h1><br><br>
+                <ol>
+                   
+                        <ul>
+                            <li><strong>Merge Sort :</strong> Recursively splits the array into two halves until it reaches base cases (arrays of length 1 or less).</li>
+                            <li><strong> Merge :</strong> Combines the two sorted halves back into a single sorted array by comparing the smallest elements of each half and appending them in order.</li>
+                        </ul><br>
+                   
+                 
+                        <!--<ul>
+                            <li>for index from 0 to length of list - 1: This loop iterates over each index of the list, starting from 0 and ending at length of list - 1. The length of list is the total number of elements in the list.</li><br>
+                            <ul>
+                                <li><strong>Initialization:</strong> index is initialized to 0, the first position in the list.</li>
+                                <br><li><strong>Condition:</strong> The loop continues as long as index is less than length of list - 1.</li>
+                                <br> <li><strong>Update:</strong> After each iteration, index is incremented by 1 (moving to the next element in the list).</li>
+                                <br></ul>
+                        </ul><br>
+                  
+               
+                        <ul>
+                            <li>if list[index] == target: Within the loop, this condition checks if the current element at list[index] is equal to the target value.</li>
+                            <br><ul>
+                                <li><strong>Match Found:</strong> If the condition is true, it means the target value has been found at the current index.</li>
+                                <br></ul>
+                        </ul>
+             
+                  
+                        <ul>
+                            <li>return index: If the target value matches the current element, the function returns the index where the target value is located.</li>
+                        </ul><br>
+                 
+                  
+                        <ul>
+                            <li>return -1: If the loop completes and the target value has not been found in the list, the function returns -1 to indicate that the target is not present.</li>
+                        </ul>-->
+                   
+                </ol>
+        <br><br>
+             </div>
+             <br>
+        </div>
+                </div>
+        
+        <!-- flowchart -->
+        
+        
+                <div id="flowchart" class="content-container" style="height: 190vh;">
+                    <div class="article-title text">
+                        <h1>Flowchart</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <img src="img/merge_sort.png" alt="AlgoVerse Logo" class="logo" style="width: 500px; /* Specify the width of the image */
+                     height: 500px; /* Maintain aspect ratio */
+                     border-radius: 5px;
+                     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                     margin-top: 30px;">
+                     <br><br>
+         
+                </div>
+        
+        
+        
+                <!-- example -->
+        
+                <div id="example" class="content-container" style="height: 250vh;">
+                    <br><br>
+                    <div class="article-title text">
+                        <h1>Example</h1>
+                     </div>
+                     <br>
+                     <hr>
+                     <p>
+                        <br><br>
+                        <p>Let's say we have an array of integers:</p><br>
+                        <p>Initial Array: [10, 22, 35, 40, 45, 50, 60, 70]</p><br>
+                      <p><strong>step 1:</strong></p><br>
+                       <p><strong> Split the array into two halves:<li>
+                        Left half: [10, 22, 35, 40]</li>
+                        <li>Right half: [45, 50, 60, 70]</li></p><br><br>
+                        
+                      <p><strong>step 2:</strong></p><br>
+                       <p><strong> Split the left half [10, 22, 35, 40] into two halves:
+                        <li>
+                            Left sub-half: [10, 22]</li>
+                        <li> Right sub-half: [35, 40]</li></p><br><br>
+                      <p><strong>step 3:</strong></p><br>
+                       <p><strong> Split the right half [45, 50, 60, 70] into two halves:
+                        
+                        li>
+                            Left sub-half: [45, 50]</li>
+                        <li>Right sub-half: [60, 70]</li></p><br><br>
+                      <p><strong>step 4:</strong></p><br>
+                       <p><strong>Continue splitting the smaller arrays until each contains only one element:
+                        <li>[10], [22], [35], [40], [45], [50], [60], [70]
+                        </li></p><br><br>
+                      <p><strong>step 5:</strong></p><br>
+                       <p><strong>  Start merging : <li>
+                        Merge [10] and [22] to get [10, 22]</li>
+                        <li>Merge [35] and [40] to get [35, 40]</li></p><br><br>
+                        <li>Merge [45] and [50] to get [45, 50]</li></p><br><br>
+                        <li>Merge [60] and [70] to get [60, 70]</li></p><br><br>
+                      <p><strong>step 6:</strong></p><br>
+                       <p><strong> Continue merging the sorted subarrays:<li>
+                            Merge [10, 22] and [35, 40] to get [10, 22, 35, 40]</li>
+                        <li>Merge [45, 50] and [60, 70] to get [45, 50, 60, 70]</li></p><br><br>
+                      <p><strong>step 7:</strong></p><br>
+                       <p><strong> Final step :<li>
+                        Merge [10, 22, 35, 40] and [45, 50, 60, 70] to get the fully sorted array: [10, 22, 35, 40, 45, 50, 60, 70]</li>
+                        <li>The array is now completely sorted.</li></p><br><br>
+        
+                </div>
+        
+        
+        
+                <!-- visualization -->
+        
+        
+                <div id="Visualization" class="content-container">
+                    <div class="article-title text">
+                        <h1>Visualization</h1>
+                     </div>
+                     <hr>
+                     <div class="cancel" onclick="normalscreen()"><i class="fa-solid fa-xmark"></i></div>
+                      <div id="merge-sort-tree"></div>   <!-- merge animation -->
+                    <div class="cont">
+                       <div class="identity">
+                        <div class="leftident"><div></div> left tree</div>
+                        <div class="rightident"><div></div> right tree</div>
+                        <div class="levelident-1"><div></div>Level-2</div>
+                        <div class="levelident-2"><div></div> Level-3</div>
+                        <div class="levelident-3"><div></div> Level-4</div>
+                       </div>
+                    </div>
+
+                     <!-- <div>
+                             <button id="sortButton">Sort</button>
+                             <button id="sortDescendingButton">Sort Descending</button>
+                             <button id="restartButton">Restart</button>
+                             <button id="pauseButton">Pause</button>
+                             <button id="playButton">Play</button>
+                     </div> -->
+                     <div class="screen" onclick="fullscreen()"><i class="fa-solid fa-expand"></i></div>
+                     <div class="box">
+                        <h4>Speed: </h4>
+                        <div class="slider">
+                            <p style="font-size: 1.3em; padding-right: 10px; font-weight:800; color:#000;">1x</p>
+                            <input id="speed" type="range" min="0" max="3" value="0">
+                            <p style="font-size: 1.3em; padding-left: 10px; font-weight:800; color:#000;">2x</p>
+                        </div>
+                    </div>
+                    <div class="prompt">
+                        <div class="box-1">
+                            <button id="start-button">Start&nbsp;<i class="fa-solid fa-play"></i></button>   
+                            <button id="restart-button"class="btn1-re-start none">Restart&nbsp;<i class="fa-solid fa-arrow-rotate-left"></i></button>
+                        </div>
+                        <div class="box-2">
+                            <button id="pauseButton" class="btn2-pause" >Pause &nbsp; <i class="fa-solid fa-pause"></i></button>
+                            <button id="resumeButton" class="btn2-resume none">Resume&nbsp;<i class="fa-regular fa-circle-play"></i></button>
+                        </div>
+                        <button onclick="toggle()" class="create">Create an example</button>
+                        <div class="prompt-menu" id="promptMenu">
+                            <label for="array-input">Enter Array Values (comma-separated):</label>
+                            <input type="text" id="array-input" />
+                            <button onclick="toggle(); initializeArray(); " id="goButton" >Go</button>
+                        </div>                
+                    </div>
+                    
+                </div>
+        <!-- time complexity -->
+                <div id="tcomplexity" class="content-container">
+                    <div class="article-title text">
+                    <h1>Time complexity</h1>
+                 </div>
+                 <br>
+                 <hr><br><br>
+                 <p><strong>Definition:</strong> Time complexity measures the amount of time an algorithm takes to complete as a function of the size of the input. For linear search, the time complexity can be expressed in different scenarios:</p>
+                 <br><br><ol>
+                     <li><p><strong>Worst-Case Time Complexity:</strong></p><br>
+                         <ul>
+                             <li><strong>Scenario:</strong> The array is completely unsorted, or any possible input.</li><br>
+                             <li><strong>Analysis:</strong> Merge sort always splits the array into two halves and recursively sorts them, followed by merging. No matter how the data is organized, it always performs this process consistently.</li>
+                             <br> <li><strong>Complexity:</strong> <code>O(n log n)</code>, where n is the number of elements. The algorithm divides the array <code>log(n) </code> (for the number of splits), and merging each level takes <code>O(n)</code>
+                             time.</li>
+                             </ul><br><br>
+                     </li>
+                     <li><strong>Best-Case Time Complexity:</strong></p><br>
+                         <ul>
+                             <li><strong>Scenario:</strong>Even if the array is already sorted..</li><br>
+                             <li><strong>Analysis:</strong>Merge sort still divides the array into halves and goes through the merging process, regardless of whether the data is already sorted..</li><br>
+                             <li><strong>Complexity:</strong> <code>O(n log n),</code> since the algorithm still performs the same number of splits and merges.</li>
+                         </ul><br><br>
+                     </li>
+                     <li><strong>Average-Case Time Complexity:</strong></p><br>
+                         <ul>
+                             <li><strong>Scenario:</strong>The input array is in a random order.</li><br>
+                             <li><strong>Analysis:</strong>Like the worst-case scenario, merge sort splits the array and merges them in the same way, no matter the arrangement of elements.</li>
+                             <br><li><strong>Complexity:</strong> <code>O(n log n)</code>, because the algorithm consistently performs the same operations for any input.</li>
+                         </ul><br>
+                     </li>
+                 </ol>
+             </div>
+        
+        
+        
+        <!-- space compleity -->
+        
+                <div id="scomplexity" class="content-container">
+                    <div class="article-title text">
+                    <h1>Space complexity</h1>
+                 </div>
+                 <br>
+                 <hr><br>
+                 <h2>Space Complexity</h2><br>
+                 <p><strong>Definition:</strong> Space complexity measures the amount of memory an algorithm uses relative to the size of the input. For linear search, the space complexity is straightforward:</p>
+                 <br><ol>
+                         <ul>
+                             <li><strong>Scenario:</strong> Merge sort needs extra space to store the divided subarrays during the sorting and merging process.</li><br>
+                             <li><strong>Analysis:</strong> During merging, merge sort requires additional memory to temporarily hold the left and right halves of the array. This means that the memory usage grows with the size of the input array.
+                             </li><br>
+                             <li><strong>Complexity:</strong> <code>O(n)</code>, where n is the number of elements in the array. Merge sort uses extra space proportional to the size of the input array to hold temporary subarrays during the merging process.
+        
+                             </li><br>
+                         </ul>
+                    
+             
+                </div>
+            </div>
+
+<!-- script -->
+
+<script >
+    function openSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+    
+        sidebar.style.width = '280px'; // Set the sidebar width to its full size
+        sidebar.style.transform = 'translateX(0)'; // Slide the sidebar into view
+        menuBtn.style.display = 'none'; // Hide the menu button
+    }
+    function closeSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const menuBtn = document.querySelector('.menu-btn');
+    
+        sidebar.style.transform = 'translateX(-100%)'; // Slide the sidebar out of view
+        menuBtn.style.display = 'flex'; // Show the menu button
+    }
+    
+
+function toggleSubmenu1() {
+const submenu = document.getElementById("submenu1");
+submenu.classList.toggle("expanded");
+const arrowIcon = document.querySelector(".arrow-icon");
+arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+function toggleSubmenu2() {
+const submenu = document.getElementById("submenu2");
+submenu.classList.toggle("expanded");
+const arrowIcon = document.querySelector(".arrow-icon2");
+arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+const sidebar = document.querySelector('.sidebar');
+
+sidebar.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+        e.preventDefault();
+        
+        const targetId = e.target.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            // Quickly scroll to the target element
+            window.scrollTo({
+                top: targetElement.offsetTop - 100, // Adjust for fixed header
+                behavior: 'auto' // No smooth scrolling, immediate jump
+            });
+
+            // Update active link immediately
+            document.querySelectorAll('.sidebar a').forEach(link => link.classList.remove('active'));
+            e.target.classList.add('active');
+        }
+    }
+});
+});
+
+
+window.onload = function() {
+document.getElementById("Visualization").scrollIntoView();
+};
+
+</script>
+<script src="js/merge2.js"></script>
+ <!-- Bootstrap JS and dependencies -->
+ <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ 
+ <script>
+    function handleStepActivation(selector, stepClass) {
+        document.querySelectorAll(selector + ' .step a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                
+                // Find the index of the clicked step
+                const clickedStepIndex = Array.from(this.closest('.step').parentNode.children).indexOf(this.closest('.step'));
+                // Reset all steps to default state
+                document.querySelectorAll(selector + ' .step').forEach((step, index) => {
+                    if (index < clickedStepIndex) {
+                        step.classList.add('active');
+                        step.querySelector('.line').style.backgroundColor = '#007bff';
+                    } else if (index === clickedStepIndex) {
+                        step.classList.add('active');
+                        step.querySelector('.line').style.backgroundColor = '#d3d3d3'; // Keep the line color of the clicked step default
+                    } else {
+                        step.classList.remove('active');
+                        step.querySelector('.line').style.backgroundColor = '#d3d3d3';
+                    }
+                });
+            });
+        });
+    }
+
+    // Handle steps for Description submenu
+    handleStepActivation('.has-submenu .step-indicator', 'step');
+
+    // Handle steps for Algorithm submenu
+    handleStepActivation('.has-submenu .step-indicator2', 'step');
+ </script>
+</body>
+</html>

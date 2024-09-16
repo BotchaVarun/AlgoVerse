@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Search</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/linear.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-left">
+            <a href="index.html" style="text-decoration: none;"><img src="img/logo2.jpg" alt="AlgoVerse Logo" class="logo"></a>
+        </div>
+        <div class="navbar-right">
+            <a href="#about" class="nav-link">ABOUT US</a>
+            <a href="#help" class="nav-link">HELP</a>
+            <button class="algo-code-button">Algo code</button>
+        </div>
+    </nav>
+    
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <h3>Linear Search</h3>
+            <button class="close-btn" onclick="closeSidebar()" ><span class="material-symbols-outlined" id="close">
+                close
+                </span></button>
+        </div>
+        <ul>
+            <li class="has-submenu">
+                <a href="javascript:void(0);" onclick="toggleSubmenu1()" class="menu-title">
+                    Description &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa-solid fa-angle-down arrow-icon" style="color:#000;"></i>
+                </a>
+                <div class="submenu" id="submenu1">
+                    <div class="step-indicator">
+                        <div class="step" id="step1">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#Theory" class="sidebar-link">Theory</a></div>
+                        </div>
+                        <div class="step" id="step2">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#Advantages" class="sidebar-link">Advantages</a></div>
+                        </div>
+                        <div class="step" id="step3">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#Disadvantages" class="sidebar-link">Disadvantages</a></div>
+                        </div>
+                        <div class="step" id="step4">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#Applications" class="sidebar-link">Applications</a></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            <li class="has-submenu">
+                <a href="javascript:void(0);" onclick="toggleSubmenu2()">Algorithm &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <i class="fa-solid fa-angle-down arrow-icon2"  style="color:#000;"></i>
+                </a>
+                <ul class="submenu" id="submenu2">
+                    <div class="step-indicator2">
+                        <div class="step" id="step1">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#pseudocode">Pseudocode</a></div>
+                        </div>
+                        <div class="step" id="step2">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#flowchart">Flowchart</a></div>
+                        </div>
+                        <div class="step" id="step3">
+                            <div class="circle"><i class="fas fa-check"></i></div>
+                            <div class="line"></div>
+                            <div class="word"><a href="#example">Example</a></div>
+                        </div>
+                    </div>
+                </ul>
+            </li>
+            
+            <li><a href="#Visualization">Visualization</a></li>
+            <li><a href="#tcomplexity" >Time complexity</a></li>
+            <li><a href="#scomplexity" >Space Complexity</a></li>
+        </ul>
+    </div>
+    
+
+    <button class="menu-btn" onclick="openSidebar()"><span class="material-symbols-outlined" style="color:#fff;">
+        dock_to_left
+        </span></button>
+
+
+
+
+    <div class="content">
+        <div id="Theory" class="content-container">
+             <div class="article-title">
+               <h1>Linear Search Algorithm</h1>
+            </div>
+            <hr style="color:#fff;">
+            <div class="text" style="height: 1800px; overflow: hidden; mask-image: linear-gradient(rgb(0, 0, 0) 80%, transparent);">
+                <p dir="ltr" style="text-align: justify;">
+
+                    <b> Linear search </b> is simple to implement and efficient for small datasets or unsorted lists. However, for larger sorted datasets, binary search is generally preferred due to its better average and worst-case time complexity
+                </p>
+                <br>
+                <p dir="ltr" style="text-align: justify;">
+
+                    Linear search, also known as sequential search, is a fundamental algorithm used to locate a specific element within a list or array. It operates by examining each element of the list one by one in sequence until the target element is found or the end of the list is reached.</p>
+                </p>
+                <p dir="ltr" style="text-align: justify;">Linear search is a fundamental and intuitive searching algorithm characterized by its simplicity and ease of use. While it may not be the most efficient for large datasets due to its <code>O(n)</code> time complexity, it is versatile and effective for small to moderately sized lists or when dealing with unsorted data. Understanding linear search provides a foundational grasp of search algorithms and helps in recognizing the trade-offs involved in different searching techniques.</p>
+                                </p>
+                <br>
+                <p dir="ltr" style="text-align: justify;">
+                    <h2>HOW IT WORKS ?</h2>
+                    </p>
+                    <br>
+                    <ol>
+                        <p><strong>Initialization:</strong></p><br>
+                        <ul>
+                            <li>Start at the beginning of the list (typically index 0 for arrays or the head of a linked list).</li>
+                        </ul><br>
+                      
+                        <p><strong>Iteration and Comparison:</strong></p><br>
+                        <ul>
+                            <li>Compare the target value with the current element of the list.</li>
+                            <li>If the current element matches the target value, return the index or position of that element.</li>
+                            <li>If the current element does not match the target value, move to the next element in the list.</li>
+                        </ul><br>
+                       
+                        <p><strong>Termination:</strong></p><br>
+                        <ul>
+                            <li>Continue the comparison until you either find the target value or reach the end of the list.</li>
+                            <li>If the target is found: Return the index or position where the target value is located.</li>
+                            <li>If the target is not found: Return a special value (like <code>-1</code> or <code>null</code>) indicating that the target value is not present in the list.</li>
+                        </ul>
+                    </ol>
+                </div>
+            </div>
+
+<!-- advantages -->
+
+        <div id="Advantages" class="content-container">
+            <div class="article-title text">
+                <h1>Advantages</h1>
+             </div>
+             <hr>
+            <div class="article-title text">
+                    <ol>
+                        <p><li><strong>Simplicity</strong></p><br>
+                            <ul>
+                                <li><strong>Ease of Understanding:</strong> Linear search is one of the most straightforward algorithms. It involves a simple loop through the elements of the list, making it easy to grasp and implement.</li>
+                                <li><strong>Implementation:</strong> The algorithm's basic structure is minimal and intuitive, requiring only basic looping and comparison operations. This simplicity is advantageous for educational purposes and quick implementations.</li>
+                            </ul><br>
+                        </li>
+                        <p><li><strong>No Preprocessing Required</strong></p><br>
+                            <ul>
+                                <li><strong>Works on Unsorted Data:</strong> Linear search does not require the data to be sorted beforehand. This means you can use it directly on unsorted lists, saving the time and complexity associated with sorting algorithms.</li>
+                                <li><strong>Flexibility:</strong> It can handle various types of data structures, including arrays, linked lists, and other collections where sorting may be impractical or unnecessary.</li>
+                            </ul><br>
+                        </li>
+                        <p><li><strong>Versatility</strong></p><br>
+                            <ul>
+                                <li><strong>Applicability to Different Data Structures:</strong> Linear search is versatile and can be applied to arrays, linked lists, and even more complex structures where random access is not feasible.</li>
+                            </ul><br>
+                        </li>
+                        <p><li><strong>Robustness</strong></p><br>
+                            <ul>
+                                <li><strong>Handles Diverse Data Types:</strong> Linear search can be used on any list of elements, including integers, strings, and complex objects. It does not depend on the type of data being searched.</li>
+                                <li><strong>Error Handling:</strong> If the list is modified or contains duplicate elements, linear search will still function correctly, as it checks each element one by one.</li>
+                            </ul><br>
+                        </li>
+                        <p><li><strong>Predictable Performance</strong></p><br>
+                            <ul>
+                                <li><strong>Ease of Analysis:</strong> Its time complexity (<code>O(n)</code>) and space complexity (<code>O(1)</code>) are straightforward to analyze and understand, which is beneficial for performance estimation and debugging.</li>
+                            </ul><br>
+                        </li>
+                        <p><li><strong>Optimal for Small or Static Datasets</strong></p><br>
+                            <ul>
+                                <li><strong>Quick for Small Lists:</strong> For small datasets, the overhead of more complex algorithms may not be justified. Linear search can be more efficient in such cases due to its low implementation overhead.</li>
+                                <li><strong>Static Data:</strong> When dealing with static or infrequently changing datasets, linear search’s simplicity and low overhead can be advantageous.</li>
+                            </ul><br>
+                        </li>
+                    </ol>
+             </div>
+        </div>
+<!-- disadvantages -->
+
+
+        <div id="Disadvantages" class="content-container">
+            <div class="article-title text">
+                <h1>Disadvantages</h1>
+             </div>
+<hr>
+            <div class="article-title text">
+                <ol>
+                    <p><li><strong>Inefficiency with Large Datasets</strong></p><br>
+                        <ul>
+                            <li><strong>Time Complexity:</strong> Linear search has a time complexity of <code>O(n)</code>, where <code>n</code> is the number of elements in the list. This means that in the worst-case scenario, the algorithm may need to examine every single element to find the target or determine its absence.</li>
+                            <li><strong>Performance Degradation:</strong> As the size of the dataset grows, the time required for linear search increases linearly. For very large lists, this can result in significant performance slowdowns.</li>
+                        </ul><br>
+                    </li>
+                    <li> <p><strong>Scalability Issues</strong></p><br>
+                        <ul>
+                            <li><strong>Not Scalable:</strong> Linear search does not scale well with the size of the data. For applications with large datasets or where performance is critical, linear search can become impractical due to its linear growth in time complexity.</li>
+                            <li><strong>Comparison Overhead:</strong> With large datasets, the number of comparisons increases proportionally, which can be a bottleneck in terms of processing time.</li>
+                        </ul><br>
+                    </li>
+                    <li> <p><strong>Increased Search Time for Multiple Queries</strong></p><br>
+                        <ul>
+                            <li><strong>Repeated Searches:</strong> If you need to perform multiple searches on the same dataset, linear search can be inefficient because each search is independent and requires scanning from the start of the list each time.</li>
+                            <li><strong>Redundant Work:</strong> For multiple queries, especially in a large dataset, linear search can result in redundant comparisons and wasted computational resources.</li>
+                        </ul><br>
+                    </li>
+                    <li> <p><strong>Inefficient for Dynamic Data</strong></p><br>
+                        <ul>
+                            <li><strong>Frequent Updates:</strong> If the dataset is dynamic and changes frequently (with many insertions or deletions), linear search does not adapt or benefit from such changes. It still performs a full scan for each search, regardless of the state of the dataset.</li>
+                        </ul><br>
+                    </li>
+                    <li> <p><strong>No Optimal Searching Strategy</strong></p><br>
+                        <ul>
+                            <li><strong>Lack of Strategy:</strong> Linear search does not use any strategy or heuristics to improve search efficiency. It performs a straightforward scan without considering any optimization based on the data or the search process.</li>
+                            <li><strong>Absence of Algorithmic Sophistication:</strong> Unlike algorithms that utilize sophisticated strategies like divide-and-conquer or hashing, linear search operates with a simple and non-adaptive approach.</li>
+                        </ul><br>
+                    </li>
+                </ol>
+            
+             </div>
+
+        </div>
+
+
+<!-- applications -->
+
+
+        <div id="Applications" class="content-container">
+            <div class="article-title text">
+                <h1>Applications</h1>
+             </div>
+<hr>
+            <div class="article-title text">
+                <ol>
+                    <li><p><strong>Small Datasets</strong></p><br>
+                        <ul>
+                            <li><strong>Quick Prototyping:</strong> When developing small-scale applications or prototypes, linear search can be used for quick and simple implementations where efficiency is not a primary concern.</li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Unsorted Data</strong></p><br>
+                        <ul>
+                            <li><strong>Initial Data Inspection:</strong> Linear search is useful when you need to perform a quick search on data that has not been sorted. For example, it can be used in applications where data is ingested in real-time and remains unsorted.</li>
+                            <li><strong>Data Analysis:</strong> In scenarios where data sorting is either impractical or not required, linear search can be employed to find elements without the overhead of sorting algorithms.</li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Linked Lists</strong></p><br>
+                        <ul>
+                            <li><strong>Sequential Access:</strong> In data structures like linked lists, where random access is not feasible, linear search is often used to traverse the list and locate elements. Each node must be accessed sequentially, making linear search a natural fit.</li>
+                            <li><strong>List Operations:</strong> Linear search can be used to find elements, perform updates, or check for the presence of elements in linked lists where indexing is not possible.</li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Database Queries</strong></p><br>
+                        <ul>
+                            <li><strong>Simple Queries:</strong> In databases, linear search may be used for simple queries or when dealing with small tables or non-indexed columns. It can also be used when performing operations like checking for duplicates or verifying constraints.</li>
+                            <li><strong>Index Scans:</strong> While modern databases use more complex indexing techniques, linear search may still be applied during certain database operations, especially in scenarios where full index scans are performed.</li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Debugging and Testing</strong></p><br>
+                        <ul>
+                            <li><strong>Verification:</strong> Linear search can be used in debugging and testing scenarios to verify the presence of specific values or to check the results of operations. It helps in validating outputs in a controlled and simple manner.</li>
+                            <li><strong>Test Cases:</strong> In testing environments, linear search can be utilized to check for the presence of expected values or to iterate through results to ensure correctness.</li>
+                        </ul><br>
+                    </li>
+                    <li><p><strong>Data Filtering</strong></p><br>
+                        <ul>
+                            <li><strong>Simple Filters:</strong> Linear search can be used in applications that require simple filtering of data based on certain criteria. For example, it can be employed to find records that match specific conditions in small or unsorted datasets.</li>
+                            <li><strong>Manual Processing:</strong> In scenarios where automated filtering or processing is not available, linear search can be manually applied to review or process data elements sequentially.</li>
+                        </ul><br>
+                    </li>
+                 
+                </ol>
+            
+             </div>
+        </div>
+
+
+
+        <!-- pseudocode -->
+
+        <div id="pseudocode" class="content-container">
+            <div class="article-title text">
+                <h1>Pseudocode</h1>
+             </div>
+            <hr>
+<div class="pseudo2">
+    
+     <div class="article-title text">
+        <br>
+        <h1>Explanation</h1><br><br>
+        <ol>
+           
+                <ul>
+                    <li>function linearSearch(list, target): This defines a function named <strong>linearSearch</strong> that takes two parameters: <strong>list</strong> (the array or list to search) and <strong>target</strong> (the value to search for).</li>
+                </ul><br>
+           
+         
+                <ul>
+                    <li>for index from 0 to length of list - 1: This loop iterates over each index of the list, starting from 0 and ending at length of list - 1. The length of list is the total number of elements in the list.</li><br>
+                    <ul>
+                        <li><strong>Initialization:</strong> index is initialized to 0, the first position in the list.</li>
+                        <br><li><strong>Condition:</strong> The loop continues as long as index is less than length of list - 1.</li>
+                        <br> <li><strong>Update:</strong> After each iteration, index is incremented by 1 (moving to the next element in the list).</li>
+                        <br></ul>
+                </ul><br>
+          
+       
+                <ul>
+                    <li>if list[index] == target: Within the loop, this condition checks if the current element at list[index] is equal to the target value.</li>
+                    <br><ul>
+                        <li><strong>Match Found:</strong> If the condition is true, it means the target value has been found at the current index.</li>
+                        <br></ul>
+                </ul>
+     
+          
+                <ul>
+                    <li>return index: If the target value matches the current element, the function returns the index where the target value is located.</li>
+                </ul><br>
+         
+          
+                <ul>
+                    <li>return -1: If the loop completes and the target value has not been found in the list, the function returns -1 to indicate that the target is not present.</li>
+                </ul>
+           
+        </ol>
+<br><br>
+     </div>
+     <br>
+</div>
+        </div>
+
+<!-- flowchart -->
+
+
+        <div id="flowchart" class="content-container" >
+            <div class="article-title text">
+                <h1>Flowchart</h1>
+             </div>
+             <br>
+             <hr>
+             <img src="img/flowchart_linear.jpg" alt="AlgoVerse Logo" class="logo" style="width: calc(100% - 250px); /* Specify the width of the image */
+             height: auto; /* Maintain aspect ratio */
+             border-radius: 5px;
+             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+             margin-top: 30px;">
+             <br><br>
+ 
+ 
+        </div>
+
+
+
+        <!-- example -->
+
+        <div id="example" class="content-container" style="height: 250vh;">
+            <br><br>
+            <div class="article-title text">
+                <h1>Example</h1>
+             </div>
+             <br>
+             <hr>
+             <p>
+                <br><br>
+                Let's say we have an array of integers:<br><br>
+
+array = [34, 78, 23, 56, 90, 12, 44]<br><br>
+
+And we want to find the position of the number 90 in this array.<br><br>
+
+Steps of the Linear Search:<br><br>
+Start at the Beginning:<br><br>
+
+Initialize the index i to 0.<br><br>
+Check Each Element:<br><br>
+
+Compare the element at index 0 (which is 34) with the target value 90.<br><br>
+Since 34 is not equal to 90, move to the next index.<br><br>
+Compare the element at index 1 (which is 78) with 90.<br><br>
+Since 78 is not equal to 90, move to the next index.<br><br>
+Compare the element at index 2 (which is 23) with 90.<br><br>
+Since 23 is not equal to 90, move to the next index.<br><br>
+Compare the element at index 3 (which is 56) with 90.<br><br>
+Since 56 is not equal to 90, move to the next index.<br><br>
+Compare the element at index 4 (which is 90) with 90.<br><br>
+Since 90 is equal to 90, we have found our target.<br><br>
+Output the Result:<br><br>
+
+The target value 90 is found at index 4 in the array.<br><br>
+Return the index 4 as the result.<br><br>
+Explanation:<br><br>
+Initialization: Start with the first element of the array.<br><br>
+Iteration: Go through each element one by one, from the start to the end.<br><br>
+Comparison: For each element, check if it matches the target value.<br><br>
+Termination: If a match is found, return the index of the matching element. If no match is found after checking all elements, return a value indicating that the target is not in the array (usually -1).<br><br>
+Example in Detail:
+Given the array [34, 78, 23, 56, 90, 12, 44] and the target 90:<br><br>
+
+First Iteration:<br><br>
+
+Index 0: Compare 34 with 90. They are not equal.<br><br>
+Move to the next element.<br><br>
+Second Iteration:<br><br>
+
+Index 1: Compare 78 with 90. They are not equal.<br><br>
+Move to the next element.<br><br>
+Third Iteration:<br><br>
+
+Index 2: Compare 23 with 90. They are not equal.<br><br>
+Move to the next element.<br><br>
+Fourth Iteration:<br><br>
+
+Index 3: Compare 56 with 90. They are not equal.<br><br>
+Move to the next element.<br><br>
+Fifth Iteration:<br><br>
+
+Index 4: Compare 90 with 90. They are equal.<br><br>
+Target found at index 4.<br><br>
+<h1>Conclusion:</h1><br><br>
+
+The algorithm stops, and the index 4 is returned as the position of the target value 90 in the array.<br><br>
+             </p>
+        </div>
+
+
+
+        <!-- visualization -->
+
+        <div id="Visualization" class="content-container">
+            <div class="article-title text">
+                <h1>Visualization</h1>
+            </div>
+            <hr>
+            <div class="linear-visual">
+                <div class="cancel" onclick="normalscreen()"><i class="fa-solid fa-xmark"></i></div>
+                <div id="array-container"></div>
+                <h3>key</h3>
+                <div class="key">
+                    <input type="number" id="search-value" value="10">
+                </div>
+                <div class="menu1">
+                    <div class="arrow1" onclick="showarrow1()">
+                        <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                    </div>
+                    <h1 class="data">Linear Search</h1>
+                </div>
+                <div class="menu2">
+                    <div class="arrow2" onclick="showarrow2()">
+                        <i class="fa-solid fa-caret-left" style="color:aqua; font-size:30px;"></i>
+                    </div>
+                    <div class="menu2-info">
+                        <div class="code">
+                            <h4 class="e1">procedure linear_search(list, key)</h4><br>
+                            <h4 class="e2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for each item in the list</h4><br>
+                            <h4 class="e3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if item == key</h4><br>
+                            <h4 class="e4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return index of item</h4><br>
+                            <h4 class="e5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return -1 (indicating key not found)</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="screen" onclick="fullscreen()"><i class="fa-solid fa-expand"></i></div>
+                <div class="controls">
+
+                </div>
+                <div class="box">
+                    <h4>Speed: </h4>
+                    <div class="slider">
+                        <p style="font-size: 1.3em; padding-right: 10px; font-weight:800; color:#000;">1x</p>
+                        <input id="speed" type="range" min="0" max="3" value="0">
+                        <p style="font-size: 1.3em; padding-left: 10px; font-weight:800; color:#000;">2x</p>
+                    </div>
+                </div>
+                <div class="prompt">
+                    <div class="box-1">
+                        <button onclick="startSearch()" class="btn1-start">Start &nbsp; <i class="fa-solid fa-play"></i></button>
+                        <button onclick="restartSearch()" class="btn1-re-start none">Restart&nbsp;<i class="fa-solid fa-arrow-rotate-left"></i></button>
+                    </div>
+                    <div class="box-2">
+                        <button onclick="pauseSearch()" class="btn2-pause">Pause &nbsp; <i class="fa-solid fa-pause"></i></button>
+                        <button onclick="resumeSearch()" class="btn2-resume none">Resume&nbsp;<i class="fa-regular fa-circle-play"></i></button>
+                    </div>
+                    <button onclick="toggle()" class="create">Create an example</button>
+                    <ul class="prompt-menu">
+                        <li class="array">Enter Array Values (comma-separated):<input type="text" id="array-input"/></li>
+                        <li class="go" onclick="initializeArray();toggle();">Go</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    
+        <!-- Time Complexity Section -->
+        <div id="tcomplexity" class="content-container">
+            <div class="article-title text">
+                <h1>Complexity</h1>
+                <hr><br>
+            </div>
+            <div id="complexity-analysis">
+                <!-- This will display time and space complexity -->
+            </div>
+        </div>
+        <div id="Explaination" class="content-container">
+            <div class="article-title text">
+                <h1>Visualization Explanation</h1>
+                <hr><br>
+                <div id="Explain">
+                    
+                </div>
+            </div>
+        </div>
+        <div id="tcomplexity" class="content-container">
+            <div class="article-title text">
+                <h1>Time Complexity</h1>
+            </div>
+            <br>
+            <hr><br>
+            <p><strong>Definition:</strong> Time complexity measures the amount of time an algorithm takes to complete as a function of the size of the input. For linear search, the time complexity can be expressed in different scenarios:</p>
+            <br>
+            <ol>
+                <li>
+                    <p><strong>Worst-Case Time Complexity:</strong></p><br>
+                    <ul>
+                        <li><strong>Scenario:</strong> The target element is not in the list, or it is at the very end of the list.</li><br>
+                        <li><strong>Analysis:</strong> In the worst case, linear search has to check every element in the list to confirm the target's absence or find it. If the list has <code>n</code> elements, it performs <code>n</code> comparisons.</li><br>
+                        <li><strong>Complexity:</strong> <code>O(n)</code>, where <code>n</code> is the number of elements in the list.</li>
+                    </ul><br>
+                </li>
+                <li>
+                    <p><strong>Best-Case Time Complexity:</strong></p><br>
+                    <ul>
+                        <li><strong>Scenario:</strong> The target element is the first element in the list.</li><br>
+                        <li><strong>Analysis:</strong> In this case, the search is successful immediately after one comparison.</li><br>
+                        <li><strong>Complexity:</strong> <code>O(1)</code>, which indicates constant time complexity.</li>
+                    </ul><br>
+                </li>
+                <li>
+                    <p><strong>Average-Case Time Complexity:</strong></p><br>
+                    <ul>
+                        <li><strong>Scenario:</strong> The target element can be anywhere in the list, and we assume that each element is equally likely to be the target.</li><br>
+                        <li><strong>Analysis:</strong> On average, the algorithm will need to check half of the list's elements to find the target or confirm its absence. This results in an average of <code>n/2</code> comparisons.</li><br>
+                        <li><strong>Complexity:</strong> <code>O(n)</code>, as constants are ignored in Big-O notation.</li>
+                    </ul><br>
+                </li>
+            </ol>
+        </div>
+    
+        <!-- Space Complexity Section -->
+        <div id="scomplexity" class="content-container">
+            <div class="article-title text">
+                <h1>Space Complexity</h1>
+            </div>
+            <hr>
+            <p><strong>Definition:</strong> Space complexity measures the amount of memory an algorithm uses relative to the size of the input. For linear search, the space complexity is straightforward:</p>
+            <br>
+            <ul>
+                <li><strong>Scenario:</strong> Linear search requires only a few variables, such as the index for iteration and a variable to store the target value.</li><br>
+                <li><strong>Analysis:</strong> The memory required does not scale with the size of the input list. It remains constant regardless of how many elements are in the list.</li><br>
+                <li><strong>Complexity:</strong> <code>O(1)</code>, indicating constant space complexity. This means the algorithm uses a fixed amount of additional memory, independent of the input size.</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+<!-- script -->
+
+
+    <script >
+        function openSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const menuBtn = document.querySelector('.menu-btn');
+        
+            sidebar.style.width = '280px'; // Set the sidebar width to its full size
+            sidebar.style.transform = 'translateX(0)'; // Slide the sidebar into view
+            menuBtn.style.display = 'none'; // Hide the menu button
+        }
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const menuBtn = document.querySelector('.menu-btn');
+        
+            sidebar.style.transform = 'translateX(-100%)'; // Slide the sidebar out of view
+            menuBtn.style.display = 'flex'; // Show the menu button
+        }
+        
+
+function toggleSubmenu1() {
+    const submenu = document.getElementById("submenu1");
+    submenu.classList.toggle("expanded");
+    const arrowIcon = document.querySelector(".arrow-icon");
+    arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+function toggleSubmenu2() {
+    const submenu = document.getElementById("submenu2");
+    submenu.classList.toggle("expanded");
+    const arrowIcon = document.querySelector(".arrow-icon2");
+    arrowIcon.style.transform = submenu.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.querySelector('.sidebar');
+    
+    sidebar.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && e.target.getAttribute('href').startsWith('#')) {
+            e.preventDefault();
+            
+            const targetId = e.target.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Quickly scroll to the target element
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100, // Adjust for fixed header
+                    behavior: 'auto' // No smooth scrolling, immediate jump
+                });
+
+                // Update active link immediately
+                document.querySelectorAll('.sidebar a').forEach(link => link.classList.remove('active'));
+                e.target.classList.add('active');
+            }
+        }
+    });
+});
+
+
+window.onload = function() {
+    document.getElementById("Visualization").scrollIntoView();
+  };
+
+    </script>
+    <script src="js/linear.js"></script>
+     <!-- Bootstrap JS and dependencies -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+     
+     <script>
+        function handleStepActivation(selector, stepClass) {
+            document.querySelectorAll(selector + ' .step a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor behavior
+                    
+                    // Find the index of the clicked step
+                    const clickedStepIndex = Array.from(this.closest('.step').parentNode.children).indexOf(this.closest('.step'));
+                    // Reset all steps to default state
+                    document.querySelectorAll(selector + ' .step').forEach((step, index) => {
+                        if (index < clickedStepIndex) {
+                            step.classList.add('active');
+                            step.querySelector('.line').style.backgroundColor = '#007bff';
+                        } else if (index === clickedStepIndex) {
+                            step.classList.add('active');
+                            step.querySelector('.line').style.backgroundColor = '#d3d3d3'; // Keep the line color of the clicked step default
+                        } else {
+                            step.classList.remove('active');
+                            step.querySelector('.line').style.backgroundColor = '#d3d3d3';
+                        }
+                    });
+                });
+            });
+        }
+    
+        // Handle steps for Description submenu
+        handleStepActivation('.has-submenu .step-indicator', 'step');
+    
+        // Handle steps for Algorithm submenu
+        handleStepActivation('.has-submenu .step-indicator2', 'step');
+     </script>
+</body>
+</html>

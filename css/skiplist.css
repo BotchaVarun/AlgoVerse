@@ -1,0 +1,362 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    background-color: #e0dede;
+}
+
+.skiplist {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.level {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    opacity: 0; /* Initially hide all levels */
+    transition: opacity 1s ease-in-out; /* Smooth transition */
+}
+
+#level0 {
+    opacity: 1; /* Show level-0 initially */
+}
+.visible
+{
+    opacity: 1;
+}
+
+.node {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.node {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #007bff;
+    color: #000;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.node.highlighted {
+    background-color: yellow;
+}
+
+.node.previous-highlighted {
+    background-color: orange;
+}
+
+.node::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: -30px;
+    width: 30px;
+    height: 2px;
+    
+    background-color: #000;
+}
+/* Level-specific styles */
+
+
+
+
+/* Hide the ::before pseudo-element of the first child */
+#level1 .node:first-child::before {
+    width: 0; /* Ensure width is 0 */
+    visibility: hidden; /* Or use opacity: 0; */
+}
+
+
+
+
+/* Adjusted connecting line lengths for specific nodes */
+#node3::before, 
+#node5::before, 
+#node6::before, 
+#node8::before,
+#node9::before, 
+#node10::before, 
+#node11::before {
+    left: -90px;
+    width: 0; /* Use width for general nodes */
+    transition: width 0.7s ease;
+    height: 2px;
+}
+#node3.expand::before, 
+#node5.expand::before, 
+#node6.expand::before, 
+#node8.expand::before,
+#node9.expand::before, 
+#node10.expand::before, 
+#node11.expand::before
+{
+    width:90px;
+}
+/* Node 16 with a shorter line */
+#node16::before {
+    left: -30px;
+    width:0; /* Specific width for node 16 */
+    transition: width 0.7s ease;
+    height: 2px;
+}
+
+/* If you want to ensure that node 16 does not use the general expand width */
+#node16.expand::before {
+    width: 30px; /* Specific width for node 16 when expanded */
+}
+
+/*level-2*/
+#node5-2::before
+{
+    left: -210px;
+    width: 0;
+    transition: width 0.7s ease;
+    height: 2px; 
+}
+#node8-2::before
+{
+    left: -210px;
+    width: 0;
+    transition: width 0.7s ease;
+    height: 2px; 
+}
+#node10-2::before
+{
+    left: -210px;
+    width: 0;
+    transition: width 0.7s ease;
+    height: 2px; 
+}
+#node16-2::before
+{
+    left: -150px;
+    width: 0;
+    transition: width 0.7s ease;
+    height: 2px; 
+}
+#node5-2.expand::before,
+#node8-2.expand::before,
+#node10-2.expand::before
+{
+    width: 210px;
+}
+#node16-2.expand::before
+{
+    width: 150px;
+}
+/**/
+/*level3*/
+#node8-3::before
+{
+    left: -450px;
+    width: 0;
+    transition: width 0.7s ease;
+    height: 2px; 
+}
+#node16-3::before
+{
+    left: -390px;
+    width: 0;
+    transition: width 0.7s ease;
+    height: 2px; 
+}
+#node8-3.expand::before
+{
+    width: 450px;
+}
+#node16-3.expand::before
+{
+    width: 390px;
+}
+/**/
+.node:first-child::before {
+    display: none;
+}
+
+.node[data-next]::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width:2px;
+    height: 0;
+    transform: translateX(-50%);
+    transition: height 0.7s ease;
+    background-color: #000;
+}
+.node.high[data-next]::after{
+    height:40px;
+}
+.node.highlighted {
+    background-color: #ffc107;
+    
+}
+
+.level:last-child .node::after {
+    display: none;
+}
+#node1
+{
+    left:-210px;
+}
+#node1-2
+{
+    left:-330px;
+}
+#node1-3
+{
+    left:-390px;
+}
+#node16
+{
+    right:-210px;
+}
+
+#node16-2
+{
+    right:-330px;
+}
+
+#node16-3
+{
+    right:-390px;
+}
+
+#node3
+{
+    left:-150px;
+}
+
+#node5
+{
+    left:-90px;
+}
+
+#node6
+{
+    left:-30px;
+}
+
+#node8
+{
+    left:30px;
+}
+
+#node9
+{
+    left:90px;
+}
+
+#node10
+{
+    left:150px;
+}
+
+#node11
+{
+    left:210px;
+}
+
+#node5-2
+{
+    left:-150px;
+}
+
+#node8-2
+{
+    left:30px;
+}
+
+#node10-2
+{
+    left:210px;
+}
+
+#node8-3
+{
+    left:30px;
+}
+
+.highlighted {
+    background-color: yellow;
+}
+
+.previous-highlighted {
+    background-color: orange;
+}
+.btns
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:5px;
+}
+.btns button{
+    width:80px;
+    height:50px;
+    border-radius:5px;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 0;
+    color:aliceblue;
+    background-color: rgb(1, 2, 23);
+}
+.key-box
+{
+    width:0;
+    padding: 0;
+    height:50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+    transition: width 0.5s ease;
+    font-size: 10px;
+    border-radius:5px;
+    border: 0;
+    overflow: hidden;
+}
+#key-input
+{
+    height:30px;
+    font-size: 15px;
+    outline: none;
+}
+.key-box .go
+{
+    width:50px;
+    background-color: green;
+    border: 1px solid green;
+    height: 40px;
+}
+.key-box.expand
+{
+    width:400px;
+    border: 1px solid gray;
+}
