@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms</title>
+    <link rel="stylesheet" href="css/ds.css">
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-YNDYBX0K88');
+    </script>
+</head>
+<body>
+    <nav class="navbar" style="background-color: #fff;">
+        <div class="navbar-left">
+            <a href="index.html" style="text-decoration: none;"><img src="img/logo2.jpg" alt="AlgoVerse Logo" class="logo"></a>
+        </div>
+        <div class="navbar-right">
+            <a href="#about" class="nav-link">ABOUT US</a>
+            <a href="#help" class="nav-link">HELP</a>
+            <button class="algo-code-button">Algo code</button>
+        </div>
+    </nav>
+                <div class="container">
+                    <h1>Algorithms</h1>
+                    <div class="spacer" ></div>
+<p>An algorithm is a set of commands that must be followed for a computer to perform calculations or other problem-solving operations.According to its formal definition, an algorithm is a finite set of instructions carried out in a specific order to perform a particular task.</p>                </div>
+
+<div class="header" id="sortings">
+                    <div><h1 class="heading-title">Graph Search</h1></div>
+<div class="data">       
+<div class="item" onmouseover="playdisjkstraGif()" onmouseleave="stopdisjkstraGif()">
+<img src="img/DIJKSTRA.png" id="dijkstra" onclick="window.location.href='Diji.html'">
+<button class="algo-code-button1" onclick="window.location.href='Diji.html'">Dijkstra’s</button> 
+</div>
+<div class="item" onmouseover="playAstarGif()" onmouseleave="stopAstarGif()">
+<img src="img/ASTAR.png" id="Astar" alt="" onclick="window.location.href='A_Star.html'">
+<button class="algo-code-button1" onclick="window.location.href='A_Star.html'">A Star</button> 
+</div>
+<div class="item">
+<img src="img/CONVEXHULL.png" alt="">
+<button class="algo-code-button1">convex hull</button> 
+</div>
+<div class="item">
+<img src="img/TRAVELLINGSALESMAN.png" alt="">
+<button class="algo-code-button1">Travelling Salesman</button> 
+</div>
+</div>  
+                </div>
+                <script>let playing = false;
+
+                    function playGif(imageId, gifSrc, imgSrc) {
+                      const img = document.getElementById(imageId);
+                      if (!playing) {
+                        img.src = gifSrc;
+                        playing = true;
+                      }
+                    }
+                    
+                    function stopGif(imageId, imgSrc) {
+                      const img = document.getElementById(imageId);
+                      if (playing) {
+                        img.src = imgSrc;
+                        playing = false;
+                      }
+                    }
+                    
+                    // Example usage for skiplist gif
+                    function playdisjkstraGif() {
+                      playGif('dijkstra', 'img/dijikisthra.gif', 'img/DIJKSTRA.png');
+                    }
+                    
+                    function stopdisjkstraGif() {
+                      stopGif('dijkstra', 'img/DIJKSTRA.png');
+                    }
+                    
+                    // Example usage for binary gif
+                    function playAstarGif() {
+                      playGif('Astar', 'img/Astar.gif', 'img/Astar.png');
+                    }
+                    function stopAstarGif() {
+                      stopGif('Astar', 'img/Astar.png');
+                    }
+                </script>
+</body>
+</html>
