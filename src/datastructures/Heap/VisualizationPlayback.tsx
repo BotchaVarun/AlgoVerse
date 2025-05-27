@@ -76,7 +76,7 @@ const VisualizationPlayback = () => {
       isFullScreen 
         ? 'fixed inset-0 z-50 max-w-none rounded-none border-none' 
         : 'max-w-7xl mx-auto'
-    }`} style={{ height: isFullScreen ? '100vh' : '100vh' }} >
+    }`} style={{ height: isFullScreen ? '100vh' : '95vh' }} >
       <div className="flex flex-col h-full">
         {/* Enhanced Control Bar */}
         <EnhancedControlBar
